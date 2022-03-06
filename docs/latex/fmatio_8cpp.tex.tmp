@@ -1,0 +1,46 @@
+\hypertarget{fmatio_8cpp}{}\doxysection{source/fmatio.cpp File Reference}
+\label{fmatio_8cpp}\index{source/fmatio.cpp@{source/fmatio.cpp}}
+{\ttfamily \#include $<$fmatio.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for fmatio.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fmatio_8hpp_a2c417f475551b71a14c6f8afb364fc08}{fmatio\+::hello}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Joris Baranauskas (jorisb)
+\end{DoxyAuthor}
+Main library header. It includes most often used and important headers.
+
+\begin{DoxyCopyright}{Copyright}
+© 2022-\/2023 by Joris Baranauskas
+\end{DoxyCopyright}
+This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+Definition in file \mbox{\hyperlink{fmatio_8cpp_source}{fmatio.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fmatio_8hpp_a2c417f475551b71a14c6f8afb364fc08}\label{fmatio_8hpp_a2c417f475551b71a14c6f8afb364fc08}} 
+\index{fmatio.cpp@{fmatio.cpp}!hello@{hello}}
+\index{hello@{hello}!fmatio.cpp@{fmatio.cpp}}
+\doxysubsubsection{\texorpdfstring{hello()}{hello()}}
+{\footnotesize\ttfamily void fmatio\+::hello (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{fmatio_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{fmatio_8cpp_source}{fmatio.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023     \{}
+\DoxyCodeLine{00024         std::cout << \textcolor{stringliteral}{"{}Hello, World!\(\backslash\)n"{}};}
+\DoxyCodeLine{00025     \}}
+
+\end{DoxyCode}

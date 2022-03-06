@@ -1,0 +1,133 @@
+\hypertarget{utils_8hpp_source}{}\doxysection{utils.\+hpp}
+\label{utils_8hpp_source}\index{tests/unit-\/tests/utils.hpp@{tests/unit-\/tests/utils.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef ANETIO\_TESTS\_UNIT\_TESTS\_UTILS\_HPP}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define ANETIO\_TESTS\_UNIT\_TESTS\_UTILS\_HPP}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00008}\mbox{\hyperlink{classUnitTest}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classUnitTest}{UnitTest}}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00010}00010 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00011}00011     ::std::string title;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00012}00012     \textcolor{keywordtype}{bool} expression;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00013}00013     ::std::string expressionString;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00014}00014     ::std::string onSuccess;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00015}00015     ::std::string onFailure;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00017}00017 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00018}00018     \mbox{\hyperlink{classUnitTest}{UnitTest}}(const ::std::string\& title,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00019}00019              \textcolor{keywordtype}{bool} expression,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00020}00020              const ::std::string\& expressionString,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00021}00021              const ::std::string\& onSuccess,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00022}00022              const ::std::string\& onFailure)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00023}00023         : title(title)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00024}00024         , expression(expression)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00025}00025         , expressionString(expressionString)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00026}00026         , onSuccess(onSuccess)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00027}00027         , onFailure(onFailure)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00028}00028     \{ \}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00030}00030 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00031}00031     \textcolor{keywordtype}{void} perform()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00032}00032 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00033}00033         \textcolor{keywordflow}{if} (expression)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00034}00034         \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00035}00035             ::std::cout << \textcolor{stringliteral}{"{}\(\backslash\)033[1;32m["{}} << title << \textcolor{stringliteral}{"{}] [SUCCESS] ("{}} << expressionString << \textcolor{stringliteral}{"{}) : "{}} << onSuccess << \textcolor{stringliteral}{"{}\(\backslash\)033[0m"{}} << ::std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00036}00036         \}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00037}00037         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00038}00038         \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00039}00039             ::std::cerr << \textcolor{stringliteral}{"{}\(\backslash\)033[1;31m["{}} << title << \textcolor{stringliteral}{"{}] [FAILURE] ("{}} << expressionString << \textcolor{stringliteral}{"{}) : "{}} << onFailure << \textcolor{stringliteral}{"{}\(\backslash\)033[0m"{}} << ::std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00040}00040         \}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00042}00042 \};}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00044}\mbox{\hyperlink{classUnitTestPool}{00044}} \textcolor{keyword}{class }\mbox{\hyperlink{classUnitTestPool}{UnitTestPool}}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00045}00045 \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00046}00046 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00047}00047     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} length;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00048}00048     ::std::vector<UnitTest> tests;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00050}00050 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00051}00051     \mbox{\hyperlink{classUnitTestPool}{UnitTestPool}}(const ::std::string\& title)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00052}00052         : tests(), length(title.size())}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00053}00053     \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00054}00054         ::std::cout << \textcolor{stringliteral}{"{}\(\backslash\)033[1;33m[ "{}} << title << \textcolor{stringliteral}{"{} ]\(\backslash\)033[0m"{}} << ::std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00057}00057     \mbox{\hyperlink{classUnitTestPool}{\string~UnitTestPool}}()}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00058}00058     \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00059}00059         ::std::cout << \textcolor{stringliteral}{"{}\(\backslash\)033[1;33m[ "{}};}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00061}00061         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this-\/>length; i++)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00062}00062             ::std::cout << \textcolor{stringliteral}{"{}-\/"{}};}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00064}00064         ::std::cout << \textcolor{stringliteral}{"{} ]\(\backslash\)033[0m"{}} << ::std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00067}00067 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00068}00068     \textcolor{keywordtype}{void} addTest(const ::std::string\& title,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00069}00069                  \textcolor{keywordtype}{bool} expression,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00070}00070                  const ::std::string\& expressionString,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00071}00071                  const ::std::string\& onSuccess,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00072}00072                  const ::std::string\& onFailure)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00073}00073     \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00074}00074         this-\/>tests.push\_back(\mbox{\hyperlink{classUnitTest}{UnitTest}}(title, expression, expressionString, onSuccess, onFailure));}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00075}00075     \}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00077}00077     \textcolor{keywordtype}{void} addTest(\textcolor{keyword}{const} \mbox{\hyperlink{classUnitTest}{UnitTest}}\& test)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00078}00078     \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00079}00079         this-\/>tests.push\_back(test);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00080}00080     \}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00082}00082     \textcolor{keywordtype}{void} performAll()}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00083}00083     \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00084}00084         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& test : this-\/>tests)}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00085}00085             test.perform();}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00086}00086     \}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00087}00087 \};}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00089}00089 \textcolor{preprocessor}{\#define BEGIN\_UNIT\_TEST(title) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00090}00090 \textcolor{preprocessor}{\{ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00091}00091 \textcolor{preprocessor}{    UnitTestPool pool = UnitTestPool(title);}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00093}00093 \textcolor{preprocessor}{\#define END\_UNIT\_TEST() \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00094}00094 \textcolor{preprocessor}{    pool.performAll(); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00095}00095 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00097}00097 \textcolor{preprocessor}{\#define ADD\_TEST(title, expression, onSuccess, onFailure) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00098}00098 \textcolor{preprocessor}{    pool.addTest(title, expression, \#expression, onSuccess, onFailure);}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00100}00100 \textcolor{preprocessor}{\#define ADD\_LINE\_BREAK() \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00101}00101 \textcolor{preprocessor}{    ::std::cout << ::std::endl;}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00103}00103 \textcolor{preprocessor}{\#define TEST\_TRUE(title, value, onSuccess, onFailure) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00104}00104 \textcolor{preprocessor}{    pool.addTest(title, value == true, "{}Empty"{}}, onSuccess, onFailure);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00106}00106 \textcolor{preprocessor}{\#define TEST\_FALSE(title, value, onSuccess, onFailure) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00107}00107 \textcolor{preprocessor}{    pool.addTest(title, value == false, "{}Empty"{}}, onSuccess, onFailure);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00109}00109 \textcolor{preprocessor}{\#define TEST\_EQUAL(title, value, other, onSuccess, onFailure) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00110}00110 \textcolor{preprocessor}{    pool.addTest(title, value == other, "{}Empty"{}}, onSuccess, onFailure);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00112}00112 \textcolor{preprocessor}{\#define TEST\_NOT\_EQUAL(title, value, other, onSuccess, onFailure) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00113}00113 \textcolor{preprocessor}{    pool.addTest(title, value != other, "{}Empty"{}}, onSuccess, onFailure);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00115}00115 \textcolor{preprocessor}{\#define TEST\_IS\_NULLPTR(title, value, onSuccess, onFailure) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00116}00116 \textcolor{preprocessor}{    pool.addTest(title, value == nullptr, "{}Empty"{}}, onSuccess, onFailure);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00118}00118 \textcolor{preprocessor}{\#define TEST\_IS\_NOT\_NULLPTR(title, value, onSuccess, onFailure) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00119}00119 \textcolor{preprocessor}{    pool.addTest(title, value != nullptr, "{}Empty"{}}, onSuccess, onFailure);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00121}00121 \textcolor{preprocessor}{\#define TEST\_IS\_NULL(title, value, onSuccess, onFailure) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00122}00122 \textcolor{preprocessor}{    pool.addTest(title, value == NULL, "{}Empty"{}}, onSuccess, onFailure);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00124}00124 \textcolor{preprocessor}{\#define TEST\_IS\_NOT\_NULL(title, value, onSuccess, onFailure) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00125}00125 \textcolor{preprocessor}{    pool.addTest(title, value != NULL, "{}Empty"{}}, onSuccess, onFailure);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00127}00127 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
