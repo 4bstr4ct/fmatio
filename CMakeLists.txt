@@ -111,9 +111,12 @@ set(FMATIO_INCLUDE_DIRECTORY  "${CMAKE_CURRENT_SOURCE_DIR}/include")
 set(FMATIO_SOURCE_DIRECTORY   "${CMAKE_CURRENT_SOURCE_DIR}/source")
 
 file(GLOB FMATIO_INLINE_FILES
-	"${FMATIO_SOURCE_DIRECTORY}/fmatio.inl"
-
+	"${FMATIO_SOURCE_DIRECTORY}/fmatio/format.inl"
+	"${FMATIO_SOURCE_DIRECTORY}/fmatio/writers.inl"
+	"${FMATIO_SOURCE_DIRECTORY}/fmatio/string.inl"
 	"${FMATIO_SOURCE_DIRECTORY}/fmatio/string_view.inl"
+
+	"${FMATIO_SOURCE_DIRECTORY}/fmatio/details/arguments.inl"
 )
 
 file(GLOB FMATIO_HEADER_FILES
@@ -121,8 +124,12 @@ file(GLOB FMATIO_HEADER_FILES
 	
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/core.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/types.hpp"
-
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/writers.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string_view.hpp"
+
+	"${FMATIO_SOURCE_DIRECTORY}/fmatio/details/arguments.hpp"
 )
 
 set(FMATIO_PUBLIC_HEADER_FILES
@@ -130,8 +137,12 @@ set(FMATIO_PUBLIC_HEADER_FILES
 	
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/core.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/types.hpp"
-
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/writers.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string_view.hpp"
+
+	"${FMATIO_SOURCE_DIRECTORY}/fmatio/details/arguments.hpp"
 )
 
 set(FMATIO_TARGET_DEFINITIONS "")
@@ -157,6 +168,7 @@ elseif(APPLE)
 endif()
 
 string(TOUPPER "${CMAKE_BUILD_TYPE}" BUILD_VARIANT)
+message(${BUILD_VARIANT})
 set(FMATIO_BUILD_VARIANT "FMATIO_${BUILD_VARIANT}")
 list(APPEND FMATIO_TARGET_DEFINITIONS "${FMATIO_BUILD_VARIANT}")
 

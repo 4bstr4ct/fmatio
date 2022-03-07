@@ -18,6 +18,11 @@
 namespace fmatio
 {
 	/**
+	 * A type represeting null pointer
+	 */
+	using null = decltype(__nullptr);
+
+	/**
 	 * A type representing signed char. 
 	 */
 	using int8 = signed char;

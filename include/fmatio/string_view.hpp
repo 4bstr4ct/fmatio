@@ -3,7 +3,7 @@
  * 
  * @author Joris Baranauskas (jorisb)
  * 
- * Defines macros and helper utilities.
+ * Defines string view class.
  * 
  * @copyright © 2022-2023 by Joris Baranauskas
  * 
@@ -33,55 +33,53 @@ namespace fmatio
 		 * Define a public typedef for char type used in this class.
 		 */
 		using CharType = Char;
+		
+		/**
+		 * Define a public typedef for value type used in this class.
+		 */
+		using ValueType = Char;
 
 	private:
 		const Char* data;
 		uint32 size;
 
 	public:
-		BasicStringView<Char>();
+		BasicStringView<Char>() noexcept;
 
-		BasicStringView<Char>(const Char* data);
+		BasicStringView<Char>(const Char* data) noexcept;
 
-		BasicStringView<Char>(const BasicStringView<Char>& other) = default;
+		BasicStringView<Char>(const BasicStringView<Char>& other) noexcept = default;
 
 #if defined(FMATIO_MOVE_SEMANTICS_ENABLED) && FMATIO_MOVE_SEMANTICS_ENABLED == 1
-		BasicStringView<Char>(BasicStringView<Char>&& other) = delete;
+		BasicStringView<Char>(BasicStringView<Char>&& other) noexcept = default;
 #endif
 
-		~BasicStringView<Char>();
+		~BasicStringView<Char>() noexcept;
 
 	public:
-		const Char* getData() const;
+		const Char* getData() const noexcept;
 
-		uint32 getSize() const;
+		uint32 getSize() const noexcept;
 
-		bool isEmpty() const;
+		bool isEmpty() const noexcept;
 
-		const Char* getBegin() const;
+		const Char* getBegin() const noexcept;
 		
-		const Char* getEnd() const;
+		const Char* getEnd() const noexcept;
 
 	public:
-		BasicStringView<Char>& operator =(const BasicStringView<Char>& other) = default;
+		BasicStringView<Char>& operator =(const BasicStringView<Char>& other) noexcept = default;
 
 #if defined(FMATIO_MOVE_SEMANTICS_ENABLED) && FMATIO_MOVE_SEMANTICS_ENABLED == 1
-		BasicStringView<Char>& operator =(BasicStringView<Char>&& other) = delete;
+		BasicStringView<Char>& operator =(BasicStringView<Char>&& other) noexcept = default;
 #endif
 
-		bool operator ==(const BasicStringView<Char>& other) const;
+		bool operator ==(const BasicStringView<Char>& other) const noexcept;
 
-		bool operator !=(const BasicStringView<Char>& other) const;
+		bool operator !=(const BasicStringView<Char>& other) const noexcept;
 
-		Char& operator [](uint32 index);
-
-		const Char& operator [](uint32 index) const;
+		const Char& operator [](uint32 index) const noexcept;
 	};
-
-	/**
-	 * Define a string view with char as the inner type.
-	 */
-	using StringView = BasicStringView<char>;
 }
 
 #include "../../source/fmatio/string_view.inl"

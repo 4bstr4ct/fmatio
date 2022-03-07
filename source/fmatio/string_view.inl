@@ -15,48 +15,48 @@
 namespace fmatio
 {
 	template<typename Char>
-	BasicStringView<Char>::BasicStringView()
+	BasicStringView<Char>::BasicStringView() noexcept
 		: data(), size() { }
 
 	template<typename Char>
-	BasicStringView<Char>::BasicStringView(const Char* data)
+	BasicStringView<Char>::BasicStringView(const Char* data) noexcept
 		: data(data), size((uint32)strlen(data)) { }
 
 	template<typename Char>
-	BasicStringView<Char>::~BasicStringView() { }
+	BasicStringView<Char>::~BasicStringView() noexcept { }
 
 	template<typename Char>
-	const Char* BasicStringView<Char>::getData() const
+	const Char* BasicStringView<Char>::getData() const noexcept
 	{
 		return this->data;
 	}
 
 	template<typename Char>
-	uint32 BasicStringView<Char>::getSize() const
+	uint32 BasicStringView<Char>::getSize() const noexcept
 	{
 		return this->size;
 	}
 
 	template<typename Char>
-	bool BasicStringView<Char>::isEmpty() const
+	bool BasicStringView<Char>::isEmpty() const noexcept
 	{
 		return this->data == nullptr;
 	}
 
 	template<typename Char>
-	const Char* BasicStringView<Char>::getBegin() const
+	const Char* BasicStringView<Char>::getBegin() const noexcept
 	{
 		return this->data;
 	}
 
 	template<typename Char>
-	const Char* BasicStringView<Char>::getEnd() const
+	const Char* BasicStringView<Char>::getEnd() const noexcept
 	{
 		return this->data + this->size;
 	}
 
 	template<typename Char>
-	bool BasicStringView<Char>::operator ==(const BasicStringView<Char>& other) const
+	bool BasicStringView<Char>::operator ==(const BasicStringView<Char>& other) const noexcept
 	{
 		if (this == &other)
 			return true;
@@ -75,20 +75,15 @@ namespace fmatio
 	}
 
 	template<typename Char>
-	bool BasicStringView<Char>::operator !=(const BasicStringView<Char>& other) const
+	bool BasicStringView<Char>::operator !=(const BasicStringView<Char>& other) const noexcept
 	{
 		return !(*this == other);
 	}
 
 	template<typename Char>
-	Char& BasicStringView<Char>::operator [](uint32 index)
+	const Char& BasicStringView<Char>::operator [](uint32 index) const noexcept
 	{
-		return this->data[index];
-	}
-
-	template<typename Char>
-	const Char& BasicStringView<Char>::operator [](uint32 index) const
-	{
+		FMATIO_ASSERT(index >= 0 && index < this->size, "Index out of bounds!");
 		return this->data[index];
 	}
 }

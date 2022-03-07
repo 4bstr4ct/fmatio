@@ -1,10 +1,9 @@
 /*******************************************************************************
- * @file fmatio.hpp
+ * @file format.inl
  * 
  * @author Joris Baranauskas (jorisb)
  * 
- * Main library header. It includes most often used and important
- * headers.
+ * Defines format.hpp implementations.
  * 
  * @copyright © 2022-2023 by Joris Baranauskas
  * 
@@ -13,14 +12,7 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#ifndef FMATIO_INCLUDE_FMATIO_HPP
-#define FMATIO_INCLUDE_FMATIO_HPP
-
-#include <fmatio/core.hpp>
-#include <fmatio/types.hpp>
-#include <fmatio/format.hpp>
-#include <fmatio/writers.hpp>
-#include <fmatio/string.hpp>
-#include <fmatio/string_view.hpp>
-
-#endif
+namespace fmatio
+{
+	
+}

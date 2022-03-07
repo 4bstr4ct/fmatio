@@ -2,17 +2,16 @@
 
 // #include "./utils.hpp"
 
+#include <stdio.h>
 #include <iostream>
-#include <vector>
 
-template<typename T>
-using Vector = ::std::vector<T>;
-
-using ::fmatio::StringView;
+using ::fmatio::format;
+using ::fmatio::BasicString;
+using ::fmatio::BasicStringView;
 
 int main(int argc, char** argv)
 {
-	::std::cout << ::fmatio::format("Hello, from {} {}!", "FMATIO", 5) << ::std::endl;
-	// ::fmatio::print(::std::cout, "Hello, from {}!", "FMATIO");
+	// printf("%s", format<BasicStringView>("Hello, from {} {}!\n", "FMATIO", 5).c_str());
+	::std::cout << format<BasicString<char>>("Hello, from {} {}!\n", "FMATIO", 5).getData();
 	return 0;
 }
