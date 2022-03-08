@@ -66,6 +66,11 @@ namespace fmatio
 	 * A type representing unsigned long long. 
 	 */
 	using uint64 = unsigned long long;
+
+	/**
+	 * A type representing wide char. 
+	 */
+	using wchar = wchar_t;
 }
 
 #endif

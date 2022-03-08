@@ -18,50 +18,32 @@
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
-#include <fmatio/writers.hpp>
 #include <fmatio/string_view.hpp>
-#include <fmatio/details/arguments.hpp>
 
-#include <string>
+#include <fmatio/details/writers.hpp>
+#include <fmatio/details/arguments.hpp>
 
 namespace fmatio
 {
 	template<typename Char>
-	FMATIO_API void formatImpl(BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const BasicFormatArgumentsList<Char>& arguments) noexcept
-	{
-		uint32 index = 0;
-
-		for (BasicStringView<Char>::Iterator it = pattern.getBegin(); it != pattern.getEnd(); it++)
-		{
-			if (*it == '{' && *(it + 1) == '}')
-			{
-				arguments.formatArgument(writer, index++); it++;
-			}
-			else
-			{
-				Char letter[2] = { *it, '\0' };
-				writer.write(BasicStringView<Char>(letter));
-			}
-		}
-	}
-
-	template<typename T>
-	using DecayArray = ::std::conditional_t<::std::is_array_v<T>, ::std::remove_extent_t<T> const*, T>;
-
-	template<typename T>
-	using Formattable = DecayArray<::std::remove_reference_t<T>>;
+	void formatHandle(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) noexcept;
 
 	template<typename Result, typename Pattern, typename... Arguments>
-	FMATIO_API Result format(const Pattern& pattern, const Arguments&... arguments) noexcept
-	{
-		using CharType = Result::CharType;
-		Result result;
-		BasicDynamicWriter<Result> writer(result);
-		formatImpl(writer, BasicStringView<CharType>(pattern), { makeFormatArgument<CharType, Formattable<Arguments>>(arguments)... });
-		return result;
-	}
+	Result format(const Pattern& pattern, Arguments&&... arguments) noexcept;
+
+	template<typename Pattern, typename... Arguments>
+	BasicString<char> format(const Pattern& pattern, Arguments&&... arguments) noexcept;
+
+	template<typename Pattern, typename... Arguments>
+	BasicString<wchar> wformat(const Pattern& pattern, Arguments&&... arguments) noexcept;
+
+	template<typename Stream, typename Pattern, typename... Arguments>
+	void echo(Stream& stream, const Pattern& pattern, Arguments&&... arguments) noexcept;
+
+	template<typename Stream, typename Pattern, typename... Arguments>
+	void wecho(Stream& stream, const Pattern& pattern, Arguments&&... arguments) noexcept;
 }
 
-#include "../source/fmatio/format.inl"
+#include "./format.inl"
 
 #endif

@@ -21,7 +21,7 @@
 namespace fmatio
 {
 	template<typename Char>
-	FMATIO_API class BasicStringView
+	class BasicStringView
 	{
 	public:
 		/**
@@ -82,6 +82,6 @@ namespace fmatio
 	};
 }
 
-#include "../../source/fmatio/string_view.inl"
+#include "./string_view.inl"
 
 #endif

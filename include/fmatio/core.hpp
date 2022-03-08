@@ -15,8 +15,6 @@
 #ifndef FMATIO_INCLUDE_FMATIO_CORE_HPP
 #define FMATIO_INCLUDE_FMATIO_CORE_HPP
 
-#define FMATIO_API
-
 #if FMATIO_DEBUG
 #	include <iostream>
 #	define FMATIO_ASSERT(expression, message) \
@@ -24,7 +22,7 @@
 	if (!(expression)) \
 	{ \
 		::std::cerr << "Assertion failed: " << message << "\n\tFile: " << __FILE__ << ". Line: " << __LINE__ << "." << ::std::endl; \
-		throw; \
+		::std::exit(-1); \
 	} \
 }
 #else

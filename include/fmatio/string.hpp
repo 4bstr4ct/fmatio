@@ -18,10 +18,12 @@
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
 
+#include <string>
+
 namespace fmatio
 {
 	template<typename Char>
-	FMATIO_API class BasicString
+	class BasicString
 	{
 	public:
 		/**
@@ -45,29 +47,28 @@ namespace fmatio
 		using ValueType = Char;
 
 	private:
-		Char* data;
-		uint32 size;
+		// Char* data;
+		// uint32 size;
+		::std::basic_string<Char> data;
 
 	public:
-		Char* getData() noexcept
-		{
-			return this->data;
-		}
-
 		const Char* getData() const noexcept
 		{
-			return this->data;
+			return this->data.data();
 		}
 
 		uint32 getSize() const noexcept
 		{
-			return this->size;
+			return this->data.size();
 		}
 
 		void append(const Char* begin, uint32 size) noexcept
 		{
+			this->data.append(begin, size);
 		}
 	};
 }
+
+#include "./string.inl"
 
 #endif

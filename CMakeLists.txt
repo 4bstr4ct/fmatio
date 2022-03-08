@@ -111,25 +111,40 @@ set(FMATIO_INCLUDE_DIRECTORY  "${CMAKE_CURRENT_SOURCE_DIR}/include")
 set(FMATIO_SOURCE_DIRECTORY   "${CMAKE_CURRENT_SOURCE_DIR}/source")
 
 file(GLOB FMATIO_INLINE_FILES
-	"${FMATIO_SOURCE_DIRECTORY}/fmatio/format.inl"
-	"${FMATIO_SOURCE_DIRECTORY}/fmatio/writers.inl"
-	"${FMATIO_SOURCE_DIRECTORY}/fmatio/string.inl"
-	"${FMATIO_SOURCE_DIRECTORY}/fmatio/string_view.inl"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.inl"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string.inl"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string_view.inl"
 
-	"${FMATIO_SOURCE_DIRECTORY}/fmatio/details/arguments.inl"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.inl"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/writers.inl"
 )
 
 file(GLOB FMATIO_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio.hpp"
-	
+		
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/core.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/types.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/writers.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string_view.hpp"
 
-	"${FMATIO_SOURCE_DIRECTORY}/fmatio/details/arguments.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/writers.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int8.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint8.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int16.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint16.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int32.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint32.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int64.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint64.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/float.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/double.hpp"
 )
 
 set(FMATIO_PUBLIC_HEADER_FILES
@@ -138,45 +153,37 @@ set(FMATIO_PUBLIC_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/core.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/types.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/writers.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string_view.hpp"
 
-	"${FMATIO_SOURCE_DIRECTORY}/fmatio/details/arguments.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/writers.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int8.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint8.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int16.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint16.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int32.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint32.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int64.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint64.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/float.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/double.hpp"
 )
-
-set(FMATIO_TARGET_DEFINITIONS "")
-
-if(WIN32)
-	file(GLOB FMATIO_SOURCE_FILES_WINDOWS
-		"${FMATIO_SOURCE_DIRECTORY}/windows/windows_socket.cpp"
-	)
-	list(APPEND FMATIO_SOURCE_FILES ${FMATIO_SOURCE_FILES_WINDOWS})
-	list(APPEND FMATIO_TARGET_DEFINITIONS "FMATIO_OS_WINDOWS=1")
-elseif(UNIX AND NOT APPLE)
-	file(GLOB FMATIO_SOURCE_FILES_LINUX
-		"${FMATIO_SOURCE_DIRECTORY}/linux/linux_socket.cpp"
-	)
-	list(APPEND FMATIO_SOURCE_FILES ${FMATIO_SOURCE_FILES_LINUX})
-	list(APPEND FMATIO_TARGET_DEFINITIONS "FMATIO_OS_LINUX=1")
-elseif(APPLE)
-	file(GLOB FMATIO_SOURCE_FILES_MACOS
-		"${FMATIO_SOURCE_DIRECTORY}/macos/macos_socket.cpp"
-	)
-	list(APPEND FMATIO_SOURCE_FILES ${FMATIO_SOURCE_FILES_MACOS})
-	list(APPEND FMATIO_TARGET_DEFINITIONS "FMATIO_OS_MACOS=1")
-endif()
 
 string(TOUPPER "${CMAKE_BUILD_TYPE}" BUILD_VARIANT)
 message(${BUILD_VARIANT})
 set(FMATIO_BUILD_VARIANT "FMATIO_${BUILD_VARIANT}")
-list(APPEND FMATIO_TARGET_DEFINITIONS "${FMATIO_BUILD_VARIANT}")
 
 add_library(${PROJECT_NAME} INTERFACE ${FMATIO_HEADER_FILES} ${FMATIO_INLINE_FILES})
 
 target_compile_definitions(${PROJECT_NAME}
 	INTERFACE
-		${FMATIO_TARGET_DEFINITIONS}
+		${FMATIO_BUILD_VARIANT}
 		"FMATIO_STATIC_BUILD=1"
 )
 
