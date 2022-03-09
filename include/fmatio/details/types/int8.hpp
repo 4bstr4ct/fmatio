@@ -1,9 +1,9 @@
 /*******************************************************************************
- * @file char_string.hpp
+ * @file int8.hpp
  *
  * @author Joris Baranauskas (jorisb)
  *
- * Defines functions to write char string.
+ * Defines functions to write signed 8-bit integer.
  *
  * @copyright © 2022-2023 by Joris Baranauskas
  *
@@ -12,8 +12,8 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_CHAR_STRING_HPP
-#define FMATIO_INCLUDE_FMATIO_DETAILS_CHAR_STRING_HPP
+#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_INT8_HPP
+#define FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_INT8_HPP
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
@@ -27,15 +27,10 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		void charStringHandle(BasicFormatWriter<Char>& writer, char* value) noexcept
+		void int8Handle(BasicFormatWriter<Char>& writer, int8 value) FMATIO_NOEXCEPT
 		{
-			writer.write(BasicStringView<Char>(value));
-		}
-
-		template<typename Char>
-		void charStringHandle(BasicFormatWriter<Char>& writer, const char* value) noexcept
-		{
-			writer.write(BasicStringView<Char>(value));
+			::std::string string = ::std::to_string(value);	// Have to reimplement this!
+			writer.write(BasicStringView<Char>(string.data()));
 		}
 	}
 }

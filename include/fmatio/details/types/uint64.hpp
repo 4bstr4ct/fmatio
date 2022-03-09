@@ -1,9 +1,9 @@
 /*******************************************************************************
- * @file int8.hpp
+ * @file uint64.hpp
  *
  * @author Joris Baranauskas (jorisb)
  *
- * Defines functions to write signed 8-bit integer.
+ * Defines functions to write unsigned 64-bit integer.
  *
  * @copyright © 2022-2023 by Joris Baranauskas
  *
@@ -12,8 +12,8 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_INT8_HPP
-#define FMATIO_INCLUDE_FMATIO_DETAILS_INT8_HPP
+#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_UINT64_HPP
+#define FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_UINT64_HPP
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
@@ -27,7 +27,7 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		void int8Handle(BasicFormatWriter<Char>& writer, int8 value) noexcept
+		void uint64Handle(BasicFormatWriter<Char>& writer, uint64 value) FMATIO_NOEXCEPT
 		{
 			::std::string string = ::std::to_string(value);	// Have to reimplement this!
 			writer.write(BasicStringView<Char>(string.data()));

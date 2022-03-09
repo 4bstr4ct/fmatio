@@ -28,19 +28,19 @@
 namespace fmatio
 {
 	template<typename Char>
-	void formatHandle(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) noexcept;
+	void formatHandle(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT;
 
 	template<typename Result, typename Pattern, typename... Arguments>
-	Result format(const Pattern& pattern, Arguments&&... arguments) noexcept;
+	Result format(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
 	template<typename Pattern, typename... Arguments>
-	BasicString<char> format(const Pattern& pattern, Arguments&&... arguments) noexcept;
+	BasicString<char> format(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
 	template<typename Pattern, typename... Arguments>
-	BasicString<wchar> wformat(const Pattern& pattern, Arguments&&... arguments) noexcept;
+	BasicString<wchar> wformat(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
 	template<typename Stream, typename Pattern, typename... Arguments>
-	void echo(Stream& stream, const Pattern& pattern, Arguments&&... arguments) noexcept;
+	void echo(Stream& stream, const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 }
 
 #include "./format.inl"

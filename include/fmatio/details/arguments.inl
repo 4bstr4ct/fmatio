@@ -12,44 +12,52 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#include <fmatio/details/int8.hpp>
-#include <fmatio/details/uint8.hpp>
+#include <fmatio/details/types/bool.hpp>
+#include <fmatio/details/types/char.hpp>
 
-#include <fmatio/details/int16.hpp>
-#include <fmatio/details/uint16.hpp>
+#include <fmatio/details/types/int8.hpp>
+#include <fmatio/details/types/uint8.hpp>
 
-#include <fmatio/details/int32.hpp>
-#include <fmatio/details/uint32.hpp>
+#include <fmatio/details/types/int16.hpp>
+#include <fmatio/details/types/uint16.hpp>
 
-#include <fmatio/details/int64.hpp>
-#include <fmatio/details/uint64.hpp>
+#include <fmatio/details/types/int32.hpp>
+#include <fmatio/details/types/uint32.hpp>
 
-#include <fmatio/details/float.hpp>
-#include <fmatio/details/double.hpp>
+#include <fmatio/details/types/int64.hpp>
+#include <fmatio/details/types/uint64.hpp>
 
-#include <fmatio/details/char_string.hpp>
+#include <fmatio/details/types/float.hpp>
+#include <fmatio/details/types/double.hpp>
+
+#include <fmatio/details/types/char_string.hpp>
 
 namespace fmatio
 {
 	namespace details
 	{
 		template<typename Char>
-		BasicFormatArgument<Char>::BasicFormatArgument() noexcept
+		BasicFormatArgument<Char>::BasicFormatArgument() FMATIO_NOEXCEPT
 			: type(FormatArgumentType::Unknown), value(nullptr) { }
 
 		template<typename Char>
-		BasicFormatArgument<Char>::BasicFormatArgument(FormatArgumentType type, const void* value) noexcept
+		BasicFormatArgument<Char>::BasicFormatArgument(FormatArgumentType type, const void* value) FMATIO_NOEXCEPT
 			: type(type), value(value) { }
 
 		template<typename Char>
-		BasicFormatArgument<Char>::~BasicFormatArgument() noexcept { }
+		BasicFormatArgument<Char>::~BasicFormatArgument() FMATIO_NOEXCEPT { }
 
 		template<typename Char>
-		void BasicFormatArgument<Char>::format(BasicFormatWriter<Char>& writer) const noexcept
+		void BasicFormatArgument<Char>::format(BasicFormatWriter<Char>& writer) const FMATIO_NOEXCEPT
 		{
 			switch (this->type)
 			{
 			case FormatArgumentType::Bool:
+				boolHandle(writer, *static_cast<const bool*>(this->value));
+				break;
+
+			case FormatArgumentType::Char:
+				charHandle(writer, *static_cast<const char*>(this->value));
 				break;
 
 			case FormatArgumentType::SignedInt8:
@@ -93,14 +101,11 @@ namespace fmatio
 				break;
 
 			case FormatArgumentType::CharString:
-				charStringHandle(writer, *static_cast<char* const *>(this->value));
-				break;
-
-			case FormatArgumentType::ConstCharString:
 				charStringHandle(writer, *static_cast<const char* const *>(this->value));
 				break;
 
 			case FormatArgumentType::NullPointer:
+				charStringHandle(writer, FormatTraits<Char>::nullptrStringified);
 				break;
 
 			case FormatArgumentType::VoidPointer:
@@ -112,31 +117,31 @@ namespace fmatio
 		}
 
 		template<typename Char>
-		BasicFormatArgumentsList<Char>::BasicFormatArgumentsList() noexcept
+		BasicFormatArgumentsList<Char>::BasicFormatArgumentsList() FMATIO_NOEXCEPT
 			: arguments(), size() { }
 
 		template<typename Char>
-		BasicFormatArgumentsList<Char>::BasicFormatArgumentsList(const ::std::initializer_list<BasicFormatArgument<Char>>& arguments) noexcept
+		BasicFormatArgumentsList<Char>::BasicFormatArgumentsList(const ::std::initializer_list<BasicFormatArgument<Char>>& arguments) FMATIO_NOEXCEPT
 			: arguments(arguments.begin()), size((uint32)arguments.size()) { }
 
 		template<typename Char>
-		BasicFormatArgumentsList<Char>::~BasicFormatArgumentsList() noexcept { }
+		BasicFormatArgumentsList<Char>::~BasicFormatArgumentsList() FMATIO_NOEXCEPT { }
 
 		template<typename Char>
-		uint32 BasicFormatArgumentsList<Char>::getSize() const noexcept
+		uint32 BasicFormatArgumentsList<Char>::getSize() const FMATIO_NOEXCEPT
 		{
 			return this->size;
 		}
 
 		template<typename Char>
-		void BasicFormatArgumentsList<Char>::format(BasicFormatWriter<Char>& writer, uint32 index) const noexcept
+		void BasicFormatArgumentsList<Char>::format(BasicFormatWriter<Char>& writer, uint32 index) const FMATIO_NOEXCEPT
 		{
 			FMATIO_ASSERT(index >= 0 && index < this->size, "Index out of bounds!");
 			this->arguments[index].format(writer);
 		}
 
 		template<typename Char, typename Value>
-		BasicFormatArgument<Char> makeFormatArgument(const Value& value) noexcept
+		BasicFormatArgument<Char> makeFormatArgument(const Value& value) FMATIO_NOEXCEPT
 		{
 			FormatArgumentType type = TypeOf<Value>::value;
 
@@ -144,12 +149,11 @@ namespace fmatio
 			{
 				return BasicFormatArgument<Char>(type, &value);
 			}
-			else if (::std::is_pointer_v<Value>)
+			else
 			{
-				return BasicFormatArgument<Char>(FormatArgumentType::VoidPointer, &value);
+				FMATIO_ASSERT(false, "Provided argument type is not supported!");
+				return BasicFormatArgument<Char>();
 			}
-			
-			return BasicFormatArgument<Char>();
 		}
 	}
 }

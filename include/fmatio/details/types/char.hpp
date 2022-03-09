@@ -1,9 +1,9 @@
 /*******************************************************************************
- * @file uint64.hpp
+ * @file bool.hpp
  *
  * @author Joris Baranauskas (jorisb)
  *
- * Defines functions to write unsigned 64-bit integer.
+ * Defines functions to write char.
  *
  * @copyright © 2022-2023 by Joris Baranauskas
  *
@@ -12,8 +12,8 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_UINT64_HPP
-#define FMATIO_INCLUDE_FMATIO_DETAILS_UINT64_HPP
+#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_CHAR_HPP
+#define FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_CHAR_HPP
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
@@ -27,9 +27,9 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		void uint64Handle(BasicFormatWriter<Char>& writer, uint64 value) noexcept
+		void charHandle(BasicFormatWriter<Char>& writer, char value) FMATIO_NOEXCEPT
 		{
-			::std::string string = ::std::to_string(value);	// Have to reimplement this!
+			::std::string string = ::std::string({ value, '\0' });	// Have to reimplement this!
 			writer.write(BasicStringView<Char>(string.data()));
 		}
 	}

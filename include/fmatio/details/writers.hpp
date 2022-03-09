@@ -36,7 +36,7 @@ namespace fmatio
 			/**
 			 * Destroy the basic format writer object.
 			 */
-			virtual ~BasicFormatWriter() noexcept;
+			virtual ~BasicFormatWriter() FMATIO_NOEXCEPT;
 
 		public:
 			/**
@@ -45,7 +45,7 @@ namespace fmatio
 			 * @param[in] stringified
 			 * 		Stringified format argument value.
 			 */
-			virtual void write(BasicStringView<Char> stringified) noexcept = 0;
+			virtual void write(BasicStringView<Char> stringified) FMATIO_NOEXCEPT = 0;
 		};
 
 		/**
@@ -67,12 +67,12 @@ namespace fmatio
 			 * @param[in] container
 			 * 		A container in which stringified arguments are written.
 			 */
-			BasicDynamicWriter(Container& container) noexcept;
+			BasicDynamicWriter(Container& container) FMATIO_NOEXCEPT;
 
 			/**
 			 * Destroy the basic dynamic writer object.
 			 */
-			virtual ~BasicDynamicWriter() noexcept override;
+			virtual ~BasicDynamicWriter() FMATIO_NOEXCEPT override;
 
 		public:
 			/**
@@ -81,7 +81,7 @@ namespace fmatio
 			 * @param[in] stringified
 			 * 		Stringified format argument value.
 			 */
-			virtual void write(BasicStringView<typename Container::CharType> stringified) noexcept override;
+			virtual void write(BasicStringView<typename Container::CharType> stringified) FMATIO_NOEXCEPT override;
 		};
 	}
 }

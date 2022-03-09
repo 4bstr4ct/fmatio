@@ -57,6 +57,10 @@ if(FMATIO_IS_MASTER_PROJECT AND NOT DEFINED CMAKE_VISIBILITY_INLINES_HIDDEN)
 				"Whether to add a compile flag to hide symbols of inline functions")
 endif()
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 	set(PEDANTIC_COMPILE_FLAGS -pedantic-errors -Wall -Wextra -pedantic
 		-Wold-style-cast -Wundef
@@ -129,24 +133,28 @@ file(GLOB FMATIO_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string_view.hpp"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/format_traits.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/writers.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int8.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint8.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/bool.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/char.hpp"
+	
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/int8.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/uint8.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int16.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint16.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/int16.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/uint16.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int32.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint32.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/int32.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/uint32.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int64.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint64.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/int64.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/uint64.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/float.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/double.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/float.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/double.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/char_string.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/char_string.hpp"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_utilities.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_view_utilities.hpp"
@@ -163,24 +171,28 @@ set(FMATIO_PUBLIC_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string_view.hpp"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/format_traits.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/writers.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int8.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint8.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/bool.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/char.hpp"
+	
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/int8.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/uint8.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int16.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint16.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/int16.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/uint16.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int32.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint32.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/int32.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/uint32.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/int64.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/uint64.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/int64.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/uint64.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/float.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/double.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/float.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/double.hpp"
 
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/char_string.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/char_string.hpp"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_utilities.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_view_utilities.hpp"
@@ -188,14 +200,15 @@ set(FMATIO_PUBLIC_HEADER_FILES
 )
 
 string(TOUPPER "${CMAKE_BUILD_TYPE}" BUILD_VARIANT)
-message(${BUILD_VARIANT})
 set(FMATIO_BUILD_VARIANT "FMATIO_${BUILD_VARIANT}")
+message(${FMATIO_BUILD_VARIANT})
 
 add_library(${PROJECT_NAME} INTERFACE ${FMATIO_HEADER_FILES} ${FMATIO_INLINE_FILES})
 
 target_compile_definitions(${PROJECT_NAME}
 	INTERFACE
 		${FMATIO_BUILD_VARIANT}
+		"FMATIO_CXX_STANDARD=${CMAKE_CXX_STANDARD}"
 		"FMATIO_STATIC_BUILD=1"
 )
 

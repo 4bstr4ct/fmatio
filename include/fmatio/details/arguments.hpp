@@ -28,7 +28,9 @@ namespace fmatio
 		enum class FormatArgumentType : uint8
 		{
 			Unknown,
+
 			Bool,
+			Char,
 
 			SignedInt8,
 			UnsignedInt8,
@@ -46,8 +48,6 @@ namespace fmatio
 			Double,
 
 			CharString,
-			ConstCharString,
-
 			NullPointer,
 			VoidPointer
 		};
@@ -62,7 +62,7 @@ namespace fmatio
 		struct TypeOf
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::Unknown;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::Unknown;
 		};
 
 		/**
@@ -72,7 +72,17 @@ namespace fmatio
 		struct TypeOf<bool>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::Bool;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::Bool;
+		};
+
+		/**
+		 * Format argument type definition for char type.
+		 */
+		template<>
+		struct TypeOf<char>
+		{
+		public:
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::Char;
 		};
 
 		/**
@@ -82,7 +92,7 @@ namespace fmatio
 		struct TypeOf<int8>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::SignedInt8;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::SignedInt8;
 		};
 
 		/**
@@ -92,7 +102,7 @@ namespace fmatio
 		struct TypeOf<uint8>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::UnsignedInt8;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::UnsignedInt8;
 		};
 
 		/**
@@ -102,7 +112,7 @@ namespace fmatio
 		struct TypeOf<int16>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::SignedInt16;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::SignedInt16;
 		};
 
 		/**
@@ -112,7 +122,7 @@ namespace fmatio
 		struct TypeOf<uint16>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::UnsignedInt16;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::UnsignedInt16;
 		};
 
 		/**
@@ -122,7 +132,7 @@ namespace fmatio
 		struct TypeOf<int32>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::SignedInt32;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::SignedInt32;
 		};
 
 		/**
@@ -132,7 +142,7 @@ namespace fmatio
 		struct TypeOf<uint32>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::UnsignedInt32;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::UnsignedInt32;
 		};
 
 		/**
@@ -142,7 +152,7 @@ namespace fmatio
 		struct TypeOf<int64>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::SignedInt64;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::SignedInt64;
 		};
 
 		/**
@@ -152,7 +162,7 @@ namespace fmatio
 		struct TypeOf<uint64>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::UnsignedInt64;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::UnsignedInt64;
 		};
 
 		/**
@@ -162,7 +172,7 @@ namespace fmatio
 		struct TypeOf<float>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::Float;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::Float;
 		};
 
 		/**
@@ -172,7 +182,7 @@ namespace fmatio
 		struct TypeOf<double>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::Double;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::Double;
 		};
 
 		/**
@@ -182,7 +192,7 @@ namespace fmatio
 		struct TypeOf<char*>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::CharString;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::CharString;
 		};
 
 		/**
@@ -192,7 +202,7 @@ namespace fmatio
 		struct TypeOf<const char*>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::ConstCharString;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::CharString;
 		};
 
 		/**
@@ -202,7 +212,7 @@ namespace fmatio
 		struct TypeOf<null>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::NullPointer;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::NullPointer;
 		};
 
 		/**
@@ -212,7 +222,7 @@ namespace fmatio
 		struct TypeOf<void*>
 		{
 		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::VoidPointer;
+			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::VoidPointer;
 		};
 
 		/**
@@ -232,7 +242,7 @@ namespace fmatio
 			/**
 			 * Construct a new basic Format argument object.
 			 */
-			BasicFormatArgument() noexcept;
+			BasicFormatArgument() FMATIO_NOEXCEPT;
 
 			/**
 			 * Construct a new basic Format argument object.
@@ -243,12 +253,12 @@ namespace fmatio
 			 * @param[in] value
 			 * 		Pointer to value address in memory.
 			 */
-			BasicFormatArgument(FormatArgumentType type, const void* value) noexcept;
+			BasicFormatArgument(FormatArgumentType type, const void* value) FMATIO_NOEXCEPT;
 
 			/**
 			 * Destroy the basic format argument object.
 			 */
-			~BasicFormatArgument() noexcept;
+			~BasicFormatArgument() FMATIO_NOEXCEPT;
 
 		public:
 			/**
@@ -257,7 +267,7 @@ namespace fmatio
 			 * @param[inout] writer
 			 * 		Writer that will pass stringified value to output buffer.
 			 */
-			void format(BasicFormatWriter<Char>& writer) const noexcept;
+			void format(BasicFormatWriter<Char>& writer) const FMATIO_NOEXCEPT;
 		};
 
 		/**
@@ -277,7 +287,7 @@ namespace fmatio
 			/**
 			 * Construct a new basic format arguments list object.
 			 */
-			BasicFormatArgumentsList() noexcept;
+			BasicFormatArgumentsList() FMATIO_NOEXCEPT;
 
 			/**
 			 * Construct a new basic format arguments list object.
@@ -285,12 +295,12 @@ namespace fmatio
 			 * @param[in] arguments
 			 * 		Format arguments list. 
 			 */
-			BasicFormatArgumentsList(const ::std::initializer_list<BasicFormatArgument<Char>>& arguments) noexcept;
+			BasicFormatArgumentsList(const ::std::initializer_list<BasicFormatArgument<Char>>& arguments) FMATIO_NOEXCEPT;
 
 			/**
 			 * Destroy the basic format arguments list object.
 			 */
-			~BasicFormatArgumentsList() noexcept;
+			~BasicFormatArgumentsList() FMATIO_NOEXCEPT;
 
 		public:
 			/**
@@ -299,7 +309,7 @@ namespace fmatio
 			 * @return uint32 -
 			 * 		Size of the arguments list.
 			 */
-			uint32 getSize() const noexcept;
+			uint32 getSize() const FMATIO_NOEXCEPT;
 
 			/**
 			 * Format argument at provided index using provided format writer.
@@ -310,7 +320,7 @@ namespace fmatio
 			 * @param[in] index
 			 * 		Index of the argument that is going to be formatted.
 			 */
-			void format(BasicFormatWriter<Char>& writer, uint32 index) const noexcept;
+			void format(BasicFormatWriter<Char>& writer, uint32 index) const FMATIO_NOEXCEPT;
 		};
 
 		/**
@@ -322,13 +332,14 @@ namespace fmatio
 		 * @tparam Value
 		 * 		Value type.
 		 * 
-		 * @param[in] value 
+		 * @param[in] value
+		 *		Value of the format argument.
 		 * 
 		 * @return BasicFormatArgument<Char> -
 		 * 		Format argument.
 		 */
 		template<typename Char, typename Value>
-		BasicFormatArgument<Char> makeFormatArgument(const Value& value) noexcept;
+		BasicFormatArgument<Char> makeFormatArgument(const Value& value) FMATIO_NOEXCEPT;
 	}
 }
 

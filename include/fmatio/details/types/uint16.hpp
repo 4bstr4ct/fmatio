@@ -1,9 +1,9 @@
 /*******************************************************************************
- * @file float.hpp
+ * @file uint16.hpp
  *
  * @author Joris Baranauskas (jorisb)
  *
- * Defines functions to write float.
+ * Defines functions to write unsigned 16-bit integer.
  *
  * @copyright © 2022-2023 by Joris Baranauskas
  *
@@ -12,8 +12,8 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_FLOAT_HPP
-#define FMATIO_INCLUDE_FMATIO_DETAILS_FLOAT_HPP
+#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_UINT16_HPP
+#define FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_UINT16_HPP
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
@@ -27,7 +27,7 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		void floatHandle(BasicFormatWriter<Char>& writer, float value) noexcept
+		void uint16Handle(BasicFormatWriter<Char>& writer, uint16 value) FMATIO_NOEXCEPT
 		{
 			::std::string string = ::std::to_string(value);	// Have to reimplement this!
 			writer.write(BasicStringView<Char>(string.data()));

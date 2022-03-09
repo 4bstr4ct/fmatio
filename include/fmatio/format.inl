@@ -12,15 +12,17 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
+#include <fmatio/details/format_traits.hpp>
+
 namespace fmatio
 {
 	template<typename Char>
-	void formatHandle(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) noexcept
+	void formatHandle(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT
 	{
 		uint32 count = 0;
 
 		for (BasicStringView<Char>::ConstIterator it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)
-			if (*it == '{' && *(it + 1) == '}')
+			if (*it == details::FormatTraits<Char>::formatBegin && *(it + 1) == details::FormatTraits<Char>::formatEnd)
 				count++;
 
 		FMATIO_ASSERT(count == arguments.getSize(), "Format arguments count and their placeholders \'{}\' count are different!");
@@ -28,7 +30,7 @@ namespace fmatio
 
 		for (BasicStringView<Char>::ConstIterator it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)
 		{
-			if (*it == '{' && *(it + 1) == '}' && index <= pattern.getSize())
+			if (*it == details::FormatTraits<Char>::formatBegin && *(it + 1) == details::FormatTraits<Char>::formatEnd && index <= pattern.getSize())
 			{
 				arguments.format(writer, index++); it++;
 			}
@@ -42,7 +44,7 @@ namespace fmatio
 	}
 
 	template<typename Result, typename Pattern, typename... Arguments>
-	Result format(const Pattern& pattern, Arguments&&... arguments) noexcept
+	Result format(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT
 	{
 		using CharType = Result::CharType; Result result = Result();
 		details::BasicDynamicWriter<Result> writer = details::BasicDynamicWriter<Result>(result);
@@ -52,22 +54,23 @@ namespace fmatio
 	}
 
 	template<typename Pattern, typename... Arguments>
-	BasicString<char> format(const Pattern& pattern, Arguments&&... arguments) noexcept
+	BasicString<char> format(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT
 	{
 		BasicString<char> result = format<BasicString<char>, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);
 		return result;
 	}
 
 	template<typename Pattern, typename... Arguments>
-	BasicString<wchar> wformat(const Pattern& pattern, Arguments&&... arguments) noexcept
+	BasicString<wchar> wformat(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT
 	{
 		BasicString<wchar> result = format<BasicString<wchar>, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);
 		return result;
 	}
 
 	template<typename Stream, typename Pattern, typename... Arguments>
-	void echo(Stream& stream, const Pattern& pattern, Arguments&&... arguments) noexcept
+	void echo(Stream& stream, const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT
 	{
-		stream << format<Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...).getData();
+		BasicString<char> string = format<Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);
+		stream << string.getData();
 	}
 }

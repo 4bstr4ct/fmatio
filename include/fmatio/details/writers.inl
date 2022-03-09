@@ -17,17 +17,17 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		BasicFormatWriter<Char>::~BasicFormatWriter() noexcept { };
+		BasicFormatWriter<Char>::~BasicFormatWriter() FMATIO_NOEXCEPT { };
 
 		template<typename Container>
-		BasicDynamicWriter<Container>::BasicDynamicWriter(Container& container) noexcept
+		BasicDynamicWriter<Container>::BasicDynamicWriter(Container& container) FMATIO_NOEXCEPT
 			: container(container) { }
 
 		template<typename Container>
-		BasicDynamicWriter<Container>::~BasicDynamicWriter() noexcept { }
+		BasicDynamicWriter<Container>::~BasicDynamicWriter() FMATIO_NOEXCEPT { }
 
 		template<typename Container>
-		void BasicDynamicWriter<Container>::write(BasicStringView<typename Container::CharType> stringified) noexcept
+		void BasicDynamicWriter<Container>::write(BasicStringView<typename Container::CharType> stringified) FMATIO_NOEXCEPT
 		{
 			this->container.append(stringified.getData(), stringified.getSize());
 		}

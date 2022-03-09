@@ -1,9 +1,9 @@
 /*******************************************************************************
- * @file int32.hpp
+ * @file float.hpp
  *
  * @author Joris Baranauskas (jorisb)
  *
- * Defines functions to write signed 32-bit integer.
+ * Defines functions to write float.
  *
  * @copyright © 2022-2023 by Joris Baranauskas
  *
@@ -12,8 +12,8 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_INT32_HPP
-#define FMATIO_INCLUDE_FMATIO_DETAILS_INT32_HPP
+#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_FLOAT_HPP
+#define FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_FLOAT_HPP
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
@@ -27,7 +27,7 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		void int32Handle(BasicFormatWriter<Char>& writer, int32 value) noexcept
+		void floatHandle(BasicFormatWriter<Char>& writer, float value) FMATIO_NOEXCEPT
 		{
 			::std::string string = ::std::to_string(value);	// Have to reimplement this!
 			writer.write(BasicStringView<Char>(string.data()));

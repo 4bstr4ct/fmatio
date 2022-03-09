@@ -15,20 +15,21 @@
 #ifndef FMATIO_INCLUDE_FMATIO_STD_BASIC_STRING_UTILITIES_HPP
 #define FMATIO_INCLUDE_FMATIO_STD_BASIC_STRING_UTILITIES_HPP
 
+#include <fmatio/core.hpp>
 #include <fmatio/basic_string.hpp>
 
 #include <ostream>
 #include <string>
 
 template<typename Char = char>
-::std::ostream& operator <<(::std::ostream& stream, const fmatio::BasicString<Char>& string) noexcept
+::std::ostream& operator <<(::std::ostream& stream, const fmatio::BasicString<Char>& string) FMATIO_NOEXCEPT
 {
 	stream << string.getData();
 	return stream;
 }
 
 template<typename Char>
-::std::basic_string<Char> toStdBasicString(const fmatio::BasicString<Char>& string) noexcept
+::std::basic_string<Char> toStdBasicString(const fmatio::BasicString<Char>& string) FMATIO_NOEXCEPT
 {
 	return ::std::basic_string<Char>(string.getData(), string.getSize());
 }
