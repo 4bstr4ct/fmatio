@@ -147,6 +147,8 @@ file(GLOB FMATIO_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/float.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/double.hpp"
 
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/char_string.hpp"
+
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_utilities.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_view_utilities.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/utilities.hpp"
@@ -179,6 +181,8 @@ set(FMATIO_PUBLIC_HEADER_FILES
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/float.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/double.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/char_string.hpp"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_utilities.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_view_utilities.hpp"

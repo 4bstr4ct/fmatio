@@ -28,9 +28,7 @@ namespace fmatio
 		enum class FormatArgumentType : uint8
 		{
 			Unknown,
-
 			Bool,
-			WideChar,
 
 			SignedInt8,
 			UnsignedInt8,
@@ -46,6 +44,9 @@ namespace fmatio
 
 			Float,
 			Double,
+
+			CharString,
+			ConstCharString,
 
 			NullPointer,
 			VoidPointer
@@ -72,16 +73,6 @@ namespace fmatio
 		{
 		public:
 			constexpr static FormatArgumentType value = FormatArgumentType::Bool;
-		};
-
-		/**
-		 * Format argument type definition for wide char type.
-		 */
-		template<>
-		struct TypeOf<wchar>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::WideChar;
 		};
 
 		/**
@@ -182,6 +173,26 @@ namespace fmatio
 		{
 		public:
 			constexpr static FormatArgumentType value = FormatArgumentType::Double;
+		};
+
+		/**
+		 * Format argument type definition for char string type.
+		 */
+		template<>
+		struct TypeOf<char*>
+		{
+		public:
+			constexpr static FormatArgumentType value = FormatArgumentType::CharString;
+		};
+
+		/**
+		 * Format argument type definition for const char string type.
+		 */
+		template<>
+		struct TypeOf<const char*>
+		{
+		public:
+			constexpr static FormatArgumentType value = FormatArgumentType::ConstCharString;
 		};
 
 		/**

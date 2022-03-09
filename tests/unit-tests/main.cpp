@@ -17,10 +17,7 @@ using namespace ::fmatio;
 
 int main(int argc, char** argv)
 {
-	for (uint32 i = 0; i < 10; i++)
-		for (uint32 j = 0; j < 10; j++)
-			echo(::std::cout, "Looping at: {} {}!\n", i, j);
-
+	echo(::std::cout, ": {} {}!\n", 5, (char*)"lalalalala");
 	return 0;
 }
 

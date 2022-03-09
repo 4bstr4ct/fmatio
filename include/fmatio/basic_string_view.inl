@@ -20,7 +20,7 @@ namespace fmatio
 
 	template<typename Char>
 	BasicStringView<Char>::BasicStringView(const Char* data) noexcept
-		: data(data), size((uint32)strlen(data)) { }
+		: data(data), size((uint32)::strlen(data)) { }
 
 	template<typename Char>
 	BasicStringView<Char>::BasicStringView(const Char* data, uint32 size) noexcept
