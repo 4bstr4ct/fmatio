@@ -1,0 +1,73 @@
+\hypertarget{basic__string__view_8hpp_source}{}\doxysection{basic\+\_\+string\+\_\+view.\+hpp}
+\label{basic__string__view_8hpp_source}\index{include/fmatio/basic\_string\_view.hpp@{include/fmatio/basic\_string\_view.hpp}}
+\mbox{\hyperlink{basic__string__view_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#ifndef FMATIO\_INCLUDE\_FMATIO\_BASIC\_STRING\_VIEW\_HPP}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00016}00016 \textcolor{preprocessor}{\#define FMATIO\_INCLUDE\_FMATIO\_BASIC\_STRING\_VIEW\_HPP}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00018}00018 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{core_8hpp}{fmatio/core.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00019}00019 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{types_8hpp}{fmatio/types.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00021}00021 \textcolor{keyword}{namespace }fmatio}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00023}00023     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00024}\mbox{\hyperlink{classfmatio_1_1BasicStringView}{00024}}     \textcolor{keyword}{class }\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00025}00025     \{}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00026}00026     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00030}\mbox{\hyperlink{classfmatio_1_1BasicStringView_af567016eeddb4d90f4a60f4cda2cf3a2}{00030}}         \textcolor{keyword}{using} \mbox{\hyperlink{classfmatio_1_1BasicStringView_af567016eeddb4d90f4a60f4cda2cf3a2}{ConstIterator}} = \textcolor{keyword}{const} Char*;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00035}\mbox{\hyperlink{classfmatio_1_1BasicStringView_acc360cfc081876413e0c01fdc81382fa}{00035}}         \textcolor{keyword}{using} \mbox{\hyperlink{classfmatio_1_1BasicStringView_acc360cfc081876413e0c01fdc81382fa}{CharType}} = Char;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00036}00036         }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00040}\mbox{\hyperlink{classfmatio_1_1BasicStringView_ab300b71fdf97ee7d618ab799b3af2336}{00040}}         \textcolor{keyword}{using} \mbox{\hyperlink{classfmatio_1_1BasicStringView_ab300b71fdf97ee7d618ab799b3af2336}{ValueType}} = Char;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00042}00042     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00043}00043         \textcolor{keyword}{const} Char* data;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00044}00044         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00046}00046     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00047}00047         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00049}00049         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}(const Char* data) noexcept;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00051}00051         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}(const Char* data, \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size) noexcept;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00053}00053         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}(const \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\& other) noexcept = default;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00055}00055 \textcolor{preprocessor}{\#if defined(FMATIO\_MOVE\_SEMANTICS\_ENABLED) \&\& FMATIO\_MOVE\_SEMANTICS\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00056}00056         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\&\& other) \textcolor{keyword}{noexcept} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00057}00057 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00059}00059         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{\string~BasicStringView}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00061}00061     public:}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00062}00062         const Char* getData() const noexcept;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00064}00064         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} getSize() const noexcept;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00066}00066         \textcolor{keywordtype}{bool} isEmpty() const noexcept;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00068}00068         const Char* getConstBegin() const noexcept;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00069}00069         }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00070}00070         const Char* getConstEnd() const noexcept;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00072}00072     public:}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00073}00073         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}<Char>\& operator =(const \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\& other) noexcept = default;}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00075}00075 \textcolor{preprocessor}{\#if defined(FMATIO\_MOVE\_SEMANTICS\_ENABLED) \&\& FMATIO\_MOVE\_SEMANTICS\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00076}00076         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView<Char>}}\& operator =(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\&\& other) \textcolor{keyword}{noexcept} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00077}00077 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00079}00079         \textcolor{keywordtype}{bool} operator ==(\textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00081}00081         \textcolor{keywordtype}{bool} operator !=(\textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00083}00083         \textcolor{keyword}{const} Char\& operator [](\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00084}00084     \};}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00085}00085 \}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00087}00087 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{basic__string__view_8inl}{./basic\_string\_view.inl}}"{}}}
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{basic__string__view_8hpp_source_l00089}00089 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

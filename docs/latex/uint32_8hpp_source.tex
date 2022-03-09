@@ -1,0 +1,31 @@
+\hypertarget{uint32_8hpp_source}{}\doxysection{uint32.\+hpp}
+\label{uint32_8hpp_source}\index{include/fmatio/details/uint32.hpp@{include/fmatio/details/uint32.hpp}}
+\mbox{\hyperlink{uint32_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#ifndef FMATIO\_INCLUDE\_FMATIO\_DETAILS\_UINT32\_HPP}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00016}00016 \textcolor{preprocessor}{\#define FMATIO\_INCLUDE\_FMATIO\_DETAILS\_UINT32\_HPP}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00018}00018 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{core_8hpp}{fmatio/core.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00019}00019 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{types_8hpp}{fmatio/types.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{writers_8hpp}{fmatio/details/writers.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00025}00025 \textcolor{keyword}{namespace }fmatio}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00026}00026 \{}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00027}00027     \textcolor{keyword}{namespace }details}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00028}00028     \{}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00029}00029         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00030}00030         \textcolor{keywordtype}{void} uint32Handle(BasicFormatWriter<Char>\& writer, uint32 value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00031}00031         \{}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00032}00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00033}00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00034}00034         \}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{uint32_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

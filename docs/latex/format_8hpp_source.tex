@@ -1,0 +1,40 @@
+\hypertarget{format_8hpp_source}{}\doxysection{format.\+hpp}
+\label{format_8hpp_source}\index{include/fmatio/format.hpp@{include/fmatio/format.hpp}}
+\mbox{\hyperlink{format_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00016}00016 \textcolor{preprocessor}{\#ifndef FMATIO\_INCLUDE\_FMATIO\_FORMAT\_HPP}}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00017}00017 \textcolor{preprocessor}{\#define FMATIO\_INCLUDE\_FMATIO\_FORMAT\_HPP}}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00019}00019 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{core_8hpp}{fmatio/core.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{types_8hpp}{fmatio/types.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00022}00022 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{basic__string_8hpp}{fmatio/basic\_string.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{basic__string__view_8hpp}{fmatio/basic\_string\_view.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{writers_8hpp}{fmatio/details/writers.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{arguments_8hpp}{fmatio/details/arguments.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00028}00028 \textcolor{keyword}{namespace }fmatio}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00029}00029 \{}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00030}00030     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00031}00031     \textcolor{keywordtype}{void} formatHandle(details::BasicFormatWriter<Char>\& writer, BasicStringView<Char> pattern, \textcolor{keyword}{const} details::BasicFormatArgumentsList<Char>\& arguments) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00033}00033     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Result, \textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00034}00034     Result format(\textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00036}00036     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00037}00037     BasicString<char> format(\textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00039}00039     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00040}00040     BasicString<wchar> wformat(\textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00042}00042     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Stream, \textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00043}00043     \textcolor{keywordtype}{void} echo(Stream\& stream, \textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00044}00044 \}}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{format_8inl}{./format.inl}}"{}}}
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{format_8hpp_source_l00048}00048 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

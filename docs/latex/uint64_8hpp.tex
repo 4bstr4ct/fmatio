@@ -1,0 +1,52 @@
+\hypertarget{uint64_8hpp}{}\doxysection{include/fmatio/details/uint64.hpp File Reference}
+\label{uint64_8hpp}\index{include/fmatio/details/uint64.hpp@{include/fmatio/details/uint64.hpp}}
+{\ttfamily \#include $<$fmatio/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/types.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/writers.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for uint64.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{uint64_8hpp_a46814a8e2ec0b9a5234b1e408e91cd99}{fmatio\+::details\+::uint64\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, uint64 value) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Joris Baranauskas (jorisb)
+\end{DoxyAuthor}
+Defines functions to write unsigned 64-\/bit integer.
+
+\begin{DoxyCopyright}{Copyright}
+© 2022-\/2023 by Joris Baranauskas
+\end{DoxyCopyright}
+This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+Definition in file \mbox{\hyperlink{uint64_8hpp_source}{uint64.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uint64_8hpp_a46814a8e2ec0b9a5234b1e408e91cd99}\label{uint64_8hpp_a46814a8e2ec0b9a5234b1e408e91cd99}} 
+\index{uint64.hpp@{uint64.hpp}!uint64Handle@{uint64Handle}}
+\index{uint64Handle@{uint64Handle}!uint64.hpp@{uint64.hpp}}
+\doxysubsubsection{\texorpdfstring{uint64Handle()}{uint64Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::uint64\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_a8953065d6027eded6c8e1c86b404d63c}{uint64}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{uint64_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{uint64_8hpp_source}{uint64.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}

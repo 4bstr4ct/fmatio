@@ -1,0 +1,52 @@
+\hypertarget{uint8_8hpp}{}\doxysection{include/fmatio/details/uint8.hpp File Reference}
+\label{uint8_8hpp}\index{include/fmatio/details/uint8.hpp@{include/fmatio/details/uint8.hpp}}
+{\ttfamily \#include $<$fmatio/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/types.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/writers.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for uint8.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{uint8_8hpp_abc4baf39c59d49e38126f322733f4438}{fmatio\+::details\+::uint8\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, uint8 value) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Joris Baranauskas (jorisb)
+\end{DoxyAuthor}
+Defines functions to write unsigned 8-\/bit integer.
+
+\begin{DoxyCopyright}{Copyright}
+© 2022-\/2023 by Joris Baranauskas
+\end{DoxyCopyright}
+This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+Definition in file \mbox{\hyperlink{uint8_8hpp_source}{uint8.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uint8_8hpp_abc4baf39c59d49e38126f322733f4438}\label{uint8_8hpp_abc4baf39c59d49e38126f322733f4438}} 
+\index{uint8.hpp@{uint8.hpp}!uint8Handle@{uint8Handle}}
+\index{uint8Handle@{uint8Handle}!uint8.hpp@{uint8.hpp}}
+\doxysubsubsection{\texorpdfstring{uint8Handle()}{uint8Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::uint8\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_a21697faae9638766e0f71a8d807504c2}{uint8}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{uint8_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{uint8_8hpp_source}{uint8.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}

@@ -1,0 +1,48 @@
+\hypertarget{writers_8hpp_source}{}\doxysection{writers.\+hpp}
+\label{writers_8hpp_source}\index{include/fmatio/details/writers.hpp@{include/fmatio/details/writers.hpp}}
+\mbox{\hyperlink{writers_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#ifndef FMATIO\_INCLUDE\_FMATIO\_DETAILS\_WRITERS\_HPP}}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00016}00016 \textcolor{preprocessor}{\#define FMATIO\_INCLUDE\_FMATIO\_DETAILS\_WRITERS\_HPP}}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00018}00018 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{core_8hpp}{fmatio/core.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00019}00019 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{basic__string_8hpp}{fmatio/basic\_string.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{basic__string__view_8hpp}{fmatio/basic\_string\_view.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00022}00022 \textcolor{keyword}{namespace }fmatio}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00024}00024     \textcolor{keyword}{namespace }details}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00025}00025     \{}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00032}00032         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00033}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{00033}}         \textcolor{keyword}{class }\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{BasicFormatWriter}}}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00034}00034         \{}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00035}00035         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00039}00039             \textcolor{keyword}{virtual} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_a72fd9cc649478a7f2c226e6f2675918b}{\string~BasicFormatWriter}}() \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00041}00041         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00048}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_acaeed8b3295b9d5265a7c7d142a7a54e}{00048}}             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_acaeed8b3295b9d5265a7c7d142a7a54e}{write}}(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView<Char>}} stringified) \textcolor{keyword}{noexcept} = 0;}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00049}00049         \};}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00057}00057         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Container>}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00058}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter}{00058}}         \textcolor{keyword}{class }\mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter}{BasicDynamicWriter}} : \textcolor{keyword}{public} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{BasicFormatWriter}}<typename Container::CharType>}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00059}00059         \{}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00060}00060         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00061}00061             Container\& container;}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00063}00063         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00070}00070             \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_ae5d13def5ead27211143dfca3c233322}{BasicDynamicWriter}}(Container\& container) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00075}00075             \textcolor{keyword}{virtual} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_afd2125e46fe2cf50c1cc4c05ef22e0d4}{\string~BasicDynamicWriter}}() \textcolor{keyword}{noexcept} \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00077}00077         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00084}00084             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_ac386c2750d67e83ec85fb9a4cc051330}{write}}(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView<typename Container::CharType>}} stringified) \textcolor{keyword}{noexcept} \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00085}00085         \};}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00086}00086     \}}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00087}00087 \}}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00089}00089 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{writers_8inl}{./writers.inl}}"{}}}
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{writers_8hpp_source_l00091}00091 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

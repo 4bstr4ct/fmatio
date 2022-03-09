@@ -1,0 +1,71 @@
+\hypertarget{basic__string__utilities_8hpp}{}\doxysection{include/fmatio/std/basic\+\_\+string\+\_\+utilities.hpp File Reference}
+\label{basic__string__utilities_8hpp}\index{include/fmatio/std/basic\_string\_utilities.hpp@{include/fmatio/std/basic\_string\_utilities.hpp}}
+{\ttfamily \#include $<$fmatio/basic\+\_\+string.\+hpp$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for basic\+\_\+string\+\_\+utilities.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char  = char$>$ }\\\+::std\+::ostream \& \mbox{\hyperlink{basic__string__utilities_8hpp_ac9dc7b42ac0529670b6c02001bc69ebd}{operator$<$$<$}} (\+::std\+::ostream \&stream, const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&string) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\\+::std\+::basic\+\_\+string$<$ Char $>$ \mbox{\hyperlink{basic__string__utilities_8hpp_ae76f6e7a9b0bacf9a8cd1dc182f2abcb}{to\+Std\+Basic\+String}} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&string) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Joris Baranauskas (jorisb)
+\end{DoxyAuthor}
+Defines std functions and operators for basic string.
+
+\begin{DoxyCopyright}{Copyright}
+© 2022-\/2023 by Joris Baranauskas
+\end{DoxyCopyright}
+This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+Definition in file \mbox{\hyperlink{basic__string__utilities_8hpp_source}{basic\+\_\+string\+\_\+utilities.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{basic__string__utilities_8hpp_ac9dc7b42ac0529670b6c02001bc69ebd}\label{basic__string__utilities_8hpp_ac9dc7b42ac0529670b6c02001bc69ebd}} 
+\index{basic\_string\_utilities.hpp@{basic\_string\_utilities.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!basic\_string\_utilities.hpp@{basic\_string\_utilities.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename Char  = char$>$ \\
+\+::std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\+::std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string__utilities_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{basic__string__utilities_8hpp_source}{basic\+\_\+string\+\_\+utilities.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025 \{}
+\DoxyCodeLine{00026     stream << \textcolor{keywordtype}{string}.getData();}
+\DoxyCodeLine{00027     \textcolor{keywordflow}{return} stream;}
+\DoxyCodeLine{00028 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{basic__string__utilities_8hpp_ae76f6e7a9b0bacf9a8cd1dc182f2abcb}\label{basic__string__utilities_8hpp_ae76f6e7a9b0bacf9a8cd1dc182f2abcb}} 
+\index{basic\_string\_utilities.hpp@{basic\_string\_utilities.hpp}!toStdBasicString@{toStdBasicString}}
+\index{toStdBasicString@{toStdBasicString}!basic\_string\_utilities.hpp@{basic\_string\_utilities.hpp}}
+\doxysubsubsection{\texorpdfstring{toStdBasicString()}{toStdBasicString()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\+::std\+::basic\+\_\+string$<$ Char $>$ to\+Std\+Basic\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string__utilities_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{basic__string__utilities_8hpp_source}{basic\+\_\+string\+\_\+utilities.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{}
+\DoxyCodeLine{00033     return ::std::basic\_string<Char>(\textcolor{keywordtype}{string}.getData(), \textcolor{keywordtype}{string}.getSize());}
+\DoxyCodeLine{00034 \}}
+
+\end{DoxyCode}

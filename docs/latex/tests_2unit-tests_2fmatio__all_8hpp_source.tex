@@ -1,0 +1,1032 @@
+\hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source}{}\doxysection{fmatio\+\_\+all.\+hpp}
+\label{tests_2unit-tests_2fmatio__all_8hpp_source}\index{tests/unit-\/tests/fmatio\_all.hpp@{tests/unit-\/tests/fmatio\_all.hpp}}
+\mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00037}00037 \textcolor{preprocessor}{\#ifndef FMATIO\_ALL\_HPP}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#define FMATIO\_ALL\_HPP}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#pragma region Core}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#if FMATIO\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#   include <iostream>}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#   define FMATIO\_ASSERT(expression, message) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00047}00047 \textcolor{preprocessor}{\{ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00048}00048 \textcolor{preprocessor}{    if (!(expression)) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00049}00049 \textcolor{preprocessor}{    \{ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00050}00050 \textcolor{preprocessor}{        ::std::cerr << "{}Assertion failed: "{}} << message << "{}\(\backslash\)n\(\backslash\)tFile: "{} << \_\_FILE\_\_ << "{}. Line: "{} << \_\_LINE\_\_ << "{}."{} << ::std::endl; \(\backslash\)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00051}00051         ::std::exit(-\/1); \(\backslash\)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00052}00052     \} \(\backslash\)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00053}00053 \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00054}00054 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00055}\mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}{00055}} \textcolor{preprocessor}{\#   define FMATIO\_ASSERT(expression, message)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00056}00056 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00058}00058 \textcolor{preprocessor}{\#if !defined(FMATIO\_MOVE\_SEMANTICS\_ENABLED)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00059}00059 \textcolor{preprocessor}{\#   if !defined(PYRONET\_DISABLE\_MOVE\_SEMANTICS)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00060}00060 \textcolor{preprocessor}{\#       if defined(\_\_clang\_\_)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00061}00061 \textcolor{preprocessor}{\#           if \_\_has\_feature(\_\_cxx\_rvalue\_references\_\_)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00062}00062 \textcolor{preprocessor}{\#               define FMATIO\_MOVE\_SEMANTICS\_ENABLED 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00063}00063 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00064}00064 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00065}00065 \textcolor{preprocessor}{\#       if defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00066}00066 \textcolor{preprocessor}{\#           if ((\_\_GNUC\_\_ == 4) \&\& (\_\_GNUC\_MINOR\_\_ >= 8)) || (\_\_GNUC\_\_ > 4)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00067}00067 \textcolor{preprocessor}{\#               if (\_\_cplusplus >= 201103) || defined(\_\_GXX\_EXPERIMENTAL\_CXX0X\_\_)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00068}00068 \textcolor{preprocessor}{\#                   define FMATIO\_MOVE\_SEMANTICS\_ENABLED 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00069}00069 \textcolor{preprocessor}{\#               endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00070}00070 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00071}00071 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00072}00072 \textcolor{preprocessor}{\#       if defined(\_MSC\_VER) \&\& (\_MSC\_VER >= 1700)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00073}00073 \textcolor{preprocessor}{\#           define FMATIO\_MOVE\_SEMANTICS\_ENABLED 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00074}00074 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00075}00075 \textcolor{preprocessor}{\#       if defined(\_\_INTEL\_CXX11\_MODE\_\_)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00076}00076 \textcolor{preprocessor}{\#           if defined(\_\_INTEL\_COMPILER) \&\& (\_\_INTEL\_COMPILER >= 1500)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00077}00077 \textcolor{preprocessor}{\#               define FMATIO\_MOVE\_SEMANTICS\_ENABLED 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00078}00078 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00079}00079 \textcolor{preprocessor}{\#           if defined(\_\_ICL) \&\& (\_\_ICL >= 1500)}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00080}00080 \textcolor{preprocessor}{\#               define FMATIO\_MOVE\_SEMANTICS\_ENABLED 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00081}00081 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00082}00082 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00083}00083 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00084}00084 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00085}00085 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00087}00087 \textcolor{keyword}{namespace }fmatio}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00088}00088 \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00089}00089 \textcolor{preprocessor}{\#pragma region Types}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00093}00093     \textcolor{keyword}{using} null = \textcolor{keyword}{decltype}(\_\_nullptr);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00098}00098     \textcolor{keyword}{using} int8 = \textcolor{keywordtype}{signed} char;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00103}00103     \textcolor{keyword}{using} uint8 = \textcolor{keywordtype}{unsigned} char;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00104}00104     }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00108}00108     \textcolor{keyword}{using} \textcolor{keywordtype}{byte} = \textcolor{keywordtype}{unsigned} char;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00113}00113     \textcolor{keyword}{using} int16 = \textcolor{keywordtype}{signed} short;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00118}00118     \textcolor{keyword}{using} uint16 = \textcolor{keywordtype}{unsigned} short;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00123}00123     \textcolor{keyword}{using} int32 = \textcolor{keywordtype}{signed} int;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00124}00124     }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00128}00128     \textcolor{keyword}{using} uint32 = \textcolor{keywordtype}{unsigned} int;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00133}00133     \textcolor{keyword}{using} int64 = \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} long;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00134}00134     }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00138}00138     \textcolor{keyword}{using} uint64 = \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} long;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00143}00143     \textcolor{keyword}{using} wchar = wchar\_t;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00144}00144 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00146}00146 \textcolor{preprocessor}{\#pragma region BasicStringView}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00147}00147     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00148}00148     \textcolor{keyword}{class }BasicStringView}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00149}00149     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00150}00150     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00154}\mbox{\hyperlink{classfmatio_1_1BasicStringView_af567016eeddb4d90f4a60f4cda2cf3a2}{00154}}         \textcolor{keyword}{using} \mbox{\hyperlink{classfmatio_1_1BasicStringView_af567016eeddb4d90f4a60f4cda2cf3a2}{ConstIterator}} = \textcolor{keyword}{const} Char*;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00159}\mbox{\hyperlink{classfmatio_1_1BasicStringView_acc360cfc081876413e0c01fdc81382fa}{00159}}         \textcolor{keyword}{using} \mbox{\hyperlink{classfmatio_1_1BasicStringView_acc360cfc081876413e0c01fdc81382fa}{CharType}} = Char;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00160}00160         }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00164}\mbox{\hyperlink{classfmatio_1_1BasicStringView_ab300b71fdf97ee7d618ab799b3af2336}{00164}}         \textcolor{keyword}{using} \mbox{\hyperlink{classfmatio_1_1BasicStringView_ab300b71fdf97ee7d618ab799b3af2336}{ValueType}} = Char;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00166}00166     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00167}00167         \textcolor{keyword}{const} Char* data;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00168}00168         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00170}00170     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00171}00171         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00173}00173         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}(const Char* data) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00175}00175         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}(const Char* data, \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00177}00177         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}(const \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\& other) noexcept = default;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00179}00179 \textcolor{preprocessor}{\#if defined(FMATIO\_MOVE\_SEMANTICS\_ENABLED) \&\& FMATIO\_MOVE\_SEMANTICS\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00180}00180         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\&\& other) \textcolor{keyword}{noexcept} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00181}00181 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00183}00183         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{\string~BasicStringView}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00185}00185     public:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00186}00186         const Char* getData() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00188}00188         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} getSize() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00190}00190         \textcolor{keywordtype}{bool} isEmpty() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00192}00192         const Char* getConstBegin() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00193}00193         }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00194}00194         const Char* getConstEnd() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00196}00196     public:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00197}00197         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}<Char>\& operator =(const \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\& other) noexcept = default;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00198}00198 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00199}00199 \textcolor{preprocessor}{\#if defined(FMATIO\_MOVE\_SEMANTICS\_ENABLED) \&\& FMATIO\_MOVE\_SEMANTICS\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00200}00200         \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView<Char>}}\& operator =(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\&\& other) \textcolor{keyword}{noexcept} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00201}00201 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00203}00203         \textcolor{keywordtype}{bool} operator ==(\textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00205}00205         \textcolor{keywordtype}{bool} operator !=(\textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00207}00207         \textcolor{keyword}{const} Char\& operator [](\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00208}00208     \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00209}00209 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00210}00210 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00211}00211 \textcolor{preprocessor}{\#pragma region BasicString}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00212}00212     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00213}00213     \textcolor{keyword}{class }\mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00214}00214     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00215}00215     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00219}\mbox{\hyperlink{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}{00219}}         \textcolor{keyword}{using} \mbox{\hyperlink{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}{Iterator}} = Char*;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00224}\mbox{\hyperlink{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}{00224}}         \textcolor{keyword}{using} \mbox{\hyperlink{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}{ConstIterator}} = \textcolor{keyword}{const} Char*;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00229}\mbox{\hyperlink{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}{00229}}         \textcolor{keyword}{using} \mbox{\hyperlink{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}{CharType}} = Char;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00230}00230         }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00234}\mbox{\hyperlink{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}{00234}}         \textcolor{keyword}{using} \mbox{\hyperlink{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}{ValueType}} = Char;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00235}00235 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00236}00236     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00237}00237         Char* data;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00238}00238         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00239}00239         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} capacity;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00240}00240 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00241}00241     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00242}00242         \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00243}00243 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00244}00244         \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}(\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} capacity) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00245}00245 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00246}00246         \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}(const Char* const data) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00247}00247 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00248}00248         \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}(const \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}\& other) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00249}00249 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00250}00250 \textcolor{preprocessor}{\#if defined(FMATIO\_MOVE\_SEMANTICS\_ENABLED) \&\& FMATIO\_MOVE\_SEMANTICS\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00251}00251         \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}(\mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00252}00252 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00254}00254         \mbox{\hyperlink{classfmatio_1_1BasicString}{\string~BasicString}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00255}00255 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00256}00256     private:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00257}00257         \textcolor{keywordtype}{void} initialize(\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} capacity) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00258}00258 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00259}00259         \textcolor{keywordtype}{void} reallocate(\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} newCapacity) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00261}00261         \textcolor{keywordtype}{void} copy(const Char* const data, \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00262}00262 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00263}00263         \textcolor{keywordtype}{void} deallocate() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00264}00264 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00265}00265     public:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00266}00266         const Char* getData() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00267}00267 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00268}00268         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} getSize() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00269}00269 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00270}00270         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} getCapacity() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00271}00271 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00272}00272         \textcolor{keywordtype}{bool} isEmpty() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00273}00273 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00274}00274         \textcolor{keywordtype}{void} append(const Char* const \textcolor{keywordtype}{string}) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00275}00275 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00276}00276         \textcolor{keywordtype}{void} append(const Char* const begin, \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00277}00277 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00278}00278         \textcolor{keywordtype}{void} clear() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00279}00279 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00280}00280         Char* getBegin() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00281}00281         }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00282}00282         Char* getEnd() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00283}00283 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00284}00284         const Char* getConstBegin() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00285}00285         }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00286}00286         const Char* getConstEnd() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00287}00287 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00288}00288     public:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00289}00289         \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}\& operator =(const \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}\& other) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00290}00290 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00291}00291 \textcolor{preprocessor}{\#if defined(FMATIO\_MOVE\_SEMANTICS\_ENABLED) \&\& FMATIO\_MOVE\_SEMANTICS\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00292}00292         \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}\& operator =(\mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00293}00293 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00295}00295         \textcolor{keywordtype}{bool} operator ==(\textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00296}00296 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00297}00297         \textcolor{keywordtype}{bool} operator !=(\textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString}}\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00298}00298 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00299}00299         Char\& operator [](\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00300}00300 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00301}00301         \textcolor{keyword}{const} Char\& operator [](\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00302}00302     \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00303}00303 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00304}00304 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00305}00305     \textcolor{keyword}{namespace }details}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00306}00306     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00307}00307 \textcolor{preprocessor}{\#pragma region Writers}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00314}00314         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00315}00315         \textcolor{keyword}{class }BasicFormatWriter}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00316}00316         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00317}00317         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00321}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_a04308962630772629fbb9ffebea07301}{00321}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_a04308962630772629fbb9ffebea07301}{\string~BasicFormatWriter}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00322}00322 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00323}00323         public:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00330}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_acaeed8b3295b9d5265a7c7d142a7a54e}{00330}}             virtual \textcolor{keywordtype}{void} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_acaeed8b3295b9d5265a7c7d142a7a54e}{write}}(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}<Char> stringified) noexcept = 0;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00331}00331         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00332}00332 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00339}00339         template<typename Container>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00340}00340         class \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter}{BasicDynamicWriter}} : public \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{BasicFormatWriter}}<typename Container::CharType>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00341}00341         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00342}00342         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00343}00343             Container\& container;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00344}00344 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00345}00345         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00352}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_ae5d13def5ead27211143dfca3c233322}{00352}}             \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_ae5d13def5ead27211143dfca3c233322}{BasicDynamicWriter}}(Container\& container) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00353}00353 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00357}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_a86116982fb0838f2e59761c24f16ed92}{00357}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_a86116982fb0838f2e59761c24f16ed92}{\string~BasicDynamicWriter}}() noexcept override;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00358}00358 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00359}00359         public:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00366}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_a81ffd257061bdaafd1874192bc39cd40}{00366}}             virtual \textcolor{keywordtype}{void} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_acaeed8b3295b9d5265a7c7d142a7a54e}{write}}(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView}}<typename Container::CharType> stringified) noexcept override;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00367}00367         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00368}00368 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00369}00369 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00370}00370 \textcolor{preprocessor}{\#pragma region Types Writers}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00371}00371         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00372}00372         \textcolor{keywordtype}{void} int8Handle(\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{BasicFormatWriter<Char>}}\& writer, \mbox{\hyperlink{types_8hpp_ace079ae4b82745df4d386cc5ae242fe8}{int8}} value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00373}00373         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00374}00374             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00375}00375             writer.write(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView<Char>}}(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00376}00376         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00377}00377 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00378}00378         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00379}00379         \textcolor{keywordtype}{void} uint8Handle(\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{BasicFormatWriter<Char>}}\& writer, \mbox{\hyperlink{types_8hpp_a21697faae9638766e0f71a8d807504c2}{uint8}} value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00380}00380         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00381}00381             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00382}00382             writer.write(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView<Char>}}(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00383}00383         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00384}00384 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00385}00385         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00386}00386         \textcolor{keywordtype}{void} int16Handle(BasicFormatWriter<Char>\& writer, \mbox{\hyperlink{types_8hpp_ad968226ad742933a9920b369c9b3177c}{int16}} value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00387}00387         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00388}00388             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00389}00389             writer.write(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView<Char>}}(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00390}00390         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00391}00391 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00392}00392         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00393}00393         \textcolor{keywordtype}{void} uint16Handle(BasicFormatWriter<Char>\& writer, uint16 value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00394}00394         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00395}00395             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00396}00396             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00397}00397         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00398}00398 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00399}00399         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00400}00400         \textcolor{keywordtype}{void} int32Handle(BasicFormatWriter<Char>\& writer, int32 value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00401}00401         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00402}00402             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00403}00403             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00404}00404         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00405}00405 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00406}00406         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00407}00407         \textcolor{keywordtype}{void} uint32Handle(BasicFormatWriter<Char>\& writer, uint32 value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00408}00408         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00409}00409             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00410}00410             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00411}00411         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00412}00412 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00413}00413         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00414}00414         \textcolor{keywordtype}{void} int64Handle(BasicFormatWriter<Char>\& writer, int64 value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00415}00415         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00416}00416             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00417}00417             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00418}00418         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00419}00419 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00420}00420         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00421}00421         \textcolor{keywordtype}{void} uint64Handle(BasicFormatWriter<Char>\& writer, uint64 value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00422}00422         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00423}00423             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00424}00424             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00425}00425         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00426}00426 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00427}00427         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00428}00428         \textcolor{keywordtype}{void} floatHandle(BasicFormatWriter<Char>\& writer, \textcolor{keywordtype}{float} value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00429}00429         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00430}00430             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00431}00431             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00432}00432         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00433}00433 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00434}00434         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00435}00435         \textcolor{keywordtype}{void} doubleHandle(BasicFormatWriter<Char>\& writer, \textcolor{keywordtype}{double} value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00436}00436         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00437}00437             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00438}00438             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00439}00439         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00440}00440 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00441}00441 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00442}00442 \textcolor{preprocessor}{\#pragma region Arguments}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00446}\mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{00446}}         \textcolor{keyword}{enum class} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} : \mbox{\hyperlink{types_8hpp_a21697faae9638766e0f71a8d807504c2}{uint8}}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00447}00447         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00448}00448             Unknown,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00449}00449 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00450}00450             Bool,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00451}00451             WideChar,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00452}00452 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00453}00453             SignedInt8,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00454}00454             UnsignedInt8,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00455}00455 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00456}00456             SignedInt16,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00457}00457             UnsignedInt16,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00458}00458 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00459}00459             SignedInt32,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00460}00460             UnsignedInt32,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00461}00461 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00462}00462             SignedInt64,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00463}00463             UnsignedInt64,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00464}00464 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00465}00465             Float,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00466}00466             Double,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00467}00467 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00468}00468             NullPointer,}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00469}00469             VoidPointer}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00470}00470         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00471}00471 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00478}00478         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00479}00479         \textcolor{keyword}{struct }TypeOf}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00480}00480         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00481}00481         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00482}00482             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} FormatArgumentType value = FormatArgumentType::Unknown;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00483}00483         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00484}00484 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00488}00488         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00489}00489         \textcolor{keyword}{struct }TypeOf<bool>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00490}00490         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00491}00491         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00492}00492             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} FormatArgumentType value = FormatArgumentType::Bool;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00493}00493         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00494}00494 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00498}00498         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00499}00499         \textcolor{keyword}{struct }TypeOf<\mbox{\hyperlink{types_8hpp_a79c66be368c546f4dc42802af2f7326a}{wchar}}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00500}00500         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00501}00501         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00502}00502             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::WideChar;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00503}00503         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00504}00504 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00508}00508         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00509}00509         \textcolor{keyword}{struct }TypeOf<\mbox{\hyperlink{types_8hpp_ace079ae4b82745df4d386cc5ae242fe8}{int8}}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00510}00510         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00511}00511         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00512}00512             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::SignedInt8;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00513}00513         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00514}00514 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00518}00518         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00519}00519         \textcolor{keyword}{struct }TypeOf<\mbox{\hyperlink{types_8hpp_a21697faae9638766e0f71a8d807504c2}{uint8}}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00520}00520         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00521}00521         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00522}00522             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::UnsignedInt8;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00523}00523         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00524}00524 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00528}00528         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00529}00529         \textcolor{keyword}{struct }TypeOf<\mbox{\hyperlink{types_8hpp_ad968226ad742933a9920b369c9b3177c}{int16}}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00530}00530         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00531}00531         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00532}00532             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::SignedInt16;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00533}00533         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00534}00534 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00538}00538         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00539}00539         \textcolor{keyword}{struct }TypeOf<\mbox{\hyperlink{types_8hpp_af57d680165131ff29b1c1755cfefae3c}{uint16}}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00540}00540         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00541}00541         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00542}00542             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::UnsignedInt16;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00543}00543         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00544}00544 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00548}00548         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00549}00549         \textcolor{keyword}{struct }TypeOf<\mbox{\hyperlink{types_8hpp_a6ef284e280b053cf9d56547d7234d9ca}{int32}}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00550}00550         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00551}00551         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00552}00552             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::SignedInt32;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00553}00553         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00554}00554 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00558}00558         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00559}00559         \textcolor{keyword}{struct }TypeOf<\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00560}00560         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00561}00561         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00562}00562             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::UnsignedInt32;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00563}00563         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00564}00564 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00568}00568         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00569}00569         \textcolor{keyword}{struct }TypeOf<\mbox{\hyperlink{types_8hpp_a0cfb2c98c2f3addcbd27d058c8e0b516}{int64}}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00570}00570         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00571}00571         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00572}00572             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::SignedInt64;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00573}00573         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00574}00574 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00578}00578         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00579}00579         \textcolor{keyword}{struct }TypeOf<\mbox{\hyperlink{types_8hpp_a8953065d6027eded6c8e1c86b404d63c}{uint64}}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00580}00580         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00581}00581         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00582}00582             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::UnsignedInt64;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00583}00583         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00584}00584 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00588}00588         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00589}00589         \textcolor{keyword}{struct }TypeOf<float>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00590}00590         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00591}00591         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00592}00592             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::Float;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00593}00593         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00594}00594 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00598}00598         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00599}00599         \textcolor{keyword}{struct }TypeOf<double>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00600}00600         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00601}00601         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00602}00602             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::Double;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00603}00603         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00604}00604 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00608}00608         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00609}00609         \textcolor{keyword}{struct }TypeOf<\mbox{\hyperlink{types_8hpp_ab12b8290910ab0101e8f579354a2a7e5}{null}}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00610}00610         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00611}00611         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00612}00612             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::NullPointer;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00613}00613         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00614}00614 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00618}00618         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00619}00619         \textcolor{keyword}{struct }TypeOf<void*>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00620}00620         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00621}00621         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00622}00622             \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} value = FormatArgumentType::VoidPointer;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00623}00623         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00624}00624 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00631}00631         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00632}00632         \textcolor{keyword}{class }BasicFormatArgument}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00633}00633         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00634}00634         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00635}00635             \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type = FormatArgumentType::Unknown;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00636}00636             \textcolor{keyword}{const} \textcolor{keywordtype}{void}* value = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00637}00637 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00638}00638         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00642}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_ab4b92908cc4a6e1ead1e8547db82edbc}{00642}}             \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_ab4b92908cc4a6e1ead1e8547db82edbc}{BasicFormatArgument}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00643}00643 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00653}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_a8c0d0ccce2619a0cf3851c7cca4cf813}{00653}}             \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{BasicFormatArgument}}(\mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type, const \textcolor{keywordtype}{void}* value) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00654}00654 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00658}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_a083c412d51ee70dc43c444c4a45d0fc7}{00658}}             \string~\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{BasicFormatArgument}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00659}00659 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00660}00660         public:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00667}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_a1f834c9bccfd406d23077665891bb3e9}{00667}}             \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{BasicFormatWriter}}<Char>\& writer) const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00668}00668         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00669}00669 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00676}00676         template<typename Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00677}00677         class \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList}{BasicFormatArgumentsList}}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00678}00678         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00679}00679         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00680}00680             \textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{BasicFormatArgument<Char>}}* arguments;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00681}00681             \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00682}00682 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00683}00683         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00687}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a36319707951d0c3654505724020c5f19}{00687}}             \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a36319707951d0c3654505724020c5f19}{BasicFormatArgumentsList}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00688}00688 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00695}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a7cb755a8f90da4376c2041047536a576}{00695}}             \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList}{BasicFormatArgumentsList}}(const ::std::initializer\_list<\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{BasicFormatArgument}}<Char>>\& arguments) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00696}00696 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00700}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a7f6e4b70e65c9697a5db050913c7823a}{00700}}             \string~\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList}{BasicFormatArgumentsList}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00701}00701 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00702}00702         public:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00709}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a978c102db9d1bf569f4880697dac7a64}{00709}}             \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} getSize() const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00710}00710 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00720}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a9cb89eb17352ab5e570bccec6eafcaf8}{00720}}             \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{BasicFormatWriter}}<Char>\& writer, \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) const noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00721}00721         \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00722}00722 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00737}00737         template<typename Char, typename Value>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00738}00738         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{BasicFormatArgument}}<Char> makeFormatArgument(const Value\& value) noexcept;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00739}00739 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00740}00740     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00741}00741 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00742}00742 \textcolor{preprocessor}{\#pragma region Format}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00743}00743     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00744}00744     \textcolor{keywordtype}{void} formatHandle(\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{details::BasicFormatWriter<Char>}}\& writer, \mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView<Char>}} pattern, \textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList}{details::BasicFormatArgumentsList<Char>}}\& arguments) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00745}00745 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00746}00746     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Result, \textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00747}00747     Result format(\textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00748}00748 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00749}00749     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00750}00750     \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString<char>}} format(\textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00751}00751 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00752}00752     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00753}00753     \mbox{\hyperlink{classfmatio_1_1BasicString}{BasicString<wchar>}} wformat(\textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00754}00754 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00755}00755     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Stream, \textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00756}00756     \textcolor{keywordtype}{void} echo(Stream\& stream, \textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00757}00757 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00758}00758 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00759}00759 \textcolor{preprocessor}{\#pragma region Std Utils}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00760}00760     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char = \textcolor{keywordtype}{char}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00761}00761     ::std::ostream\& operator <<(::std::ostream\& stream, \textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio::BasicString<Char>}}\& \textcolor{keywordtype}{string}) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00762}00762     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00763}00763         stream << \textcolor{keywordtype}{string}.getData();}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00764}00764         \textcolor{keywordflow}{return} stream;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00765}00765     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00766}00766 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00767}00767     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00768}00768     ::std::basic\_string<Char> toStdBasicString(\textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio::BasicString<Char>}}\& \textcolor{keywordtype}{string}) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00769}00769     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00770}00770         return ::std::basic\_string<Char>(\textcolor{keywordtype}{string}.getData(), \textcolor{keywordtype}{string}.getSize());}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00771}00771     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00772}00772 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00773}00773     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char = \textcolor{keywordtype}{char}>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00774}00774     ::std::ostream\& operator <<(::std::ostream\& stream, \textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicStringView}{fmatio::BasicStringView<Char>}}\& stringView) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00775}00775     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00776}00776         stream << stringView.getData();}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00777}00777         \textcolor{keywordflow}{return} stream;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00778}00778     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00779}00779 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00780}00780     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00781}00781     ::std::basic\_string<Char> toStdBasicString(\textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicStringView}{fmatio::BasicStringView<Char>}}\& stringView) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00782}00782     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00783}00783         return ::std::basic\_string<Char>(stringView.getData(), stringView.getSize());}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00784}00784     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00785}00785 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00786}00786 \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00787}00787 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00788}00788 \textcolor{keyword}{namespace }fmatio}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00789}00789 \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00790}00790 \textcolor{preprocessor}{\#pragma region BasicStringView}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00791}00791     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00792}00792     BasicStringView<Char>::BasicStringView() noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00793}00793         : data(), size() \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00794}00794 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00795}00795     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00796}00796     BasicStringView<Char>::BasicStringView(\textcolor{keyword}{const} Char* data) noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00797}00797         : data(data), size((uint32)strlen(data)) \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00798}00798 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00799}00799     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00800}00800     BasicStringView<Char>::BasicStringView(\textcolor{keyword}{const} Char* data, uint32 size) noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00801}00801         : data(data), size(size) \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00802}00802 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00803}00803     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00804}00804     BasicStringView<Char>::\string~BasicStringView() noexcept \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00805}00805 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00806}00806     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00807}00807     \textcolor{keyword}{const} Char* BasicStringView<Char>::getData() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00808}00808     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00809}00809         \textcolor{keywordflow}{return} this-\/>data;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00810}00810     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00811}00811 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00812}00812     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00813}00813     \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} BasicStringView<Char>::getSize() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00814}00814     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00815}00815         \textcolor{keywordflow}{return} this-\/>size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00816}00816     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00817}00817 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00818}00818     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00819}00819     \textcolor{keywordtype}{bool} BasicStringView<Char>::isEmpty() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00820}00820     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00821}00821         \textcolor{keywordflow}{return} this-\/>data == \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00822}00822     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00823}00823 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00824}00824     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00825}00825     \textcolor{keyword}{const} Char* BasicStringView<Char>::getConstBegin() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00826}00826     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00827}00827         \textcolor{keywordflow}{return} this-\/>data;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00828}00828     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00829}00829 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00830}00830     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00831}00831     \textcolor{keyword}{const} Char* BasicStringView<Char>::getConstEnd() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00832}00832     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00833}00833         \textcolor{keywordflow}{return} this-\/>data + this-\/>size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00834}00834     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00835}00835 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00836}00836     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00837}00837     \textcolor{keywordtype}{bool} BasicStringView<Char>::operator ==(\textcolor{keyword}{const} BasicStringView<Char>\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00838}00838     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00839}00839         \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&other)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00840}00840             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00841}00841 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00842}00842         \textcolor{keywordflow}{if} (this-\/>data == other.data)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00843}00843             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00844}00844 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00845}00845         \textcolor{keywordflow}{if} (this-\/>size != other.size)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00846}00846             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00847}00847 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00848}00848         \textcolor{keywordflow}{for} (uint32 i = 0; i < this-\/>size; i++)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00849}00849             \textcolor{keywordflow}{if} (this-\/>data[i] != other[i])}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00850}00850                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00851}00851 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00852}00852         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00853}00853     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00854}00854 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00855}00855     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00856}00856     \textcolor{keywordtype}{bool} BasicStringView<Char>::operator !=(\textcolor{keyword}{const} BasicStringView<Char>\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00857}00857     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00858}00858         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == other);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00859}00859     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00860}00860 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00861}00861     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00862}00862     \textcolor{keyword}{const} Char\& BasicStringView<Char>::operator [](uint32 index) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00863}00863     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00864}00864         \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}{FMATIO\_ASSERT}}(index >= 0 \&\& index < this-\/>size, \textcolor{stringliteral}{"{}Index out of bounds!"{}});}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00865}00865         \textcolor{keywordflow}{return} this-\/>data[index];}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00866}00866     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00867}00867 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00868}00868 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00869}00869 \textcolor{preprocessor}{\#pragma region BasicString}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00870}00870     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00871}00871     BasicString<Char>::BasicString() noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00872}00872         : data(), size(), capacity() \{ initialize(8); \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00873}00873 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00874}00874     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00875}00875     BasicString<Char>::BasicString(uint32 capacity) noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00876}00876         : data(), size(), capacity() \{ initialize(capacity); \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00877}00877 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00878}00878     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00879}00879     BasicString<Char>::BasicString(\textcolor{keyword}{const} Char* \textcolor{keyword}{const} data) noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00880}00880         : data(), size(), capacity()}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00881}00881     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00882}00882         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size = ::strlen(data);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00883}00883         initialize(size);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00884}00884         copy(data, size);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00885}00885     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00886}00886 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00887}00887     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00888}00888     BasicString<Char>::BasicString(\textcolor{keyword}{const} BasicString\& other) noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00889}00889         : data(), size(), capacity()}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00890}00890     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00891}00891         initialize(other.getCapacity());}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00892}00892         copy(other.getData(), other.getSize());}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00893}00893     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00894}00894 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00895}00895 \textcolor{preprocessor}{\#if defined(FMATIO\_MOVE\_SEMANTICS\_ENABLED) \&\& FMATIO\_MOVE\_SEMANTICS\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00896}00896     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00897}00897     BasicString<Char>::BasicString(BasicString\&\& other) noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00898}00898         : data(other.data), size(other.size), capacity(other.capacity) \{ other.data = \textcolor{keyword}{nullptr}; \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00899}00899 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00900}00900 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00901}00901     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00902}00902     BasicString<Char>::\string~BasicString() noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00903}00903     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00904}00904         deallocate();}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00905}00905     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00906}00906 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00907}00907     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00908}00908     \textcolor{keywordtype}{void} BasicString<Char>::initialize(uint32 capacity) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00909}00909     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00910}00910         this-\/>data = (Char*)\textcolor{keyword}{operator} \textcolor{keyword}{new}(capacity * \textcolor{keyword}{sizeof}(Char));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00911}00911         this-\/>capacity = capacity;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00912}00912     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00913}00913 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00914}00914     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00915}00915     \textcolor{keywordtype}{void} BasicString<Char>::reallocate(uint32 newCapacity) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00916}00916     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00917}00917         Char* temp = (Char*)\textcolor{keyword}{operator} \textcolor{keyword}{new}(newCapacity * \textcolor{keyword}{sizeof}(Char));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00918}00918 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00919}00919         \textcolor{keywordflow}{if} (this-\/>size > newCapacity)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00920}00920             this-\/>size = newCapacity;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00921}00921 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00922}00922         \textcolor{keywordflow}{for} (uint32 i = 0; i < this-\/>size; i++)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00923}00923             temp[i] = ::std::move(this-\/>data[i]);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00924}00924 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00925}00925         \textcolor{keywordflow}{for} (uint32 i = 0; i < this-\/>size; i++)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00926}00926             this-\/>data[i].\string~Char();}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00927}00927 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00928}00928         ::operator \textcolor{keyword}{delete}(this-\/>data, this-\/>capacity * \textcolor{keyword}{sizeof}(Char));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00929}00929         this-\/>data = temp;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00930}00930         this-\/>capacity = newCapacity;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00931}00931     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00932}00932 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00933}00933     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00934}00934     \textcolor{keywordtype}{void} BasicString<Char>::copy(\textcolor{keyword}{const} Char* \textcolor{keyword}{const} data, uint32 size) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00935}00935     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00936}00936         \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}{FMATIO\_ASSERT}}(this-\/>size >= size, \textcolor{stringliteral}{"{}Provided cstring is too big to copy!"{}});}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00937}00937         }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00938}00938         \textcolor{keywordflow}{for} (uint32 i = 0; i < size; i++)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00939}00939             this-\/>data[i] = ::std::move(data[i]);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00940}00940     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00941}00941 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00942}00942     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00943}00943     \textcolor{keywordtype}{void} BasicString<Char>::deallocate() noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00944}00944     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00945}00945         clear();}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00946}00946         ::operator \textcolor{keyword}{delete}(this-\/>data, this-\/>capacity * \textcolor{keyword}{sizeof}(Char));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00947}00947     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00948}00948 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00949}00949     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00950}00950     \textcolor{keyword}{const} Char* BasicString<Char>::getData() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00951}00951     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00952}00952         \textcolor{keywordflow}{return} this-\/>data;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00953}00953     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00954}00954 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00955}00955     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00956}00956     \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} BasicString<Char>::getSize() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00957}00957     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00958}00958         \textcolor{keywordflow}{return} this-\/>size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00959}00959     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00960}00960 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00961}00961     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00962}00962     \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} BasicString<Char>::getCapacity() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00963}00963     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00964}00964         \textcolor{keywordflow}{return} this-\/>capacity;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00965}00965     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00966}00966 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00967}00967     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00968}00968     \textcolor{keywordtype}{bool} BasicString<Char>::isEmpty() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00969}00969     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00970}00970         \textcolor{keywordflow}{return} this-\/>data == \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00971}00971     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00972}00972 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00973}00973     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00974}00974     \textcolor{keywordtype}{void} BasicString<Char>::append(\textcolor{keyword}{const} Char* \textcolor{keyword}{const} \textcolor{keywordtype}{string}) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00975}00975     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00976}00976         append(\textcolor{keywordtype}{string}, ::strlen(\textcolor{keywordtype}{string}));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00977}00977     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00978}00978 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00979}00979     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00980}00980     \textcolor{keywordtype}{void} BasicString<Char>::append(\textcolor{keyword}{const} Char* \textcolor{keyword}{const} begin, uint32 size) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00981}00981     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00982}00982         \textcolor{keywordflow}{if} (this-\/>size + size + 1 > this-\/>capacity)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00983}00983             reallocate(this-\/>capacity + size + 1);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00984}00984 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00985}00985         ::memcpy(this-\/>data + this-\/>size, begin, size);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00986}00986         this-\/>size += size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00987}00987     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00988}00988 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00989}00989     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00990}00990     \textcolor{keywordtype}{void} BasicString<Char>::clear() noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00991}00991     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00992}00992         \textcolor{keywordflow}{for} (uint32 i = 0; i < this-\/>size; i++)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00993}00993             this-\/>data[i].\string~Char();}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00994}00994 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00995}00995         this-\/>size = 0;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00996}00996     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00997}00997 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00998}00998     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l00999}00999     Char* BasicString<Char>::getBegin() noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01000}01000     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01001}01001         \textcolor{keywordflow}{return} this-\/>data;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01002}01002     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01003}01003     }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01004}01004     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01005}01005     Char* BasicString<Char>::getEnd() noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01006}01006     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01007}01007         \textcolor{keywordflow}{return} this-\/>data + this-\/>size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01008}01008     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01009}01009 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01010}01010     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01011}01011     \textcolor{keyword}{const} Char* BasicString<Char>::getConstBegin() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01012}01012     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01013}01013         \textcolor{keywordflow}{return} this-\/>data;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01014}01014     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01015}01015 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01016}01016     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01017}01017     \textcolor{keyword}{const} Char* BasicString<Char>::getConstEnd() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01018}01018     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01019}01019         \textcolor{keywordflow}{return} this-\/>data + this-\/>size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01020}01020     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01021}01021 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01022}01022     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01023}01023     BasicString<Char>\& BasicString<Char>::operator =(\textcolor{keyword}{const} BasicString<Char>\& other) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01024}01024     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01025}01025         deallocate();}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01026}01026         initialize(other.getCapacity());}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01027}01027         copy(other.getData(), other.getSize());}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01028}01028         this-\/>size = other.getSize();}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01029}01029         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01030}01030     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01031}01031 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01032}01032 \textcolor{preprocessor}{\#if defined(FMATIO\_MOVE\_SEMANTICS\_ENABLED) \&\& FMATIO\_MOVE\_SEMANTICS\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01033}01033     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01034}01034     BasicString<Char>\& BasicString<Char>::operator =(BasicString<Char>\&\& other) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01035}01035     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01036}01036         \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&other)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01037}01037             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01038}01038 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01039}01039         this-\/>data = other.data;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01040}01040         this-\/>size = other.size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01041}01041         this-\/>capacity = other.capacity;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01042}01042         other.data = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01043}01043         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01044}01044     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01045}01045 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01046}01046 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01047}01047     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01048}01048     \textcolor{keywordtype}{bool} BasicString<Char>::operator ==(\textcolor{keyword}{const} BasicString\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01049}01049     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01050}01050         \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&other)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01051}01051             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01052}01052 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01053}01053         \textcolor{keywordflow}{if} (this-\/>data == other.data)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01054}01054             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01055}01055 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01056}01056         \textcolor{keywordflow}{if} (this-\/>size != other.size)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01057}01057             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01058}01058 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01059}01059         \textcolor{keywordflow}{for} (uint32 i = 0; i < this-\/>size; i++)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01060}01060             \textcolor{keywordflow}{if} (this-\/>data[i] != other[i])}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01061}01061                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01062}01062 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01063}01063         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01064}01064     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01065}01065 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01066}01066     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01067}01067     \textcolor{keywordtype}{bool} BasicString<Char>::operator !=(\textcolor{keyword}{const} BasicString\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01068}01068     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01069}01069         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == other);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01070}01070     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01071}01071 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01072}01072     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01073}01073     Char\& BasicString<Char>::operator [](uint32 index) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01074}01074     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01075}01075         \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}{FMATIO\_ASSERT}}(index >= 0 \&\& index < this-\/>size, \textcolor{stringliteral}{"{}Index out of bounds!"{}});}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01076}01076         \textcolor{keywordflow}{return} this-\/>data[index];}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01077}01077     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01078}01078 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01079}01079     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01080}01080     \textcolor{keyword}{const} Char\& BasicString<Char>::operator [](uint32 index) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01081}01081     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01082}01082         \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}{FMATIO\_ASSERT}}(index >= 0 \&\& index < this-\/>size, \textcolor{stringliteral}{"{}Index out of bounds!"{}});}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01083}01083         \textcolor{keywordflow}{return} this-\/>data[index];}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01084}01084     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01085}01085 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01086}01086 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01087}01087     \textcolor{keyword}{namespace }details}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01088}01088     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01089}01089 \textcolor{preprocessor}{\#pragma region Writers}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01090}01090         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01091}01091         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_a72fd9cc649478a7f2c226e6f2675918b}{BasicFormatWriter<Char>::\string~BasicFormatWriter}}() noexcept \{ \};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01092}01092 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01093}01093         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Container>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01094}01094         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_ae5d13def5ead27211143dfca3c233322}{BasicDynamicWriter<Container>::BasicDynamicWriter}}(Container\& container) noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01095}01095             : container(container) \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01096}01096 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01097}01097         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Container>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01098}01098         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_afd2125e46fe2cf50c1cc4c05ef22e0d4}{BasicDynamicWriter<Container>::\string~BasicDynamicWriter}}() noexcept \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01099}01099 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01100}01100         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Container>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01101}01101         \textcolor{keywordtype}{void} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_ac386c2750d67e83ec85fb9a4cc051330}{BasicDynamicWriter<Container>::write}}(BasicStringView<typename Container::CharType> stringified) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01102}01102         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01103}01103             this-\/>container.append(stringified.getData(), stringified.getSize());}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01104}01104         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01105}01105 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01106}01106 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01107}01107 \textcolor{preprocessor}{\#pragma region Arguments}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01108}01108         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01109}01109         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_ab4b92908cc4a6e1ead1e8547db82edbc}{BasicFormatArgument<Char>::BasicFormatArgument}}() noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01110}01110             : type(FormatArgumentType::Unknown), value(\textcolor{keywordtype}{nullptr}) \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01111}01111 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01112}01112         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01113}01113         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_ab4b92908cc4a6e1ead1e8547db82edbc}{BasicFormatArgument<Char>::BasicFormatArgument}}(FormatArgumentType type, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* value) noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01114}01114             : type(type), value(value) \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01115}01115 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01116}01116         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01117}01117         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_a083c412d51ee70dc43c444c4a45d0fc7}{BasicFormatArgument<Char>::\string~BasicFormatArgument}}() noexcept \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01118}01118 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01119}01119         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01120}01120         \textcolor{keywordtype}{void} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_a1f834c9bccfd406d23077665891bb3e9}{BasicFormatArgument<Char>::format}}(BasicFormatWriter<Char>\& writer) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01121}01121         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01122}01122             \textcolor{keywordflow}{switch} (this-\/>type)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01123}01123             \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01124}01124             \textcolor{keywordflow}{case} FormatArgumentType::Bool:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01125}01125                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01126}01126 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01127}01127             \textcolor{keywordflow}{case} FormatArgumentType::WideChar:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01128}01128                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01129}01129 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01130}01130             \textcolor{keywordflow}{case} FormatArgumentType::SignedInt8:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01131}01131                 int8Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_ace079ae4b82745df4d386cc5ae242fe8}{int8}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01132}01132                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01133}01133 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01134}01134             \textcolor{keywordflow}{case} FormatArgumentType::UnsignedInt8:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01135}01135                 uint8Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_a21697faae9638766e0f71a8d807504c2}{uint8}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01136}01136                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01137}01137 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01138}01138             \textcolor{keywordflow}{case} FormatArgumentType::SignedInt16:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01139}01139                 int16Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_ad968226ad742933a9920b369c9b3177c}{int16}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01140}01140                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01141}01141 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01142}01142             \textcolor{keywordflow}{case} FormatArgumentType::UnsignedInt16:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01143}01143                 uint16Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_af57d680165131ff29b1c1755cfefae3c}{uint16}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01144}01144                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01145}01145 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01146}01146             \textcolor{keywordflow}{case} FormatArgumentType::SignedInt32:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01147}01147                 int32Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_a6ef284e280b053cf9d56547d7234d9ca}{int32}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01148}01148                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01149}01149 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01150}01150             \textcolor{keywordflow}{case} FormatArgumentType::UnsignedInt32:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01151}01151                 uint32Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01152}01152                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01153}01153 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01154}01154             \textcolor{keywordflow}{case} FormatArgumentType::SignedInt64:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01155}01155                 int64Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_a0cfb2c98c2f3addcbd27d058c8e0b516}{int64}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01156}01156                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01157}01157 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01158}01158             \textcolor{keywordflow}{case} FormatArgumentType::UnsignedInt64:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01159}01159                 uint64Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_a8953065d6027eded6c8e1c86b404d63c}{uint64}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01160}01160                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01161}01161 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01162}01162             \textcolor{keywordflow}{case} FormatArgumentType::Float:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01163}01163                 floatHandle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{float}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01164}01164                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01165}01165 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01166}01166             \textcolor{keywordflow}{case} FormatArgumentType::Double:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01167}01167                 doubleHandle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{double}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01168}01168                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01169}01169 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01170}01170             \textcolor{keywordflow}{case} FormatArgumentType::NullPointer:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01171}01171                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01172}01172 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01173}01173             \textcolor{keywordflow}{case} FormatArgumentType::VoidPointer:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01174}01174                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01175}01175 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01176}01176             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01177}01177                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01178}01178             \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01179}01179         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01180}01180 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01181}01181         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01182}01182         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a36319707951d0c3654505724020c5f19}{BasicFormatArgumentsList<Char>::BasicFormatArgumentsList}}() noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01183}01183             : arguments(), size() \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01184}01184 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01185}01185         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01186}01186         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a36319707951d0c3654505724020c5f19}{BasicFormatArgumentsList<Char>::BasicFormatArgumentsList}}(const ::std::initializer\_list<BasicFormatArgument<Char>>\& arguments) noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01187}01187             : arguments(arguments.begin()), size((uint32)arguments.size()) \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01188}01188 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01189}01189         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01190}01190         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a7f6e4b70e65c9697a5db050913c7823a}{BasicFormatArgumentsList<Char>::\string~BasicFormatArgumentsList}}() noexcept \{ \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01191}01191 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01192}01192         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01193}01193         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a978c102db9d1bf569f4880697dac7a64}{BasicFormatArgumentsList<Char>::getSize}}() const noexcept}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01194}01194         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01195}01195             \textcolor{keywordflow}{return} this-\/>size;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01196}01196         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01197}01197 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01198}01198         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01199}01199         \textcolor{keywordtype}{void} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a9cb89eb17352ab5e570bccec6eafcaf8}{BasicFormatArgumentsList<Char>::format}}(BasicFormatWriter<Char>\& writer, uint32 index) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01200}01200         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01201}01201             \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}{FMATIO\_ASSERT}}(index >= 0 \&\& index < this-\/>size, \textcolor{stringliteral}{"{}Index out of bounds!"{}});}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01202}01202             this-\/>arguments[index].format(writer);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01203}01203         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01204}01204 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01205}01205         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char, \textcolor{keyword}{typename} Value>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01206}01206         BasicFormatArgument<Char> \mbox{\hyperlink{arguments_8hpp_aac035f79e5c870904c9c7e2152f5ea95}{makeFormatArgument}}(\textcolor{keyword}{const} Value\& value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01207}01207         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01208}01208             \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type = TypeOf<Value>::value;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01209}01209             \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}{FMATIO\_ASSERT}}(type != FormatArgumentType::Unknown, \textcolor{stringliteral}{"{}Type of the format argument was unknown!"{}});}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01210}01210             \textcolor{keywordflow}{return} BasicFormatArgument<Char>(type, \&value);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01211}01211         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01212}01212 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01213}01213     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01214}01214 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01215}01215 \textcolor{preprocessor}{\#pragma region Format}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01216}01216     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01217}01217     \textcolor{keywordtype}{void} formatHandle(details::BasicFormatWriter<Char>\& writer, BasicStringView<Char> pattern, \textcolor{keyword}{const} details::BasicFormatArgumentsList<Char>\& arguments) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01218}01218     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01219}01219         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} count = 0;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01220}01220 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01221}01221         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classfmatio_1_1BasicStringView_af567016eeddb4d90f4a60f4cda2cf3a2}{BasicStringView<Char>::ConstIterator}} it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01222}01222             \textcolor{keywordflow}{if} (*it == \textcolor{charliteral}{'\{'} \&\& *(it + 1) == \textcolor{charliteral}{'\}'})}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01223}01223                 count++;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01224}01224 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01225}01225         \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}{FMATIO\_ASSERT}}(count == arguments.getSize(), \textcolor{stringliteral}{"{}Format arguments count and their placeholders \(\backslash\)'\{\}\(\backslash\)' count are different!"{}});}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01226}01226         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index = 0;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01227}01227 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01228}01228         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classfmatio_1_1BasicStringView_af567016eeddb4d90f4a60f4cda2cf3a2}{BasicStringView<Char>::ConstIterator}} it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01229}01229         \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01230}01230             \textcolor{keywordflow}{if} (*it == \textcolor{charliteral}{'\{'} \&\& *(it + 1) == \textcolor{charliteral}{'\}'} \&\& index <= pattern.getSize())}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01231}01231             \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01232}01232                 arguments.format(writer, index++); it++;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01233}01233             \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01234}01234             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01235}01235             \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01236}01236                 writer.write(BasicStringView<Char>(it, 1));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01237}01237             \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01238}01238         \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01239}01239 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01240}01240         writer.write(BasicStringView<Char>((\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"{}\(\backslash\)0"{}}, 1));}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01241}01241     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01242}01242 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01243}01243     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Result, \textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01244}01244     Result format(\textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01245}01245     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01246}01246         \textcolor{keyword}{using} CharType = Result::CharType; Result result = Result();}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01247}01247         details::BasicDynamicWriter<Result> writer = details::BasicDynamicWriter<Result>(result);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01248}01248         formatHandle(writer, BasicStringView<CharType>(pattern), \{ details::makeFormatArgument<CharType>(arguments)... \});}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01249}01249         \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}{FMATIO\_ASSERT}}(result.getData() != \textcolor{keyword}{nullptr} \&\& result.getSize() > 0, \textcolor{stringliteral}{"{}Format resulted in a invalid string!"{}});}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01250}01250         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01251}01251     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01252}01252 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01253}01253     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01254}01254     BasicString<char> format(\textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01255}01255     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01256}01256         BasicString<char> result = format<BasicString<char>, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01257}01257         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01258}01258     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01259}01259 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01260}01260     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01261}01261     BasicString<wchar> wformat(\textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01262}01262     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01263}01263         BasicString<wchar> result = format<BasicString<wchar>, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01264}01264         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01265}01265     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01266}01266 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01267}01267     \textcolor{keyword}{template}<\textcolor{keyword}{typename} Stream, \textcolor{keyword}{typename} Pattern, \textcolor{keyword}{typename}... Arguments>}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01268}01268     \textcolor{keywordtype}{void} echo(Stream\& stream, \textcolor{keyword}{const} Pattern\& pattern, Arguments\&\&... arguments) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01269}01269     \{}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01270}01270         stream << format<Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...).getData();}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01271}01271     \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01272}01272 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01273}01273 \}}
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01274}01274 }
+\DoxyCodeLine{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_source_l01275}01275 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
