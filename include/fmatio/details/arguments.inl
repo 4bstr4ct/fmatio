@@ -27,6 +27,8 @@
 #include <fmatio/details/float.hpp>
 #include <fmatio/details/double.hpp>
 
+#include <fmatio/details/char_string.hpp>
+
 namespace fmatio
 {
 	namespace details
@@ -48,9 +50,6 @@ namespace fmatio
 			switch (this->type)
 			{
 			case FormatArgumentType::Bool:
-				break;
-
-			case FormatArgumentType::WideChar:
 				break;
 
 			case FormatArgumentType::SignedInt8:
@@ -93,6 +92,14 @@ namespace fmatio
 				doubleHandle(writer, *static_cast<const double*>(this->value));
 				break;
 
+			case FormatArgumentType::CharString:
+				charStringHandle(writer, *static_cast<char* const *>(this->value));
+				break;
+
+			case FormatArgumentType::ConstCharString:
+				charStringHandle(writer, *static_cast<const char* const *>(this->value));
+				break;
+
 			case FormatArgumentType::NullPointer:
 				break;
 
@@ -132,8 +139,17 @@ namespace fmatio
 		BasicFormatArgument<Char> makeFormatArgument(const Value& value) noexcept
 		{
 			FormatArgumentType type = TypeOf<Value>::value;
-			FMATIO_ASSERT(type != FormatArgumentType::Unknown, "Type of the format argument was unknown!");
-			return BasicFormatArgument<Char>(type, &value);
+
+			if (type != FormatArgumentType::Unknown)
+			{
+				return BasicFormatArgument<Char>(type, &value);
+			}
+			else if (::std::is_pointer_v<Value>)
+			{
+				return BasicFormatArgument<Char>(FormatArgumentType::VoidPointer, &value);
+			}
+			
+			return BasicFormatArgument<Char>();
 		}
 	}
 }
