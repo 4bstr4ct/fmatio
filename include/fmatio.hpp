@@ -21,7 +21,7 @@
 
 #include <fmatio/format.hpp>
 
-#include <fmatio/string.hpp>
-#include <fmatio/string_view.hpp>
+#include <fmatio/basic_string.hpp>
+#include <fmatio/basic_string_view.hpp>
 
 #endif

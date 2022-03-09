@@ -1,9 +1,9 @@
 /*******************************************************************************
- * @file string_view.inl
+ * @file basic_string_view.inl
  * 
  * @author Joris Baranauskas (jorisb)
  * 
- * Defines string_view.hpp implementations.
+ * Defines basic_string_view.hpp implementations.
  * 
  * @copyright © 2022-2023 by Joris Baranauskas
  * 
@@ -21,6 +21,10 @@ namespace fmatio
 	template<typename Char>
 	BasicStringView<Char>::BasicStringView(const Char* data) noexcept
 		: data(data), size((uint32)strlen(data)) { }
+
+	template<typename Char>
+	BasicStringView<Char>::BasicStringView(const Char* data, uint32 size) noexcept
+		: data(data), size(size) { }
 
 	template<typename Char>
 	BasicStringView<Char>::~BasicStringView() noexcept { }
@@ -44,13 +48,13 @@ namespace fmatio
 	}
 
 	template<typename Char>
-	const Char* BasicStringView<Char>::getBegin() const noexcept
+	const Char* BasicStringView<Char>::getConstBegin() const noexcept
 	{
 		return this->data;
 	}
 
 	template<typename Char>
-	const Char* BasicStringView<Char>::getEnd() const noexcept
+	const Char* BasicStringView<Char>::getConstEnd() const noexcept
 	{
 		return this->data + this->size;
 	}

@@ -49,7 +49,7 @@ private:
 
 public:
 	UnitTestPool(const ::std::string& title)
-		: tests(), length(title.size())
+		: tests(), length((unsigned int)title.size())
 	{
 		::std::cout << "\033[1;33m[ " << title << " ]\033[0m" << ::std::endl;
 	}

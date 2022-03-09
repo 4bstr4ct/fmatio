@@ -33,7 +33,7 @@ namespace fmatio
 	{
 		template<typename Char>
 		BasicFormatArgument<Char>::BasicFormatArgument() noexcept
-			: type(FormatArgumentType::Unknown), value() { }
+			: type(FormatArgumentType::Unknown), value(nullptr) { }
 
 		template<typename Char>
 		BasicFormatArgument<Char>::BasicFormatArgument(FormatArgumentType type, const void* value) noexcept
@@ -132,11 +132,8 @@ namespace fmatio
 		BasicFormatArgument<Char> makeFormatArgument(const Value& value) noexcept
 		{
 			FormatArgumentType type = TypeOf<Value>::value;
-
-			if (type != FormatArgumentType::Unknown)
-				return BasicFormatArgument<Char>(type, &value);
-
-			return BasicFormatArgument<Char>();
+			FMATIO_ASSERT(type != FormatArgumentType::Unknown, "Type of the format argument was unknown!");
+			return BasicFormatArgument<Char>(type, &value);
 		}
 	}
 }

@@ -17,7 +17,7 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		BasicFormatWriter<Char>::~BasicFormatWriter() noexcept = default;
+		BasicFormatWriter<Char>::~BasicFormatWriter() noexcept { };
 
 		template<typename Container>
 		BasicDynamicWriter<Container>::BasicDynamicWriter(Container& container) noexcept
@@ -27,9 +27,9 @@ namespace fmatio
 		BasicDynamicWriter<Container>::~BasicDynamicWriter() noexcept { }
 
 		template<typename Container>
-		void BasicDynamicWriter<Container>::write(BasicStringView<typename Container::CharType> string) noexcept
+		void BasicDynamicWriter<Container>::write(BasicStringView<typename Container::CharType> stringified) noexcept
 		{
-			this->container.append(string.getData(), string.getSize());
+			this->container.append(stringified.getData(), stringified.getSize());
 		}
 	}
 }

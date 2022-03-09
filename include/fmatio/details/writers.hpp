@@ -16,23 +16,44 @@
 #define FMATIO_INCLUDE_FMATIO_DETAILS_WRITERS_HPP
 
 #include <fmatio/core.hpp>
-#include <fmatio/string.hpp>
-#include <fmatio/string_view.hpp>
+#include <fmatio/basic_string.hpp>
+#include <fmatio/basic_string_view.hpp>
 
 namespace fmatio
 {
 	namespace details
 	{
+		/**
+		 * Format writer inteface that provides 'write' method.
+		 * 
+		 * @tparam Char
+		 * 		Char type for the writer.
+		 */
 		template<typename Char>
 		class BasicFormatWriter
 		{
 		public:
+			/**
+			 * Destroy the basic format writer object.
+			 */
 			virtual ~BasicFormatWriter() noexcept;
 
 		public:
-			virtual void write(BasicStringView<Char> string) noexcept = 0;
+			/**
+			 * Write / append stringified fromat argument to the string.
+			 * 
+			 * @param[in] stringified
+			 * 		Stringified format argument value.
+			 */
+			virtual void write(BasicStringView<Char> stringified) noexcept = 0;
 		};
 
+		/**
+		 * A dynamic writer that appends format arguments' values.
+		 * 
+		 * @tparam Container
+		 * 		A container in which stringified arguments are written type.
+		 */
 		template<typename Container>
 		class BasicDynamicWriter : public BasicFormatWriter<typename Container::CharType>
 		{
@@ -40,12 +61,27 @@ namespace fmatio
 			Container& container;
 
 		public:
+			/**
+			 * Construct a new basic dynamic writer object.
+			 * 
+			 * @param[in] container
+			 * 		A container in which stringified arguments are written.
+			 */
 			BasicDynamicWriter(Container& container) noexcept;
 
+			/**
+			 * Destroy the basic dynamic writer object.
+			 */
 			virtual ~BasicDynamicWriter() noexcept override;
 
 		public:
-			virtual void write(BasicStringView<typename Container::CharType> string) noexcept override;
+			/**
+			 * Write / append stringified fromat argument to the string.
+			 * 
+			 * @param[in] stringified
+			 * 		Stringified format argument value.
+			 */
+			virtual void write(BasicStringView<typename Container::CharType> stringified) noexcept override;
 		};
 	}
 }

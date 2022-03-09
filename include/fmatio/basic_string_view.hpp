@@ -1,9 +1,9 @@
 /*******************************************************************************
- * @file string_view.hpp
+ * @file basic_string_view.hpp
  * 
  * @author Joris Baranauskas (jorisb)
  * 
- * Defines string view class.
+ * Defines basic string view class.
  * 
  * @copyright © 2022-2023 by Joris Baranauskas
  * 
@@ -12,8 +12,8 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#ifndef FMATIO_INCLUDE_FMATIO_STRING_VIEW_HPP
-#define FMATIO_INCLUDE_FMATIO_STRING_VIEW_HPP
+#ifndef FMATIO_INCLUDE_FMATIO_BASIC_STRING_VIEW_HPP
+#define FMATIO_INCLUDE_FMATIO_BASIC_STRING_VIEW_HPP
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
@@ -27,7 +27,7 @@ namespace fmatio
 		/**
 		 * Define a const iterator to iterate through the data.
 		 */
-		using Iterator = const Char*;
+		using ConstIterator = const Char*;
 
 		/**
 		 * Define a public typedef for char type used in this class.
@@ -44,17 +44,19 @@ namespace fmatio
 		uint32 size;
 
 	public:
-		BasicStringView<Char>() noexcept;
+		BasicStringView() noexcept;
 
-		BasicStringView<Char>(const Char* data) noexcept;
+		BasicStringView(const Char* data) noexcept;
 
-		BasicStringView<Char>(const BasicStringView<Char>& other) noexcept = default;
+		BasicStringView(const Char* data, uint32 size) noexcept;
+
+		BasicStringView(const BasicStringView& other) noexcept = default;
 
 #if defined(FMATIO_MOVE_SEMANTICS_ENABLED) && FMATIO_MOVE_SEMANTICS_ENABLED == 1
-		BasicStringView<Char>(BasicStringView<Char>&& other) noexcept = default;
+		BasicStringView(BasicStringView&& other) noexcept = default;
 #endif
 
-		~BasicStringView<Char>() noexcept;
+		~BasicStringView() noexcept;
 
 	public:
 		const Char* getData() const noexcept;
@@ -63,25 +65,25 @@ namespace fmatio
 
 		bool isEmpty() const noexcept;
 
-		const Char* getBegin() const noexcept;
+		const Char* getConstBegin() const noexcept;
 		
-		const Char* getEnd() const noexcept;
+		const Char* getConstEnd() const noexcept;
 
 	public:
-		BasicStringView<Char>& operator =(const BasicStringView<Char>& other) noexcept = default;
+		BasicStringView<Char>& operator =(const BasicStringView& other) noexcept = default;
 
 #if defined(FMATIO_MOVE_SEMANTICS_ENABLED) && FMATIO_MOVE_SEMANTICS_ENABLED == 1
-		BasicStringView<Char>& operator =(BasicStringView<Char>&& other) noexcept = default;
+		BasicStringView<Char>& operator =(BasicStringView&& other) noexcept = default;
 #endif
 
-		bool operator ==(const BasicStringView<Char>& other) const noexcept;
+		bool operator ==(const BasicStringView& other) const noexcept;
 
-		bool operator !=(const BasicStringView<Char>& other) const noexcept;
+		bool operator !=(const BasicStringView& other) const noexcept;
 
 		const Char& operator [](uint32 index) const noexcept;
 	};
 }
 
-#include "./string_view.inl"
+#include "./basic_string_view.inl"
 
 #endif

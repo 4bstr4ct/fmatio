@@ -112,8 +112,8 @@ set(FMATIO_SOURCE_DIRECTORY   "${CMAKE_CURRENT_SOURCE_DIR}/source")
 
 file(GLOB FMATIO_INLINE_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.inl"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string.inl"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string_view.inl"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string.inl"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string_view.inl"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.inl"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/writers.inl"
@@ -121,12 +121,13 @@ file(GLOB FMATIO_INLINE_FILES
 
 file(GLOB FMATIO_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio.hpp"
-		
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio_all.hpp"
+
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/core.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/types.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string_view.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string_view.hpp"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/writers.hpp"
@@ -145,16 +146,21 @@ file(GLOB FMATIO_HEADER_FILES
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/float.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/double.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_utilities.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_view_utilities.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/utilities.hpp"
 )
 
 set(FMATIO_PUBLIC_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio.hpp"
-	
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio_all.hpp"
+
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/core.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/types.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/string_view.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string_view.hpp"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/writers.hpp"
@@ -173,6 +179,10 @@ set(FMATIO_PUBLIC_HEADER_FILES
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/float.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/double.hpp"
+
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_utilities.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_view_utilities.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/utilities.hpp"
 )
 
 string(TOUPPER "${CMAKE_BUILD_TYPE}" BUILD_VARIANT)

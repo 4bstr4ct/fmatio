@@ -18,7 +18,9 @@
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
-#include <fmatio/string_view.hpp>
+
+#include <fmatio/basic_string.hpp>
+#include <fmatio/basic_string_view.hpp>
 
 #include <fmatio/details/writers.hpp>
 #include <fmatio/details/arguments.hpp>
@@ -39,9 +41,6 @@ namespace fmatio
 
 	template<typename Stream, typename Pattern, typename... Arguments>
 	void echo(Stream& stream, const Pattern& pattern, Arguments&&... arguments) noexcept;
-
-	template<typename Stream, typename Pattern, typename... Arguments>
-	void wecho(Stream& stream, const Pattern& pattern, Arguments&&... arguments) noexcept;
 }
 
 #include "./format.inl"
