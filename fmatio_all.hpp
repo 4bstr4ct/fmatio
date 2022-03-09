@@ -12,27 +12,27 @@
  * purpose, commercial or non - commercial, and by any means.
  ******************************************************************************/
 
-/*******************************************************************************
- * fmatio - C++ header-only formatting library.
- * This project is free software released into the public domain.
- * 
- * Anyone is free to copy, modify, publish, use, compile, sell, or distribute
- * this software, either in source code form or as a compiled binary, for any
- * purpose, commercial or non - commercial, and by any means.
- * 
- * In jurisdictions that recognize copyright laws, the author or authors of
- * this software dedicate any and all copyright interest in the software to
- * the public domain.
- * 
- * The software is provided "as is", without warranty of any kind, express or
- * implied, including but not limited to the warranties of merchantability,
- * fitness for a particular purpose and noninfringement. In no event shall the
- * authors be liable for any claim, damages or other liability, whether in an
- * action of contract, tort or otherwise, arising from, out of or in connection
- * with the software or the use or other dealings in the software.
- * 
- * Author: Joris Baranauskas (jorisb)
- ******************************************************************************/
+ /*******************************************************************************
+  * fmatio - C++ header-only formatting library.
+  * This project is free software released into the public domain.
+  *
+  * Anyone is free to copy, modify, publish, use, compile, sell, or distribute
+  * this software, either in source code form or as a compiled binary, for any
+  * purpose, commercial or non - commercial, and by any means.
+  *
+  * In jurisdictions that recognize copyright laws, the author or authors of
+  * this software dedicate any and all copyright interest in the software to
+  * the public domain.
+  *
+  * The software is provided "as is", without warranty of any kind, express or
+  * implied, including but not limited to the warranties of merchantability,
+  * fitness for a particular purpose and noninfringement. In no event shall the
+  * authors be liable for any claim, damages or other liability, whether in an
+  * action of contract, tort or otherwise, arising from, out of or in connection
+  * with the software or the use or other dealings in the software.
+  *
+  * Author: Joris Baranauskas (jorisb)
+  ******************************************************************************/
 
 #ifndef FMATIO_ALL_HPP
 #define FMATIO_ALL_HPP
@@ -93,52 +93,52 @@ namespace fmatio
 	using null = decltype(__nullptr);
 
 	/**
-	 * A type representing signed char. 
+	 * A type representing signed char.
 	 */
 	using int8 = signed char;
 
 	/**
-	 * A type representing unsigned char. 
+	 * A type representing unsigned char.
 	 */
 	using uint8 = unsigned char;
-	
+
 	/**
-	 * A type representing unsigned char. 
+	 * A type representing unsigned char.
 	 */
 	using byte = unsigned char;
 
 	/**
-	 * A type representing signed short. 
+	 * A type representing signed short.
 	 */
 	using int16 = signed short;
 
 	/**
-	 * A type representing unsigned short. 
+	 * A type representing unsigned short.
 	 */
 	using uint16 = unsigned short;
 
 	/**
-	 * A type representing signed int. 
+	 * A type representing signed int.
 	 */
 	using int32 = signed int;
-	
+
 	/**
-	 * A type representing unsigned int. 
+	 * A type representing unsigned int.
 	 */
 	using uint32 = unsigned int;
 
 	/**
-	 * A type representing signed long long. 
+	 * A type representing signed long long.
 	 */
 	using int64 = signed long long;
-	
+
 	/**
-	 * A type representing unsigned long long. 
+	 * A type representing unsigned long long.
 	 */
 	using uint64 = unsigned long long;
 
 	/**
-	 * A type representing wide char. 
+	 * A type representing wide char.
 	 */
 	using wchar = wchar_t;
 #pragma endregion
@@ -157,7 +157,7 @@ namespace fmatio
 		 * Define a public typedef for char type used in this class.
 		 */
 		using CharType = Char;
-		
+
 		/**
 		 * Define a public typedef for value type used in this class.
 		 */
@@ -190,7 +190,7 @@ namespace fmatio
 		bool isEmpty() const noexcept;
 
 		const Char* getConstBegin() const noexcept;
-		
+
 		const Char* getConstEnd() const noexcept;
 
 	public:
@@ -227,7 +227,7 @@ namespace fmatio
 		 * Define a public typedef for char type used in this class.
 		 */
 		using CharType = Char;
-		
+
 		/**
 		 * Define a public typedef for value type used in this class.
 		 */
@@ -278,11 +278,11 @@ namespace fmatio
 		void clear() noexcept;
 
 		Char* getBegin() noexcept;
-		
+
 		Char* getEnd() noexcept;
 
 		const Char* getConstBegin() const noexcept;
-		
+
 		const Char* getConstEnd() const noexcept;
 
 	public:
@@ -437,6 +437,18 @@ namespace fmatio
 			::std::string string = ::std::to_string(value);	// Have to reimplement this!
 			writer.write(BasicStringView<Char>(string.data()));
 		}
+
+		template<typename Char>
+		void charStringHandle(BasicFormatWriter<Char>& writer, char* value) noexcept
+		{
+			writer.write(BasicStringView<Char>(value));
+		}
+
+		template<typename Char>
+		void charStringHandle(BasicFormatWriter<Char>& writer, const char* value) noexcept
+		{
+			writer.write(BasicStringView<Char>(value));
+		}
 #pragma endregion
 
 #pragma region Arguments
@@ -446,9 +458,7 @@ namespace fmatio
 		enum class FormatArgumentType : uint8
 		{
 			Unknown,
-
 			Bool,
-			WideChar,
 
 			SignedInt8,
 			UnsignedInt8,
@@ -464,6 +474,9 @@ namespace fmatio
 
 			Float,
 			Double,
+
+			CharString,
+			ConstCharString,
 
 			NullPointer,
 			VoidPointer
@@ -490,16 +503,6 @@ namespace fmatio
 		{
 		public:
 			constexpr static FormatArgumentType value = FormatArgumentType::Bool;
-		};
-
-		/**
-		 * Format argument type definition for wide char type.
-		 */
-		template<>
-		struct TypeOf<wchar>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::WideChar;
 		};
 
 		/**
@@ -600,6 +603,26 @@ namespace fmatio
 		{
 		public:
 			constexpr static FormatArgumentType value = FormatArgumentType::Double;
+		};
+
+		/**
+		 * Format argument type definition for char string type.
+		 */
+		template<>
+		struct TypeOf<char*>
+		{
+		public:
+			constexpr static FormatArgumentType value = FormatArgumentType::CharString;
+		};
+
+		/**
+		 * Format argument type definition for const char string type.
+		 */
+		template<>
+		struct TypeOf<const char*>
+		{
+		public:
+			constexpr static FormatArgumentType value = FormatArgumentType::ConstCharString;
 		};
 
 		/**
@@ -869,11 +892,15 @@ namespace fmatio
 #pragma region BasicString
 	template<typename Char>
 	BasicString<Char>::BasicString() noexcept
-		: data(), size(), capacity() { initialize(8); }
+		: data(), size(), capacity() {
+		initialize(8);
+	}
 
 	template<typename Char>
 	BasicString<Char>::BasicString(uint32 capacity) noexcept
-		: data(), size(), capacity() { initialize(capacity); }
+		: data(), size(), capacity() {
+		initialize(capacity);
+	}
 
 	template<typename Char>
 	BasicString<Char>::BasicString(const Char* const data) noexcept
@@ -895,7 +922,9 @@ namespace fmatio
 #if defined(FMATIO_MOVE_SEMANTICS_ENABLED) && FMATIO_MOVE_SEMANTICS_ENABLED == 1
 	template<typename Char>
 	BasicString<Char>::BasicString(BasicString&& other) noexcept
-		: data(other.data), size(other.size), capacity(other.capacity) { other.data = nullptr; }
+		: data(other.data), size(other.size), capacity(other.capacity) {
+		other.data = nullptr;
+	}
 #endif
 
 	template<typename Char>
@@ -934,7 +963,7 @@ namespace fmatio
 	void BasicString<Char>::copy(const Char* const data, uint32 size) noexcept
 	{
 		FMATIO_ASSERT(this->size >= size, "Provided cstring is too big to copy!");
-		
+
 		for (uint32 i = 0; i < size; i++)
 			this->data[i] = ::std::move(data[i]);
 	}
@@ -1000,7 +1029,7 @@ namespace fmatio
 	{
 		return this->data;
 	}
-	
+
 	template<typename Char>
 	Char* BasicString<Char>::getEnd() noexcept
 	{
@@ -1124,9 +1153,6 @@ namespace fmatio
 			case FormatArgumentType::Bool:
 				break;
 
-			case FormatArgumentType::WideChar:
-				break;
-
 			case FormatArgumentType::SignedInt8:
 				int8Handle(writer, *static_cast<const int8*>(this->value));
 				break;
@@ -1165,6 +1191,14 @@ namespace fmatio
 
 			case FormatArgumentType::Double:
 				doubleHandle(writer, *static_cast<const double*>(this->value));
+				break;
+
+			case FormatArgumentType::CharString:
+				charStringHandle(writer, *static_cast<char* const *>(this->value));
+				break;
+
+			case FormatArgumentType::ConstCharString:
+				charStringHandle(writer, *static_cast<const char* const *>(this->value));
 				break;
 
 			case FormatArgumentType::NullPointer:
@@ -1206,8 +1240,17 @@ namespace fmatio
 		BasicFormatArgument<Char> makeFormatArgument(const Value& value) noexcept
 		{
 			FormatArgumentType type = TypeOf<Value>::value;
-			FMATIO_ASSERT(type != FormatArgumentType::Unknown, "Type of the format argument was unknown!");
-			return BasicFormatArgument<Char>(type, &value);
+
+			if (type != FormatArgumentType::Unknown)
+			{
+				return BasicFormatArgument<Char>(type, &value);
+			}
+			else if (::std::is_pointer_v<Value>)
+			{
+				return BasicFormatArgument<Char>(FormatArgumentType::VoidPointer, &value);
+			}
+			
+			return BasicFormatArgument<Char>();
 		}
 #pragma endregion
 	}
