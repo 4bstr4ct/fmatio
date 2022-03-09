@@ -1,0 +1,148 @@
+\hypertarget{arguments_8inl_source}{}\doxysection{arguments.\+inl}
+\label{arguments_8inl_source}\index{include/fmatio/details/arguments.inl@{include/fmatio/details/arguments.inl}}
+\mbox{\hyperlink{arguments_8inl}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00015}00015 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{int8_8hpp}{fmatio/details/int8.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00016}00016 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{uint8_8hpp}{fmatio/details/uint8.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00018}00018 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{int16_8hpp}{fmatio/details/int16.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00019}00019 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{uint16_8hpp}{fmatio/details/uint16.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00021}00021 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{int32_8hpp}{fmatio/details/int32.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00022}00022 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{uint32_8hpp}{fmatio/details/uint32.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00024}00024 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{int64_8hpp}{fmatio/details/int64.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00025}00025 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{uint64_8hpp}{fmatio/details/uint64.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00027}00027 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{float_8hpp}{fmatio/details/float.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00028}00028 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{double_8hpp}{fmatio/details/double.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00030}00030 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{char__string_8hpp}{fmatio/details/char\_string.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00032}00032 \textcolor{keyword}{namespace }fmatio}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00034}00034     \textcolor{keyword}{namespace }details}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00035}00035     \{}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00036}00036         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00037}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_ab4b92908cc4a6e1ead1e8547db82edbc}{00037}}         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_ab4b92908cc4a6e1ead1e8547db82edbc}{BasicFormatArgument<Char>::BasicFormatArgument}}() noexcept}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00038}00038             : type(\mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}}::Unknown), value(\textcolor{keywordtype}{nullptr}) \{ \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00040}00040         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00041}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_a8c0d0ccce2619a0cf3851c7cca4cf813}{00041}}         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_ab4b92908cc4a6e1ead1e8547db82edbc}{BasicFormatArgument<Char>::BasicFormatArgument}}(\mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* value) noexcept}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00042}00042             : type(type), value(value) \{ \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00044}00044         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00045}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_a083c412d51ee70dc43c444c4a45d0fc7}{00045}}         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_a083c412d51ee70dc43c444c4a45d0fc7}{BasicFormatArgument<Char>::\string~BasicFormatArgument}}() noexcept \{ \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00047}00047         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00048}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_a1f834c9bccfd406d23077665891bb3e9}{00048}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument_a1f834c9bccfd406d23077665891bb3e9}{BasicFormatArgument<Char>::format}}(\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{BasicFormatWriter<Char>}}\& writer) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00049}00049         \{}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00050}00050             \textcolor{keywordflow}{switch} (this-\/>type)}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00051}00051             \{}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00052}00052             \textcolor{keywordflow}{case} FormatArgumentType::Bool:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00053}00053                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00055}00055             \textcolor{keywordflow}{case} FormatArgumentType::SignedInt8:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00056}00056                 int8Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_ace079ae4b82745df4d386cc5ae242fe8}{int8}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00057}00057                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00059}00059             \textcolor{keywordflow}{case} FormatArgumentType::UnsignedInt8:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00060}00060                 uint8Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_a21697faae9638766e0f71a8d807504c2}{uint8}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00061}00061                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00063}00063             \textcolor{keywordflow}{case} FormatArgumentType::SignedInt16:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00064}00064                 int16Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_ad968226ad742933a9920b369c9b3177c}{int16}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00065}00065                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00067}00067             \textcolor{keywordflow}{case} FormatArgumentType::UnsignedInt16:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00068}00068                 uint16Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_af57d680165131ff29b1c1755cfefae3c}{uint16}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00069}00069                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00071}00071             \textcolor{keywordflow}{case} FormatArgumentType::SignedInt32:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00072}00072                 int32Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_a6ef284e280b053cf9d56547d7234d9ca}{int32}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00073}00073                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00075}00075             \textcolor{keywordflow}{case} FormatArgumentType::UnsignedInt32:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00076}00076                 uint32Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00077}00077                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00079}00079             \textcolor{keywordflow}{case} FormatArgumentType::SignedInt64:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00080}00080                 int64Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_a0cfb2c98c2f3addcbd27d058c8e0b516}{int64}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00081}00081                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00083}00083             \textcolor{keywordflow}{case} FormatArgumentType::UnsignedInt64:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00084}00084                 uint64Handle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{types_8hpp_a8953065d6027eded6c8e1c86b404d63c}{uint64}}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00085}00085                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00087}00087             \textcolor{keywordflow}{case} FormatArgumentType::Float:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00088}00088                 floatHandle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{float}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00089}00089                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00091}00091             \textcolor{keywordflow}{case} FormatArgumentType::Double:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00092}00092                 doubleHandle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{double}*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00093}00093                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00095}00095             \textcolor{keywordflow}{case} FormatArgumentType::CharString:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00096}00096                 charStringHandle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}* \textcolor{keyword}{const }*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00097}00097                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00099}00099             \textcolor{keywordflow}{case} FormatArgumentType::ConstCharString:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00100}00100                 charStringHandle(writer, *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{char}* \textcolor{keyword}{const }*\textcolor{keyword}{>}(this-\/>value));}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00101}00101                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00103}00103             \textcolor{keywordflow}{case} FormatArgumentType::NullPointer:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00104}00104                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00106}00106             \textcolor{keywordflow}{case} FormatArgumentType::VoidPointer:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00107}00107                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00109}00109             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00110}00110                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00111}00111             \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00112}00112         \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00114}00114         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00115}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a36319707951d0c3654505724020c5f19}{00115}}         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a36319707951d0c3654505724020c5f19}{BasicFormatArgumentsList<Char>::BasicFormatArgumentsList}}() noexcept}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00116}00116             : arguments(), size() \{ \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00118}00118         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00119}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a7cb755a8f90da4376c2041047536a576}{00119}}         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a36319707951d0c3654505724020c5f19}{BasicFormatArgumentsList<Char>::BasicFormatArgumentsList}}(const ::std::initializer\_list<\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{BasicFormatArgument<Char>}}>\& arguments) noexcept}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00120}00120             : arguments(arguments.begin()), size((\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}})arguments.size()) \{ \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00122}00122         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00123}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a7f6e4b70e65c9697a5db050913c7823a}{00123}}         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a7f6e4b70e65c9697a5db050913c7823a}{BasicFormatArgumentsList<Char>::\string~BasicFormatArgumentsList}}() noexcept \{ \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00125}00125         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00126}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a978c102db9d1bf569f4880697dac7a64}{00126}}         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a978c102db9d1bf569f4880697dac7a64}{BasicFormatArgumentsList<Char>::getSize}}() const noexcept}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00127}00127         \{}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00128}00128             \textcolor{keywordflow}{return} this-\/>size;}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00129}00129         \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00131}00131         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00132}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a9cb89eb17352ab5e570bccec6eafcaf8}{00132}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a9cb89eb17352ab5e570bccec6eafcaf8}{BasicFormatArgumentsList<Char>::format}}(\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{BasicFormatWriter<Char>}}\& writer, \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00133}00133         \{}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00134}00134             FMATIO\_ASSERT(index >= 0 \&\& index < this-\/>size, \textcolor{stringliteral}{"{}Index out of bounds!"{}});}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00135}00135             this-\/>arguments[index].format(writer);}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00136}00136         \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00138}00138         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char, \textcolor{keyword}{typename} Value>}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00139}\mbox{\hyperlink{arguments_8hpp_aac035f79e5c870904c9c7e2152f5ea95}{00139}}         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{BasicFormatArgument<Char>}} \mbox{\hyperlink{arguments_8hpp_aac035f79e5c870904c9c7e2152f5ea95}{makeFormatArgument}}(\textcolor{keyword}{const} Value\& value) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00140}00140         \{}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00141}00141             \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type = \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf}{TypeOf<Value>::value}};}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00143}00143             \textcolor{keywordflow}{if} (type != FormatArgumentType::Unknown)}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00144}00144             \{}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00145}00145                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{BasicFormatArgument<Char>}}(type, \&value);}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00146}00146             \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00147}00147             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (::std::is\_pointer\_v<Value>)}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00148}00148             \{}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00149}00149                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{BasicFormatArgument<Char>}}(FormatArgumentType::VoidPointer, \&value);}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00150}00150             \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00151}00151             }
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00152}00152             \textcolor{keywordflow}{return} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{BasicFormatArgument<Char>}}();}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00153}00153         \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00154}00154     \}}
+\DoxyCodeLine{\Hypertarget{arguments_8inl_source_l00155}00155 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,52 @@
+\hypertarget{uint32_8hpp}{}\doxysection{include/fmatio/details/uint32.hpp File Reference}
+\label{uint32_8hpp}\index{include/fmatio/details/uint32.hpp@{include/fmatio/details/uint32.hpp}}
+{\ttfamily \#include $<$fmatio/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/types.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/writers.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for uint32.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{uint32_8hpp_a6bce4fc60b94a39400fa6e4fc151f8c8}{fmatio\+::details\+::uint32\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, uint32 value) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Joris Baranauskas (jorisb)
+\end{DoxyAuthor}
+Defines functions to write unsigned 32-\/bit integer.
+
+\begin{DoxyCopyright}{Copyright}
+© 2022-\/2023 by Joris Baranauskas
+\end{DoxyCopyright}
+This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+Definition in file \mbox{\hyperlink{uint32_8hpp_source}{uint32.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uint32_8hpp_a6bce4fc60b94a39400fa6e4fc151f8c8}\label{uint32_8hpp_a6bce4fc60b94a39400fa6e4fc151f8c8}} 
+\index{uint32.hpp@{uint32.hpp}!uint32Handle@{uint32Handle}}
+\index{uint32Handle@{uint32Handle}!uint32.hpp@{uint32.hpp}}
+\doxysubsubsection{\texorpdfstring{uint32Handle()}{uint32Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::uint32\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{uint32_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{uint32_8hpp_source}{uint32.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}

@@ -2,6 +2,9 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <string>
+#include <fstream>
+using ::std::ofstream;
 
 struct Point2d
 {
@@ -18,6 +21,8 @@ using namespace ::fmatio;
 int main(int argc, char** argv)
 {
 	echo(::std::cout, ": {} {}!\n", 5, (char*)"lalalalala");
+	std::string str = toStdBasicString(format(": {} {}!\n", 5, (char*)"lalalalala"));
+	std::cout << str; 
 	return 0;
 }
 

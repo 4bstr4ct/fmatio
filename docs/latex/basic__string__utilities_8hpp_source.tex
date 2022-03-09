@@ -1,0 +1,29 @@
+\hypertarget{basic__string__utilities_8hpp_source}{}\doxysection{basic\+\_\+string\+\_\+utilities.\+hpp}
+\label{basic__string__utilities_8hpp_source}\index{include/fmatio/std/basic\_string\_utilities.hpp@{include/fmatio/std/basic\_string\_utilities.hpp}}
+\mbox{\hyperlink{basic__string__utilities_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#ifndef FMATIO\_INCLUDE\_FMATIO\_STD\_BASIC\_STRING\_UTILITIES\_HPP}}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00016}00016 \textcolor{preprocessor}{\#define FMATIO\_INCLUDE\_FMATIO\_STD\_BASIC\_STRING\_UTILITIES\_HPP}}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00018}00018 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{basic__string_8hpp}{fmatio/basic\_string.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00023}00023 \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char = \textcolor{keywordtype}{char}>}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00024}00024 ::std::ostream\& operator <<(::std::ostream\& stream, \textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio::BasicString<Char>}}\& \textcolor{keywordtype}{string}) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00025}00025 \{}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00026}00026     stream << \textcolor{keywordtype}{string}.getData();}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00027}00027     \textcolor{keywordflow}{return} stream;}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00028}00028 \}}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00030}00030 \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00031}00031 ::std::basic\_string<Char> toStdBasicString(\textcolor{keyword}{const} \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio::BasicString<Char>}}\& \textcolor{keywordtype}{string}) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00032}00032 \{}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00033}00033     return ::std::basic\_string<Char>(\textcolor{keywordtype}{string}.getData(), \textcolor{keywordtype}{string}.getSize());}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00034}00034 \}}
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{basic__string__utilities_8hpp_source_l00036}00036 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

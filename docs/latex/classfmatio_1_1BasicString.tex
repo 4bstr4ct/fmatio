@@ -1,0 +1,795 @@
+\hypertarget{classfmatio_1_1BasicString}{}\doxysection{fmatio\+::Basic\+String\texorpdfstring{$<$}{<} Char \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classfmatio_1_1BasicString}\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}{Iterator}} = Char $\ast$
+\begin{DoxyCompactList}\small\item\em Define a iterator to iterate through the data. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}{Const\+Iterator}} = const Char $\ast$
+\begin{DoxyCompactList}\small\item\em Define a const iterator to iterate through the data. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}{Char\+Type}} = Char
+\begin{DoxyCompactList}\small\item\em Define a public typedef for char type used in this class. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}{Value\+Type}} = Char
+\begin{DoxyCompactList}\small\item\em Define a public typedef for value type used in this class. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}{Iterator}} = Char $\ast$
+\begin{DoxyCompactList}\small\item\em Define a iterator to iterate through the data. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}{Const\+Iterator}} = const Char $\ast$
+\begin{DoxyCompactList}\small\item\em Define a const iterator to iterate through the data. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}{Char\+Type}} = Char
+\begin{DoxyCompactList}\small\item\em Define a public typedef for char type used in this class. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}{Value\+Type}} = Char
+\begin{DoxyCompactList}\small\item\em Define a public typedef for value type used in this class. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}{Iterator}} = Char $\ast$
+\begin{DoxyCompactList}\small\item\em Define a iterator to iterate through the data. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}{Const\+Iterator}} = const Char $\ast$
+\begin{DoxyCompactList}\small\item\em Define a const iterator to iterate through the data. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}{Char\+Type}} = Char
+\begin{DoxyCompactList}\small\item\em Define a public typedef for char type used in this class. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}{Value\+Type}} = Char
+\begin{DoxyCompactList}\small\item\em Define a public typedef for value type used in this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfmatio_1_1BasicString_a44ac8cacbf1260560555ed2ebb5982d5}{Basic\+String}} (\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} capacity) noexcept
+\item 
+\mbox{\hyperlink{classfmatio_1_1BasicString_a62806b8ffb8751289c7a3a209c12f082}{Basic\+String}} (const Char $\ast$const data) noexcept
+\item 
+\mbox{\hyperlink{classfmatio_1_1BasicString_abbb8e9fde753b5e36c9b547803ed46d8}{Basic\+String}} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) noexcept
+\item 
+const Char $\ast$ \mbox{\hyperlink{classfmatio_1_1BasicString_ac929c841d87fddd6c92a64bce82d945c}{get\+Data}} () const noexcept
+\item 
+\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} \mbox{\hyperlink{classfmatio_1_1BasicString_a3ec63e5832fe68547ee42a67330888b8}{get\+Size}} () const noexcept
+\item 
+\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} \mbox{\hyperlink{classfmatio_1_1BasicString_ad05c022e71861b484829061ef2ed727a}{get\+Capacity}} () const noexcept
+\item 
+bool \mbox{\hyperlink{classfmatio_1_1BasicString_a38b07e90dce7825bb06c2300aee5a984}{is\+Empty}} () const noexcept
+\item 
+void \mbox{\hyperlink{classfmatio_1_1BasicString_ae398fdadac245c112df38eac2a407989}{append}} (const Char $\ast$const string) noexcept
+\item 
+void \mbox{\hyperlink{classfmatio_1_1BasicString_a1fcaa6dd5eaaa3b14ce77c66a310f029}{append}} (const Char $\ast$const begin, \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size) noexcept
+\item 
+void \mbox{\hyperlink{classfmatio_1_1BasicString_a2aa7d8d40a720518491f3447778cbf62}{clear}} () noexcept
+\item 
+Char $\ast$ \mbox{\hyperlink{classfmatio_1_1BasicString_a7b1b032a4148dec98c96a2df3c0c3e18}{get\+Begin}} () noexcept
+\item 
+Char $\ast$ \mbox{\hyperlink{classfmatio_1_1BasicString_acc321c48add4bd0b693d7292e68c9c22}{get\+End}} () noexcept
+\item 
+const Char $\ast$ \mbox{\hyperlink{classfmatio_1_1BasicString_a942883f7019a64914842e69da69ed11b}{get\+Const\+Begin}} () const noexcept
+\item 
+const Char $\ast$ \mbox{\hyperlink{classfmatio_1_1BasicString_ad413af963ba95d2b50568b9cd1cfdc58}{get\+Const\+End}} () const noexcept
+\item 
+\mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \& \mbox{\hyperlink{classfmatio_1_1BasicString_a0e848e85e4db9e292a7c3424d425f76f}{operator=}} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) noexcept
+\item 
+bool \mbox{\hyperlink{classfmatio_1_1BasicString_a7ffa41860b3a209ce8bd07ab481f3279}{operator==}} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) const noexcept
+\item 
+bool \mbox{\hyperlink{classfmatio_1_1BasicString_aefe154ad933ea0b509893d3424d4cca5}{operator!=}} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) const noexcept
+\item 
+Char \& \mbox{\hyperlink{classfmatio_1_1BasicString_ab4bd7a6efc0e4817c041a02698177d2c}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) noexcept
+\item 
+const Char \& \mbox{\hyperlink{classfmatio_1_1BasicString_a6269d2b6307304e086bd47ea349b143e}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a44ac8cacbf1260560555ed2ebb5982d5}\label{classfmatio_1_1BasicString_a44ac8cacbf1260560555ed2ebb5982d5}} 
+{\bfseries Basic\+String} (\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} capacity) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a62806b8ffb8751289c7a3a209c12f082}\label{classfmatio_1_1BasicString_a62806b8ffb8751289c7a3a209c12f082}} 
+{\bfseries Basic\+String} (const Char $\ast$const data) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_abbb8e9fde753b5e36c9b547803ed46d8}\label{classfmatio_1_1BasicString_abbb8e9fde753b5e36c9b547803ed46d8}} 
+{\bfseries Basic\+String} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ac929c841d87fddd6c92a64bce82d945c}\label{classfmatio_1_1BasicString_ac929c841d87fddd6c92a64bce82d945c}} 
+const Char $\ast$ {\bfseries get\+Data} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a3ec63e5832fe68547ee42a67330888b8}\label{classfmatio_1_1BasicString_a3ec63e5832fe68547ee42a67330888b8}} 
+\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} {\bfseries get\+Size} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ad05c022e71861b484829061ef2ed727a}\label{classfmatio_1_1BasicString_ad05c022e71861b484829061ef2ed727a}} 
+\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} {\bfseries get\+Capacity} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a38b07e90dce7825bb06c2300aee5a984}\label{classfmatio_1_1BasicString_a38b07e90dce7825bb06c2300aee5a984}} 
+bool {\bfseries is\+Empty} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ae398fdadac245c112df38eac2a407989}\label{classfmatio_1_1BasicString_ae398fdadac245c112df38eac2a407989}} 
+void {\bfseries append} (const Char $\ast$const string) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a1fcaa6dd5eaaa3b14ce77c66a310f029}\label{classfmatio_1_1BasicString_a1fcaa6dd5eaaa3b14ce77c66a310f029}} 
+void {\bfseries append} (const Char $\ast$const begin, \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a2aa7d8d40a720518491f3447778cbf62}\label{classfmatio_1_1BasicString_a2aa7d8d40a720518491f3447778cbf62}} 
+void {\bfseries clear} () noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a7b1b032a4148dec98c96a2df3c0c3e18}\label{classfmatio_1_1BasicString_a7b1b032a4148dec98c96a2df3c0c3e18}} 
+Char $\ast$ {\bfseries get\+Begin} () noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_acc321c48add4bd0b693d7292e68c9c22}\label{classfmatio_1_1BasicString_acc321c48add4bd0b693d7292e68c9c22}} 
+Char $\ast$ {\bfseries get\+End} () noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a942883f7019a64914842e69da69ed11b}\label{classfmatio_1_1BasicString_a942883f7019a64914842e69da69ed11b}} 
+const Char $\ast$ {\bfseries get\+Const\+Begin} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ad413af963ba95d2b50568b9cd1cfdc58}\label{classfmatio_1_1BasicString_ad413af963ba95d2b50568b9cd1cfdc58}} 
+const Char $\ast$ {\bfseries get\+Const\+End} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a91cf91e2e0ba89441e60170968ac8387}\label{classfmatio_1_1BasicString_a91cf91e2e0ba89441e60170968ac8387}} 
+\mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \& {\bfseries operator=} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a7ffa41860b3a209ce8bd07ab481f3279}\label{classfmatio_1_1BasicString_a7ffa41860b3a209ce8bd07ab481f3279}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_aefe154ad933ea0b509893d3424d4cca5}\label{classfmatio_1_1BasicString_aefe154ad933ea0b509893d3424d4cca5}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ab4bd7a6efc0e4817c041a02698177d2c}\label{classfmatio_1_1BasicString_ab4bd7a6efc0e4817c041a02698177d2c}} 
+Char \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a6269d2b6307304e086bd47ea349b143e}\label{classfmatio_1_1BasicString_a6269d2b6307304e086bd47ea349b143e}} 
+const Char \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a44ac8cacbf1260560555ed2ebb5982d5}\label{classfmatio_1_1BasicString_a44ac8cacbf1260560555ed2ebb5982d5}} 
+{\bfseries Basic\+String} (\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} capacity) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a62806b8ffb8751289c7a3a209c12f082}\label{classfmatio_1_1BasicString_a62806b8ffb8751289c7a3a209c12f082}} 
+{\bfseries Basic\+String} (const Char $\ast$const data) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_abbb8e9fde753b5e36c9b547803ed46d8}\label{classfmatio_1_1BasicString_abbb8e9fde753b5e36c9b547803ed46d8}} 
+{\bfseries Basic\+String} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ac929c841d87fddd6c92a64bce82d945c}\label{classfmatio_1_1BasicString_ac929c841d87fddd6c92a64bce82d945c}} 
+const Char $\ast$ {\bfseries get\+Data} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a3ec63e5832fe68547ee42a67330888b8}\label{classfmatio_1_1BasicString_a3ec63e5832fe68547ee42a67330888b8}} 
+\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} {\bfseries get\+Size} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ad05c022e71861b484829061ef2ed727a}\label{classfmatio_1_1BasicString_ad05c022e71861b484829061ef2ed727a}} 
+\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} {\bfseries get\+Capacity} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a38b07e90dce7825bb06c2300aee5a984}\label{classfmatio_1_1BasicString_a38b07e90dce7825bb06c2300aee5a984}} 
+bool {\bfseries is\+Empty} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ae398fdadac245c112df38eac2a407989}\label{classfmatio_1_1BasicString_ae398fdadac245c112df38eac2a407989}} 
+void {\bfseries append} (const Char $\ast$const string) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a1fcaa6dd5eaaa3b14ce77c66a310f029}\label{classfmatio_1_1BasicString_a1fcaa6dd5eaaa3b14ce77c66a310f029}} 
+void {\bfseries append} (const Char $\ast$const begin, \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a2aa7d8d40a720518491f3447778cbf62}\label{classfmatio_1_1BasicString_a2aa7d8d40a720518491f3447778cbf62}} 
+void {\bfseries clear} () noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a7b1b032a4148dec98c96a2df3c0c3e18}\label{classfmatio_1_1BasicString_a7b1b032a4148dec98c96a2df3c0c3e18}} 
+Char $\ast$ {\bfseries get\+Begin} () noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_acc321c48add4bd0b693d7292e68c9c22}\label{classfmatio_1_1BasicString_acc321c48add4bd0b693d7292e68c9c22}} 
+Char $\ast$ {\bfseries get\+End} () noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a942883f7019a64914842e69da69ed11b}\label{classfmatio_1_1BasicString_a942883f7019a64914842e69da69ed11b}} 
+const Char $\ast$ {\bfseries get\+Const\+Begin} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ad413af963ba95d2b50568b9cd1cfdc58}\label{classfmatio_1_1BasicString_ad413af963ba95d2b50568b9cd1cfdc58}} 
+const Char $\ast$ {\bfseries get\+Const\+End} () const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a91cf91e2e0ba89441e60170968ac8387}\label{classfmatio_1_1BasicString_a91cf91e2e0ba89441e60170968ac8387}} 
+\mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \& {\bfseries operator=} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a7ffa41860b3a209ce8bd07ab481f3279}\label{classfmatio_1_1BasicString_a7ffa41860b3a209ce8bd07ab481f3279}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_aefe154ad933ea0b509893d3424d4cca5}\label{classfmatio_1_1BasicString_aefe154ad933ea0b509893d3424d4cca5}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}} \&other) const noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ab4bd7a6efc0e4817c041a02698177d2c}\label{classfmatio_1_1BasicString_ab4bd7a6efc0e4817c041a02698177d2c}} 
+Char \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) noexcept
+\item 
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a6269d2b6307304e086bd47ea349b143e}\label{classfmatio_1_1BasicString_a6269d2b6307304e086bd47ea349b143e}} 
+const Char \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index) const noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Char$>$\newline
+class fmatio\+::\+Basic\+String$<$ Char $>$}
+
+
+Definition at line \mbox{\hyperlink{basic__string_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{basic__string_8hpp_source}{basic\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}\label{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!CharType@{CharType}}
+\index{CharType@{CharType}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{CharType}{CharType}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Char\+Type =  Char}
+
+
+
+Define a public typedef for char type used in this class. 
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{basic__string_8hpp_source}{basic\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}\label{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!CharType@{CharType}}
+\index{CharType@{CharType}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{CharType}{CharType}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Char\+Type =  Char}
+
+
+
+Define a public typedef for char type used in this class. 
+
+
+
+Definition at line \mbox{\hyperlink{include_2fmatio__all_8hpp_source_l00229}{229}} of file \mbox{\hyperlink{include_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}\label{classfmatio_1_1BasicString_ae7d4d6a4eeca5011d27a94f02140862c}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!CharType@{CharType}}
+\index{CharType@{CharType}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{CharType}{CharType}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Char\+Type =  Char}
+
+
+
+Define a public typedef for char type used in this class. 
+
+
+
+Definition at line \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source_l00229}{229}} of file \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}\label{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!ConstIterator@{ConstIterator}}
+\index{ConstIterator@{ConstIterator}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{ConstIterator}{ConstIterator}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Const\+Iterator =  const Char$\ast$}
+
+
+
+Define a const iterator to iterate through the data. 
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{basic__string_8hpp_source}{basic\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}\label{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!ConstIterator@{ConstIterator}}
+\index{ConstIterator@{ConstIterator}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{ConstIterator}{ConstIterator}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Const\+Iterator =  const Char$\ast$}
+
+
+
+Define a const iterator to iterate through the data. 
+
+
+
+Definition at line \mbox{\hyperlink{include_2fmatio__all_8hpp_source_l00224}{224}} of file \mbox{\hyperlink{include_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}\label{classfmatio_1_1BasicString_aacd1135bb26f6a6e6b6758692845cd50}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!ConstIterator@{ConstIterator}}
+\index{ConstIterator@{ConstIterator}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{ConstIterator}{ConstIterator}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Const\+Iterator =  const Char$\ast$}
+
+
+
+Define a const iterator to iterate through the data. 
+
+
+
+Definition at line \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source_l00224}{224}} of file \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}\label{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{Iterator}{Iterator}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Iterator =  Char$\ast$}
+
+
+
+Define a iterator to iterate through the data. 
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{basic__string_8hpp_source}{basic\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}\label{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{Iterator}{Iterator}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Iterator =  Char$\ast$}
+
+
+
+Define a iterator to iterate through the data. 
+
+
+
+Definition at line \mbox{\hyperlink{include_2fmatio__all_8hpp_source_l00219}{219}} of file \mbox{\hyperlink{include_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}\label{classfmatio_1_1BasicString_a5376323483587e76f0b4270453f3caac}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{Iterator}{Iterator}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Iterator =  Char$\ast$}
+
+
+
+Define a iterator to iterate through the data. 
+
+
+
+Definition at line \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source_l00219}{219}} of file \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}\label{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!ValueType@{ValueType}}
+\index{ValueType@{ValueType}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{ValueType}{ValueType}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Value\+Type =  Char}
+
+
+
+Define a public typedef for value type used in this class. 
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{basic__string_8hpp_source}{basic\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}\label{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!ValueType@{ValueType}}
+\index{ValueType@{ValueType}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{ValueType}{ValueType}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Value\+Type =  Char}
+
+
+
+Define a public typedef for value type used in this class. 
+
+
+
+Definition at line \mbox{\hyperlink{include_2fmatio__all_8hpp_source_l00234}{234}} of file \mbox{\hyperlink{include_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}\label{classfmatio_1_1BasicString_a76bb714df28eae89b38eaf35f8dfac1e}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!ValueType@{ValueType}}
+\index{ValueType@{ValueType}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{ValueType}{ValueType}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+using \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Value\+Type =  Char}
+
+
+
+Define a public typedef for value type used in this class. 
+
+
+
+Definition at line \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source_l00234}{234}} of file \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ade040b12fa74348195890c3a99e17e56}\label{classfmatio_1_1BasicString_ade040b12fa74348195890c3a99e17e56}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!BasicString@{BasicString}}
+\index{BasicString@{BasicString}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{BasicString()}{BasicString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Basic\+String\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00018}{18}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019         : data(), size(), capacity() \{ initialize(8); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a44ac8cacbf1260560555ed2ebb5982d5}\label{classfmatio_1_1BasicString_a44ac8cacbf1260560555ed2ebb5982d5}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!BasicString@{BasicString}}
+\index{BasicString@{BasicString}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{BasicString()}{BasicString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Basic\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}}}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00022}{22}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023         : data(), size(), capacity() \{ initialize(capacity); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a62806b8ffb8751289c7a3a209c12f082}\label{classfmatio_1_1BasicString_a62806b8ffb8751289c7a3a209c12f082}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!BasicString@{BasicString}}
+\index{BasicString@{BasicString}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{BasicString()}{BasicString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Basic\+String (\begin{DoxyParamCaption}\item[{const Char $\ast$const}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00026}{26}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027         : data(), size(), capacity()}
+\DoxyCodeLine{00028     \{}
+\DoxyCodeLine{00029         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} size = ::strlen(data);}
+\DoxyCodeLine{00030         initialize(size);}
+\DoxyCodeLine{00031         copy(data, size);}
+\DoxyCodeLine{00032     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_abbb8e9fde753b5e36c9b547803ed46d8}\label{classfmatio_1_1BasicString_abbb8e9fde753b5e36c9b547803ed46d8}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!BasicString@{BasicString}}
+\index{BasicString@{BasicString}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{BasicString()}{BasicString()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::\+Basic\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}}$<$ Char $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00035}{35}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036         : data(), size(), capacity()}
+\DoxyCodeLine{00037     \{}
+\DoxyCodeLine{00038         initialize(other.getCapacity());}
+\DoxyCodeLine{00039         copy(other.getData(), other.getSize());}
+\DoxyCodeLine{00040     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_af60e33c1ae700ee6d458c67b1959f859}\label{classfmatio_1_1BasicString_af60e33c1ae700ee6d458c67b1959f859}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!````~BasicString@{$\sim$BasicString}}
+\index{````~BasicString@{$\sim$BasicString}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$BasicString()}{~BasicString()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::$\sim$\mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}}\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00049}{49}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050     \{}
+\DoxyCodeLine{00051         deallocate();}
+\DoxyCodeLine{00052     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a1fcaa6dd5eaaa3b14ce77c66a310f029}\label{classfmatio_1_1BasicString_a1fcaa6dd5eaaa3b14ce77c66a310f029}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!append@{append}}
+\index{append@{append}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::append (\begin{DoxyParamCaption}\item[{const Char $\ast$const}]{begin,  }\item[{\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00127}{127}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128     \{}
+\DoxyCodeLine{00129         \textcolor{keywordflow}{if} (this-\/>size + size + 1 > this-\/>capacity)}
+\DoxyCodeLine{00130             reallocate(this-\/>capacity + size + 1);}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132         ::memcpy(this-\/>data + this-\/>size, begin, size);}
+\DoxyCodeLine{00133         this-\/>size += size;}
+\DoxyCodeLine{00134     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ae398fdadac245c112df38eac2a407989}\label{classfmatio_1_1BasicString_ae398fdadac245c112df38eac2a407989}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!append@{append}}
+\index{append@{append}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::append (\begin{DoxyParamCaption}\item[{const Char $\ast$const}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00121}{121}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122     \{}
+\DoxyCodeLine{00123         append(\textcolor{keywordtype}{string}, ::strlen(\textcolor{keywordtype}{string}));}
+\DoxyCodeLine{00124     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a2aa7d8d40a720518491f3447778cbf62}\label{classfmatio_1_1BasicString_a2aa7d8d40a720518491f3447778cbf62}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!clear@{clear}}
+\index{clear@{clear}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::clear\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00137}{137}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138     \{}
+\DoxyCodeLine{00139         \textcolor{keywordflow}{for} (uint32 i = 0; i < this-\/>size; i++)}
+\DoxyCodeLine{00140             this-\/>data[i].\string~Char();}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142         this-\/>size = 0;}
+\DoxyCodeLine{00143     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a7b1b032a4148dec98c96a2df3c0c3e18}\label{classfmatio_1_1BasicString_a7b1b032a4148dec98c96a2df3c0c3e18}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!getBegin@{getBegin}}
+\index{getBegin@{getBegin}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{getBegin()}{getBegin()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+Char $\ast$ \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::get\+Begin\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00146}{146}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147     \{}
+\DoxyCodeLine{00148         \textcolor{keywordflow}{return} this-\/>data;}
+\DoxyCodeLine{00149     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ad05c022e71861b484829061ef2ed727a}\label{classfmatio_1_1BasicString_ad05c022e71861b484829061ef2ed727a}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::get\+Capacity\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00109}{109}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110     \{}
+\DoxyCodeLine{00111         \textcolor{keywordflow}{return} this-\/>capacity;}
+\DoxyCodeLine{00112     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a942883f7019a64914842e69da69ed11b}\label{classfmatio_1_1BasicString_a942883f7019a64914842e69da69ed11b}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!getConstBegin@{getConstBegin}}
+\index{getConstBegin@{getConstBegin}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{getConstBegin()}{getConstBegin()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+const Char $\ast$ \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::get\+Const\+Begin\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00158}{158}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159     \{}
+\DoxyCodeLine{00160         \textcolor{keywordflow}{return} this-\/>data;}
+\DoxyCodeLine{00161     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ad413af963ba95d2b50568b9cd1cfdc58}\label{classfmatio_1_1BasicString_ad413af963ba95d2b50568b9cd1cfdc58}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!getConstEnd@{getConstEnd}}
+\index{getConstEnd@{getConstEnd}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{getConstEnd()}{getConstEnd()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+const Char $\ast$ \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::get\+Const\+End\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00164}{164}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00165     \{}
+\DoxyCodeLine{00166         \textcolor{keywordflow}{return} this-\/>data + this-\/>size;}
+\DoxyCodeLine{00167     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ac929c841d87fddd6c92a64bce82d945c}\label{classfmatio_1_1BasicString_ac929c841d87fddd6c92a64bce82d945c}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!getData@{getData}}
+\index{getData@{getData}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+const Char $\ast$ \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::get\+Data\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00097}{97}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098     \{}
+\DoxyCodeLine{00099         \textcolor{keywordflow}{return} this-\/>data;}
+\DoxyCodeLine{00100     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_acc321c48add4bd0b693d7292e68c9c22}\label{classfmatio_1_1BasicString_acc321c48add4bd0b693d7292e68c9c22}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!getEnd@{getEnd}}
+\index{getEnd@{getEnd}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{getEnd()}{getEnd()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+Char $\ast$ \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::get\+End\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00152}{152}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00153     \{}
+\DoxyCodeLine{00154         \textcolor{keywordflow}{return} this-\/>data + this-\/>size;}
+\DoxyCodeLine{00155     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a3ec63e5832fe68547ee42a67330888b8}\label{classfmatio_1_1BasicString_a3ec63e5832fe68547ee42a67330888b8}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!getSize@{getSize}}
+\index{getSize@{getSize}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::get\+Size\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00103}{103}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104     \{}
+\DoxyCodeLine{00105         \textcolor{keywordflow}{return} this-\/>size;}
+\DoxyCodeLine{00106     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a38b07e90dce7825bb06c2300aee5a984}\label{classfmatio_1_1BasicString_a38b07e90dce7825bb06c2300aee5a984}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+bool \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::is\+Empty\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00115}{115}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116     \{}
+\DoxyCodeLine{00117         \textcolor{keywordflow}{return} this-\/>data == \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00118     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_aefe154ad933ea0b509893d3424d4cca5}\label{classfmatio_1_1BasicString_aefe154ad933ea0b509893d3424d4cca5}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+bool \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}}$<$ Char $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00214}{214}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00215     \{}
+\DoxyCodeLine{00216         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == other);}
+\DoxyCodeLine{00217     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a0e848e85e4db9e292a7c3424d425f76f}\label{classfmatio_1_1BasicString_a0e848e85e4db9e292a7c3424d425f76f}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}}$<$ Char $>$ \& \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}}$<$ Char $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00170}{170}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171     \{}
+\DoxyCodeLine{00172         deallocate();}
+\DoxyCodeLine{00173         initialize(other.getCapacity());}
+\DoxyCodeLine{00174         copy(other.getData(), other.getSize());}
+\DoxyCodeLine{00175         this-\/>size = other.getSize();}
+\DoxyCodeLine{00176         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00177     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a7ffa41860b3a209ce8bd07ab481f3279}\label{classfmatio_1_1BasicString_a7ffa41860b3a209ce8bd07ab481f3279}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+bool \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfmatio_1_1BasicString}{Basic\+String}}$<$ Char $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00195}{195}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00196     \{}
+\DoxyCodeLine{00197         \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&other)}
+\DoxyCodeLine{00198             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200         \textcolor{keywordflow}{if} (this-\/>data == other.data)}
+\DoxyCodeLine{00201             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203         \textcolor{keywordflow}{if} (this-\/>size != other.size)}
+\DoxyCodeLine{00204             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00205 }
+\DoxyCodeLine{00206         \textcolor{keywordflow}{for} (uint32 i = 0; i < this-\/>size; i++)}
+\DoxyCodeLine{00207             \textcolor{keywordflow}{if} (this-\/>data[i] != other[i])}
+\DoxyCodeLine{00208                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00211     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_a6269d2b6307304e086bd47ea349b143e}\label{classfmatio_1_1BasicString_a6269d2b6307304e086bd47ea349b143e}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+const Char \& \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}}}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00227}{227}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00228     \{}
+\DoxyCodeLine{00229         FMATIO\_ASSERT(index >= 0 \&\& index < this-\/>size, \textcolor{stringliteral}{"{}Index out of bounds!"{}});}
+\DoxyCodeLine{00230         \textcolor{keywordflow}{return} this-\/>data[index];}
+\DoxyCodeLine{00231     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1BasicString_ab4bd7a6efc0e4817c041a02698177d2c}\label{classfmatio_1_1BasicString_ab4bd7a6efc0e4817c041a02698177d2c}} 
+\index{fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!fmatio::BasicString$<$ Char $>$@{fmatio::BasicString$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+Char \& \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}}}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{basic__string_8inl_source_l00220}{220}} of file \mbox{\hyperlink{basic__string_8inl_source}{basic\+\_\+string.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00221     \{}
+\DoxyCodeLine{00222         FMATIO\_ASSERT(index >= 0 \&\& index < this-\/>size, \textcolor{stringliteral}{"{}Index out of bounds!"{}});}
+\DoxyCodeLine{00223         \textcolor{keywordflow}{return} this-\/>data[index];}
+\DoxyCodeLine{00224     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/fmatio/\mbox{\hyperlink{basic__string_8hpp}{basic\+\_\+string.\+hpp}}\item 
+include/\mbox{\hyperlink{include_2fmatio__all_8hpp}{fmatio\+\_\+all.\+hpp}}\item 
+tests/unit-\/tests/\mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp}{fmatio\+\_\+all.\+hpp}}\item 
+include/fmatio/\mbox{\hyperlink{basic__string_8inl}{basic\+\_\+string.\+inl}}\end{DoxyCompactItemize}

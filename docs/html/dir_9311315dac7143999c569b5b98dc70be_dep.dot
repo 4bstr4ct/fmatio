@@ -1,0 +1,11 @@
+digraph "include/fmatio/details"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_5da136c88b575f522fc8a57bfffb7b19 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="fmatio", fontname="Helvetica", fontsize="10", URL="dir_5da136c88b575f522fc8a57bfffb7b19.html"]
+  dir_9311315dac7143999c569b5b98dc70be [shape=box, label="details", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_9311315dac7143999c569b5b98dc70be.html"];
+  }
+}

@@ -1,0 +1,679 @@
+\hypertarget{tests_2unit-tests_2fmatio__all_8hpp}{}\doxysection{tests/unit-\/tests/fmatio\+\_\+all.hpp File Reference}
+\label{tests_2unit-tests_2fmatio__all_8hpp}\index{tests/unit-\/tests/fmatio\_all.hpp@{tests/unit-\/tests/fmatio\_all.hpp}}
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for fmatio\+\_\+all.\+hpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfmatio_1_1BasicStringView}{fmatio\+::\+Basic\+String\+View$<$ Char $>$}}
+\item 
+class \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String$<$ Char $>$}}
+\item 
+class \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{fmatio\+::details\+::\+Basic\+Format\+Writer$<$ Char $>$}}
+\begin{DoxyCompactList}\small\item\em Format writer inteface that provides \textquotesingle{}write\textquotesingle{} method. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter}{fmatio\+::details\+::\+Basic\+Dynamic\+Writer$<$ Container $>$}}
+\begin{DoxyCompactList}\small\item\em A dynamic writer that appends format arguments\textquotesingle{} values. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf}{fmatio\+::details\+::\+Type\+Of$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for unknown type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01bool_01_4}{fmatio\+::details\+::\+Type\+Of$<$ bool $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for boolean type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01wchar_01_4}{fmatio\+::details\+::\+Type\+Of$<$ wchar $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for wide char type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01int8_01_4}{fmatio\+::details\+::\+Type\+Of$<$ int8 $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for signed int8 type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01uint8_01_4}{fmatio\+::details\+::\+Type\+Of$<$ uint8 $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for unsigned int8 type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01int16_01_4}{fmatio\+::details\+::\+Type\+Of$<$ int16 $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for signed int16 type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01uint16_01_4}{fmatio\+::details\+::\+Type\+Of$<$ uint16 $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for unsigned int16 type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01int32_01_4}{fmatio\+::details\+::\+Type\+Of$<$ int32 $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for signed int32 type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01uint32_01_4}{fmatio\+::details\+::\+Type\+Of$<$ uint32 $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for unsigned int32 type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01int64_01_4}{fmatio\+::details\+::\+Type\+Of$<$ int64 $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for signed int64 type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01uint64_01_4}{fmatio\+::details\+::\+Type\+Of$<$ uint64 $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for unsigned int64 type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01float_01_4}{fmatio\+::details\+::\+Type\+Of$<$ float $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for float type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01double_01_4}{fmatio\+::details\+::\+Type\+Of$<$ double $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for double type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01null_01_4}{fmatio\+::details\+::\+Type\+Of$<$ null $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for nullptr type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01void_01_5_01_4}{fmatio\+::details\+::\+Type\+Of$<$ void $\ast$ $>$}}
+\begin{DoxyCompactList}\small\item\em Format argument type definition for void pointer type. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{fmatio\+::details\+::\+Basic\+Format\+Argument$<$ Char $>$}}
+\begin{DoxyCompactList}\small\item\em A format argument, that holds it\textquotesingle{}s type and pointer to it\textquotesingle{}s value address in memory. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList}{fmatio\+::details\+::\+Basic\+Format\+Arguments\+List$<$ Char $>$}}
+\begin{DoxyCompactList}\small\item\em A list to store format arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}{FMATIO\+\_\+\+ASSERT}}(expression,  message)
+\begin{DoxyCompactList}\small\item\em fmatio -\/ C++ header-\/only formatting library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{fmatio\+::details\+::\+Format\+Argument\+Type}} \+: uint8 \{ \newline
+{\bfseries Unknown}
+, {\bfseries Bool}
+, {\bfseries Signed\+Int8}
+, {\bfseries Unsigned\+Int8}
+, \newline
+{\bfseries Signed\+Int16}
+, {\bfseries Unsigned\+Int16}
+, {\bfseries Signed\+Int32}
+, {\bfseries Unsigned\+Int32}
+, \newline
+{\bfseries Signed\+Int64}
+, {\bfseries Unsigned\+Int64}
+, {\bfseries Float}
+, {\bfseries Double}
+, \newline
+{\bfseries Char\+String}
+, {\bfseries Const\+Char\+String}
+, {\bfseries Null\+Pointer}
+, {\bfseries Void\+Pointer}
+, \newline
+{\bfseries Unknown}
+, {\bfseries Bool}
+, {\bfseries Wide\+Char}
+, {\bfseries Signed\+Int8}
+, \newline
+{\bfseries Unsigned\+Int8}
+, {\bfseries Signed\+Int16}
+, {\bfseries Unsigned\+Int16}
+, {\bfseries Signed\+Int32}
+, \newline
+{\bfseries Unsigned\+Int32}
+, {\bfseries Signed\+Int64}
+, {\bfseries Unsigned\+Int64}
+, {\bfseries Float}
+, \newline
+{\bfseries Double}
+, {\bfseries Null\+Pointer}
+, {\bfseries Void\+Pointer}
+, {\bfseries Unknown}
+, \newline
+{\bfseries Bool}
+, {\bfseries Wide\+Char}
+, {\bfseries Signed\+Int8}
+, {\bfseries Unsigned\+Int8}
+, \newline
+{\bfseries Signed\+Int16}
+, {\bfseries Unsigned\+Int16}
+, {\bfseries Signed\+Int32}
+, {\bfseries Unsigned\+Int32}
+, \newline
+{\bfseries Signed\+Int64}
+, {\bfseries Unsigned\+Int64}
+, {\bfseries Float}
+, {\bfseries Double}
+, \newline
+{\bfseries Null\+Pointer}
+, {\bfseries Void\+Pointer}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines types of format arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{int8_8hpp_a77bb0749ad412846331ad7b4a1445e35}{fmatio\+::details\+::int8\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, int8 value) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{uint8_8hpp_abc4baf39c59d49e38126f322733f4438}{fmatio\+::details\+::uint8\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, uint8 value) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{int16_8hpp_ab4e5232bc087d383a1b45c0623ee9f82}{fmatio\+::details\+::int16\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, int16 value) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{uint16_8hpp_a78e158511ce172257a9ed7c1d9959ba9}{fmatio\+::details\+::uint16\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, uint16 value) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{int32_8hpp_aae9d0d1e301da62f44df84cd1458fe78}{fmatio\+::details\+::int32\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, int32 value) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{uint32_8hpp_a6bce4fc60b94a39400fa6e4fc151f8c8}{fmatio\+::details\+::uint32\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, uint32 value) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{int64_8hpp_a1feede8765452ea21904e58299e78f52}{fmatio\+::details\+::int64\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, int64 value) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{uint64_8hpp_a46814a8e2ec0b9a5234b1e408e91cd99}{fmatio\+::details\+::uint64\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, uint64 value) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{float_8hpp_a3ba785380223de4517cdde51ca4770e5}{fmatio\+::details\+::float\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, float value) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{double_8hpp_a2ac1a1180523c10738f3cf123a27aaa4}{fmatio\+::details\+::double\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, double value) noexcept
+\item 
+{\footnotesize template$<$typename Char , typename Value $>$ }\\Basic\+Format\+Argument$<$ Char $>$ \mbox{\hyperlink{arguments_8hpp_aac035f79e5c870904c9c7e2152f5ea95}{fmatio\+::details\+::make\+Format\+Argument}} (const Value \&value) noexcept
+\begin{DoxyCompactList}\small\item\em Make a format argument with provided value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{format_8hpp_a767b99eda650e5c81312adbbea7be9b9}{fmatio\+::format\+Handle}} (details\+::\+Basic\+Format\+Writer$<$ Char $>$ \&writer, Basic\+String\+View$<$ Char $>$ pattern, const details\+::\+Basic\+Format\+Arguments\+List$<$ Char $>$ \&arguments) noexcept
+\item 
+{\footnotesize template$<$typename Result , typename Pattern , typename... Arguments$>$ }\\Result \mbox{\hyperlink{format_8hpp_ae911aceda15385aab555913856e3a203}{fmatio\+::format}} (const Pattern \&pattern, Arguments \&\&... arguments) noexcept
+\item 
+{\footnotesize template$<$typename Pattern , typename... Arguments$>$ }\\Basic\+String$<$ char $>$ \mbox{\hyperlink{format_8hpp_a9b11cdaf7c702f060eb34cb3d94b0c4d}{fmatio\+::format}} (const Pattern \&pattern, Arguments \&\&... arguments) noexcept
+\item 
+{\footnotesize template$<$typename Pattern , typename... Arguments$>$ }\\Basic\+String$<$ wchar $>$ \mbox{\hyperlink{format_8hpp_a684c353d9f06fb89f5a3c13f34f05997}{fmatio\+::wformat}} (const Pattern \&pattern, Arguments \&\&... arguments) noexcept
+\item 
+{\footnotesize template$<$typename Stream , typename Pattern , typename... Arguments$>$ }\\void \mbox{\hyperlink{format_8hpp_a3f6c56f566a6007650a4e8998079b4b5}{fmatio\+::echo}} (Stream \&stream, const Pattern \&pattern, Arguments \&\&... arguments) noexcept
+\item 
+{\footnotesize template$<$typename Char  = char$>$ }\\\+::std\+::ostream \& \mbox{\hyperlink{include_2fmatio__all_8hpp_a2ee0cd074785e26f3ec23a775c43a922}{fmatio\+::operator$<$$<$}} (\+::std\+::ostream \&stream, const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&string) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\\+::std\+::basic\+\_\+string$<$ Char $>$ \mbox{\hyperlink{include_2fmatio__all_8hpp_aa4a462ddcd848b34e4e92a2ef6425dbf}{fmatio\+::to\+Std\+Basic\+String}} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&string) noexcept
+\item 
+{\footnotesize template$<$typename Char  = char$>$ }\\\+::std\+::ostream \& \mbox{\hyperlink{include_2fmatio__all_8hpp_aaff31bba7bcbb170397b3c0ad758446d}{fmatio\+::operator$<$$<$}} (\+::std\+::ostream \&stream, const \mbox{\hyperlink{classfmatio_1_1BasicStringView}{fmatio\+::\+Basic\+String\+View}}$<$ Char $>$ \&string\+View) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\\+::std\+::basic\+\_\+string$<$ Char $>$ \mbox{\hyperlink{include_2fmatio__all_8hpp_a122cc9a76656aba5e1fea2d661729046}{fmatio\+::to\+Std\+Basic\+String}} (const \mbox{\hyperlink{classfmatio_1_1BasicStringView}{fmatio\+::\+Basic\+String\+View}}$<$ Char $>$ \&string\+View) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Joris Baranauskas (jorisb)
+\end{DoxyAuthor}
+Contains all fmatio library files and source code.
+
+\begin{DoxyCopyright}{Copyright}
+© 2022-\/2023 by Joris Baranauskas
+\end{DoxyCopyright}
+Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non -\/ commercial, and by any means. 
+
+Definition in file \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}\label{tests_2unit-tests_2fmatio__all_8hpp_a708342aeee496098aa1eee529e56a22e}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!FMATIO\_ASSERT@{FMATIO\_ASSERT}}
+\index{FMATIO\_ASSERT@{FMATIO\_ASSERT}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{FMATIO\_ASSERT}{FMATIO\_ASSERT}}
+{\footnotesize\ttfamily \#define FMATIO\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{expression,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+
+
+fmatio -\/ C++ header-\/only formatting library. 
+
+This project is free software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non -\/ commercial, and by any means.
+
+In jurisdictions that recognize copyright laws, the author or authors of this software dedicate any and all copyright interest in the software to the public domain.
+
+The software is provided \char`\"{}as is\char`\"{}, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
+
+Author\+: Joris Baranauskas (jorisb) 
+
+Definition at line \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{tests_2unit-tests_2fmatio__all_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}\label{tests_2unit-tests_2fmatio__all_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!FormatArgumentType@{FormatArgumentType}}
+\index{FormatArgumentType@{FormatArgumentType}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{FormatArgumentType}{FormatArgumentType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{fmatio\+::details\+::\+Format\+Argument\+Type}} \+: uint8\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines types of format arguments. 
+
+
+
+Definition at line \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source_l00446}{446}} of file \mbox{\hyperlink{tests_2unit-tests_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00447         \{}
+\DoxyCodeLine{00448             Unknown,}
+\DoxyCodeLine{00449 }
+\DoxyCodeLine{00450             Bool,}
+\DoxyCodeLine{00451             WideChar,}
+\DoxyCodeLine{00452 }
+\DoxyCodeLine{00453             SignedInt8,}
+\DoxyCodeLine{00454             UnsignedInt8,}
+\DoxyCodeLine{00455 }
+\DoxyCodeLine{00456             SignedInt16,}
+\DoxyCodeLine{00457             UnsignedInt16,}
+\DoxyCodeLine{00458 }
+\DoxyCodeLine{00459             SignedInt32,}
+\DoxyCodeLine{00460             UnsignedInt32,}
+\DoxyCodeLine{00461 }
+\DoxyCodeLine{00462             SignedInt64,}
+\DoxyCodeLine{00463             UnsignedInt64,}
+\DoxyCodeLine{00464 }
+\DoxyCodeLine{00465             Float,}
+\DoxyCodeLine{00466             Double,}
+\DoxyCodeLine{00467 }
+\DoxyCodeLine{00468             NullPointer,}
+\DoxyCodeLine{00469             VoidPointer}
+\DoxyCodeLine{00470         \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{double_8hpp_a2ac1a1180523c10738f3cf123a27aaa4}\label{double_8hpp_a2ac1a1180523c10738f3cf123a27aaa4}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!doubleHandle@{doubleHandle}}
+\index{doubleHandle@{doubleHandle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{doubleHandle()}{doubleHandle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::double\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{double_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{double_8hpp_source}{double.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{format_8hpp_a3f6c56f566a6007650a4e8998079b4b5}\label{format_8hpp_a3f6c56f566a6007650a4e8998079b4b5}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!echo@{echo}}
+\index{echo@{echo}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{echo()}{echo()}}
+{\footnotesize\ttfamily template$<$typename Stream , typename Pattern , typename... Arguments$>$ \\
+void fmatio\+::echo (\begin{DoxyParamCaption}\item[{Stream \&}]{stream,  }\item[{const Pattern \&}]{pattern,  }\item[{Arguments \&\&...}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{format_8inl_source_l00069}{69}} of file \mbox{\hyperlink{format_8inl_source}{format.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070     \{}
+\DoxyCodeLine{00071         stream << format<Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...).getData();}
+\DoxyCodeLine{00072     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{float_8hpp_a3ba785380223de4517cdde51ca4770e5}\label{float_8hpp_a3ba785380223de4517cdde51ca4770e5}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!floatHandle@{floatHandle}}
+\index{floatHandle@{floatHandle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{floatHandle()}{floatHandle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::float\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{float_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{float_8hpp_source}{float.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{format_8hpp_ae911aceda15385aab555913856e3a203}\label{format_8hpp_ae911aceda15385aab555913856e3a203}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!format@{format}}
+\index{format@{format}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Result , typename Pattern , typename... Arguments$>$ \\
+Result fmatio\+::format (\begin{DoxyParamCaption}\item[{const Pattern \&}]{pattern,  }\item[{Arguments \&\&...}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{format_8inl_source_l00045}{45}} of file \mbox{\hyperlink{format_8inl_source}{format.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046     \{}
+\DoxyCodeLine{00047         \textcolor{keyword}{using} CharType = Result::CharType; Result result = Result();}
+\DoxyCodeLine{00048         details::BasicDynamicWriter<Result> writer = details::BasicDynamicWriter<Result>(result);}
+\DoxyCodeLine{00049         formatHandle(writer, BasicStringView<CharType>(pattern), \{ details::makeFormatArgument<CharType>(arguments)... \});}
+\DoxyCodeLine{00050         FMATIO\_ASSERT(result.getData() != \textcolor{keyword}{nullptr} \&\& result.getSize() > 0, \textcolor{stringliteral}{"{}Format resulted in a invalid string!"{}});}
+\DoxyCodeLine{00051         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00052     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{format_8hpp_a9b11cdaf7c702f060eb34cb3d94b0c4d}\label{format_8hpp_a9b11cdaf7c702f060eb34cb3d94b0c4d}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!format@{format}}
+\index{format@{format}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Pattern , typename... Arguments$>$ \\
+Basic\+String$<$ char $>$ fmatio\+::format (\begin{DoxyParamCaption}\item[{const Pattern \&}]{pattern,  }\item[{Arguments \&\&...}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{format_8inl_source_l00055}{55}} of file \mbox{\hyperlink{format_8inl_source}{format.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056     \{}
+\DoxyCodeLine{00057         BasicString<char> result = format<BasicString<char>, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);}
+\DoxyCodeLine{00058         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00059     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{format_8hpp_a767b99eda650e5c81312adbbea7be9b9}\label{format_8hpp_a767b99eda650e5c81312adbbea7be9b9}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!formatHandle@{formatHandle}}
+\index{formatHandle@{formatHandle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{formatHandle()}{formatHandle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::format\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{details\+::\+Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{classfmatio_1_1BasicStringView}{Basic\+String\+View}}$<$ Char $>$}]{pattern,  }\item[{const \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList}{details\+::\+Basic\+Format\+Arguments\+List}}$<$ Char $>$ \&}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{format_8inl_source_l00018}{18}} of file \mbox{\hyperlink{format_8inl_source}{format.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019     \{}
+\DoxyCodeLine{00020         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} count = 0;}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022         \textcolor{keywordflow}{for} (BasicStringView<Char>::ConstIterator it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)}
+\DoxyCodeLine{00023             \textcolor{keywordflow}{if} (*it == \textcolor{charliteral}{'\{'} \&\& *(it + 1) == \textcolor{charliteral}{'\}'})}
+\DoxyCodeLine{00024                 count++;}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026         FMATIO\_ASSERT(count == arguments.getSize(), \textcolor{stringliteral}{"{}Format arguments count and their placeholders \(\backslash\)'\{\}\(\backslash\)' count are different!"{}});}
+\DoxyCodeLine{00027         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index = 0;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         \textcolor{keywordflow}{for} (BasicStringView<Char>::ConstIterator it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             \textcolor{keywordflow}{if} (*it == \textcolor{charliteral}{'\{'} \&\& *(it + 1) == \textcolor{charliteral}{'\}'} \&\& index <= pattern.getSize())}
+\DoxyCodeLine{00032             \{}
+\DoxyCodeLine{00033                 arguments.format(writer, index++); it++;}
+\DoxyCodeLine{00034             \}}
+\DoxyCodeLine{00035             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00036             \{}
+\DoxyCodeLine{00037                 writer.write(BasicStringView<Char>(it, 1));}
+\DoxyCodeLine{00038             \}}
+\DoxyCodeLine{00039         \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         writer.write(BasicStringView<Char>((\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"{}\(\backslash\)0"{}}, 1));}
+\DoxyCodeLine{00042     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{int16_8hpp_ab4e5232bc087d383a1b45c0623ee9f82}\label{int16_8hpp_ab4e5232bc087d383a1b45c0623ee9f82}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!int16Handle@{int16Handle}}
+\index{int16Handle@{int16Handle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{int16Handle()}{int16Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::int16\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_ad968226ad742933a9920b369c9b3177c}{int16}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{int16_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{int16_8hpp_source}{int16.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{int32_8hpp_aae9d0d1e301da62f44df84cd1458fe78}\label{int32_8hpp_aae9d0d1e301da62f44df84cd1458fe78}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!int32Handle@{int32Handle}}
+\index{int32Handle@{int32Handle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{int32Handle()}{int32Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::int32\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_a6ef284e280b053cf9d56547d7234d9ca}{int32}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{int32_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{int32_8hpp_source}{int32.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{int64_8hpp_a1feede8765452ea21904e58299e78f52}\label{int64_8hpp_a1feede8765452ea21904e58299e78f52}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!int64Handle@{int64Handle}}
+\index{int64Handle@{int64Handle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{int64Handle()}{int64Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::int64\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_a0cfb2c98c2f3addcbd27d058c8e0b516}{int64}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{int64_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{int64_8hpp_source}{int64.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{int8_8hpp_a77bb0749ad412846331ad7b4a1445e35}\label{int8_8hpp_a77bb0749ad412846331ad7b4a1445e35}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!int8Handle@{int8Handle}}
+\index{int8Handle@{int8Handle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{int8Handle()}{int8Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::int8\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_ace079ae4b82745df4d386cc5ae242fe8}{int8}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{int8_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{int8_8hpp_source}{int8.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{arguments_8hpp_aac035f79e5c870904c9c7e2152f5ea95}\label{arguments_8hpp_aac035f79e5c870904c9c7e2152f5ea95}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!makeFormatArgument@{makeFormatArgument}}
+\index{makeFormatArgument@{makeFormatArgument}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{makeFormatArgument()}{makeFormatArgument()}}
+{\footnotesize\ttfamily template$<$typename Char , typename Value $>$ \\
+Basic\+Format\+Argument$<$ Char $>$ fmatio\+::details\+::make\+Format\+Argument (\begin{DoxyParamCaption}\item[{const Value \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Make a format argument with provided value. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Char} & Char type for the writer.\\
+\hline
+{\em Value} & Value type.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Basic\+Format\+Argument$<$\+Char$>$ -\/ Format argument. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{arguments_8inl_source_l00139}{139}} of file \mbox{\hyperlink{arguments_8inl_source}{arguments.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140         \{}
+\DoxyCodeLine{00141             \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type = TypeOf<Value>::value;}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143             \textcolor{keywordflow}{if} (type != FormatArgumentType::Unknown)}
+\DoxyCodeLine{00144             \{}
+\DoxyCodeLine{00145                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>(type, \&value);}
+\DoxyCodeLine{00146             \}}
+\DoxyCodeLine{00147             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (::std::is\_pointer\_v<Value>)}
+\DoxyCodeLine{00148             \{}
+\DoxyCodeLine{00149                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>(FormatArgumentType::VoidPointer, \&value);}
+\DoxyCodeLine{00150             \}}
+\DoxyCodeLine{00151             }
+\DoxyCodeLine{00152             \textcolor{keywordflow}{return} BasicFormatArgument<Char>();}
+\DoxyCodeLine{00153         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{include_2fmatio__all_8hpp_a2ee0cd074785e26f3ec23a775c43a922}\label{include_2fmatio__all_8hpp_a2ee0cd074785e26f3ec23a775c43a922}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Char  = char$>$ \\
+\+::std\+::ostream \& fmatio\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\+::std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2fmatio__all_8hpp_source_l00760}{760}} of file \mbox{\hyperlink{include_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00762     \{}
+\DoxyCodeLine{00763         stream << \textcolor{keywordtype}{string}.getData();}
+\DoxyCodeLine{00764         \textcolor{keywordflow}{return} stream;}
+\DoxyCodeLine{00765     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{include_2fmatio__all_8hpp_aaff31bba7bcbb170397b3c0ad758446d}\label{include_2fmatio__all_8hpp_aaff31bba7bcbb170397b3c0ad758446d}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Char  = char$>$ \\
+\+::std\+::ostream \& fmatio\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\+::std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classfmatio_1_1BasicStringView}{fmatio\+::\+Basic\+String\+View}}$<$ Char $>$ \&}]{string\+View }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2fmatio__all_8hpp_source_l00773}{773}} of file \mbox{\hyperlink{include_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00775     \{}
+\DoxyCodeLine{00776         stream << stringView.getData();}
+\DoxyCodeLine{00777         \textcolor{keywordflow}{return} stream;}
+\DoxyCodeLine{00778     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{include_2fmatio__all_8hpp_aa4a462ddcd848b34e4e92a2ef6425dbf}\label{include_2fmatio__all_8hpp_aa4a462ddcd848b34e4e92a2ef6425dbf}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!toStdBasicString@{toStdBasicString}}
+\index{toStdBasicString@{toStdBasicString}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{toStdBasicString()}{toStdBasicString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\+::std\+::basic\+\_\+string$<$ Char $>$ fmatio\+::to\+Std\+Basic\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2fmatio__all_8hpp_source_l00768}{768}} of file \mbox{\hyperlink{include_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00769     \{}
+\DoxyCodeLine{00770         return ::std::basic\_string<Char>(\textcolor{keywordtype}{string}.getData(), \textcolor{keywordtype}{string}.getSize());}
+\DoxyCodeLine{00771     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{include_2fmatio__all_8hpp_a122cc9a76656aba5e1fea2d661729046}\label{include_2fmatio__all_8hpp_a122cc9a76656aba5e1fea2d661729046}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!toStdBasicString@{toStdBasicString}}
+\index{toStdBasicString@{toStdBasicString}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{toStdBasicString()}{toStdBasicString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+\+::std\+::basic\+\_\+string$<$ Char $>$ fmatio\+::to\+Std\+Basic\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfmatio_1_1BasicStringView}{fmatio\+::\+Basic\+String\+View}}$<$ Char $>$ \&}]{string\+View }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2fmatio__all_8hpp_source_l00781}{781}} of file \mbox{\hyperlink{include_2fmatio__all_8hpp_source}{fmatio\+\_\+all.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00782     \{}
+\DoxyCodeLine{00783         return ::std::basic\_string<Char>(stringView.getData(), stringView.getSize());}
+\DoxyCodeLine{00784     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{uint16_8hpp_a78e158511ce172257a9ed7c1d9959ba9}\label{uint16_8hpp_a78e158511ce172257a9ed7c1d9959ba9}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!uint16Handle@{uint16Handle}}
+\index{uint16Handle@{uint16Handle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{uint16Handle()}{uint16Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::uint16\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_af57d680165131ff29b1c1755cfefae3c}{uint16}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{uint16_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{uint16_8hpp_source}{uint16.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{uint32_8hpp_a6bce4fc60b94a39400fa6e4fc151f8c8}\label{uint32_8hpp_a6bce4fc60b94a39400fa6e4fc151f8c8}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!uint32Handle@{uint32Handle}}
+\index{uint32Handle@{uint32Handle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{uint32Handle()}{uint32Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::uint32\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{uint32_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{uint32_8hpp_source}{uint32.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{uint64_8hpp_a46814a8e2ec0b9a5234b1e408e91cd99}\label{uint64_8hpp_a46814a8e2ec0b9a5234b1e408e91cd99}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!uint64Handle@{uint64Handle}}
+\index{uint64Handle@{uint64Handle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{uint64Handle()}{uint64Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::uint64\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_a8953065d6027eded6c8e1c86b404d63c}{uint64}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{uint64_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{uint64_8hpp_source}{uint64.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{uint8_8hpp_abc4baf39c59d49e38126f322733f4438}\label{uint8_8hpp_abc4baf39c59d49e38126f322733f4438}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!uint8Handle@{uint8Handle}}
+\index{uint8Handle@{uint8Handle}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{uint8Handle()}{uint8Handle()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::uint8\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_a21697faae9638766e0f71a8d807504c2}{uint8}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{uint8_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{uint8_8hpp_source}{uint8.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
+\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{format_8hpp_a684c353d9f06fb89f5a3c13f34f05997}\label{format_8hpp_a684c353d9f06fb89f5a3c13f34f05997}} 
+\index{fmatio\_all.hpp@{fmatio\_all.hpp}!wformat@{wformat}}
+\index{wformat@{wformat}!fmatio\_all.hpp@{fmatio\_all.hpp}}
+\doxysubsubsection{\texorpdfstring{wformat()}{wformat()}}
+{\footnotesize\ttfamily template$<$typename Pattern , typename... Arguments$>$ \\
+Basic\+String$<$ wchar $>$ fmatio\+::wformat (\begin{DoxyParamCaption}\item[{const Pattern \&}]{pattern,  }\item[{Arguments \&\&...}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{format_8inl_source_l00062}{62}} of file \mbox{\hyperlink{format_8inl_source}{format.\+inl}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063     \{}
+\DoxyCodeLine{00064         BasicString<wchar> result = format<BasicString<wchar>, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00066     \}}
+
+\end{DoxyCode}

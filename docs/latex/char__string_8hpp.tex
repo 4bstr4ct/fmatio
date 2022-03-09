@@ -1,0 +1,71 @@
+\hypertarget{char__string_8hpp}{}\doxysection{include/fmatio/details/char\+\_\+string.hpp File Reference}
+\label{char__string_8hpp}\index{include/fmatio/details/char\_string.hpp@{include/fmatio/details/char\_string.hpp}}
+{\ttfamily \#include $<$fmatio/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/types.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/writers.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for char\+\_\+string.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{char__string_8hpp_a3a2f8919026934fb510250ec20d80ffc}{fmatio\+::details\+::char\+String\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, char $\ast$value) noexcept
+\item 
+{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{char__string_8hpp_a48bd731dbabea1096cda1d983369090a}{fmatio\+::details\+::char\+String\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, const char $\ast$value) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Joris Baranauskas (jorisb)
+\end{DoxyAuthor}
+Defines functions to write char string.
+
+\begin{DoxyCopyright}{Copyright}
+© 2022-\/2023 by Joris Baranauskas
+\end{DoxyCopyright}
+This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+Definition in file \mbox{\hyperlink{char__string_8hpp_source}{char\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{char__string_8hpp_a3a2f8919026934fb510250ec20d80ffc}\label{char__string_8hpp_a3a2f8919026934fb510250ec20d80ffc}} 
+\index{char\_string.hpp@{char\_string.hpp}!charStringHandle@{charStringHandle}}
+\index{charStringHandle@{charStringHandle}!char\_string.hpp@{char\_string.hpp}}
+\doxysubsubsection{\texorpdfstring{charStringHandle()}{charStringHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::char\+String\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{char__string_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{char__string_8hpp_source}{char\+\_\+string.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             writer.write(BasicStringView<Char>(value));}
+\DoxyCodeLine{00033         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{char__string_8hpp_a48bd731dbabea1096cda1d983369090a}\label{char__string_8hpp_a48bd731dbabea1096cda1d983369090a}} 
+\index{char\_string.hpp@{char\_string.hpp}!charStringHandle@{charStringHandle}}
+\index{charStringHandle@{charStringHandle}!char\_string.hpp@{char\_string.hpp}}
+\doxysubsubsection{\texorpdfstring{charStringHandle()}{charStringHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void fmatio\+::details\+::char\+String\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{char__string_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{char__string_8hpp_source}{char\+\_\+string.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037         \{}
+\DoxyCodeLine{00038             writer.write(BasicStringView<Char>(value));}
+\DoxyCodeLine{00039         \}}
+
+\end{DoxyCode}

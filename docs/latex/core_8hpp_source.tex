@@ -1,0 +1,53 @@
+\hypertarget{core_8hpp_source}{}\doxysection{core.\+hpp}
+\label{core_8hpp_source}\index{include/fmatio/core.hpp@{include/fmatio/core.hpp}}
+\mbox{\hyperlink{core_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#ifndef FMATIO\_INCLUDE\_FMATIO\_CORE\_HPP}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00016}00016 \textcolor{preprocessor}{\#define FMATIO\_INCLUDE\_FMATIO\_CORE\_HPP}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00018}00018 \textcolor{preprocessor}{\#if FMATIO\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00019}00019 \textcolor{preprocessor}{\#   include <iostream>}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#   define FMATIO\_ASSERT(expression, message) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00021}00021 \textcolor{preprocessor}{\{ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00022}00022 \textcolor{preprocessor}{    if (!(expression)) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00023}00023 \textcolor{preprocessor}{    \{ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00024}00024 \textcolor{preprocessor}{        ::std::cerr << "{}Assertion failed: "{}} << message << "{}\(\backslash\)n\(\backslash\)tFile: "{} << \_\_FILE\_\_ << "{}. Line: "{} << \_\_LINE\_\_ << "{}."{} << ::std::endl; \(\backslash\)}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00025}00025         ::std::exit(-\/1); \(\backslash\)}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00026}00026     \} \(\backslash\)}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00028}00028 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#   define FMATIO\_ASSERT(expression, message)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#if !defined(FMATIO\_MOVE\_SEMANTICS\_ENABLED)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#   if !defined(PYRONET\_DISABLE\_MOVE\_SEMANTICS)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#       if defined(\_\_clang\_\_)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00035}00035 \textcolor{preprocessor}{\#           if \_\_has\_feature(\_\_cxx\_rvalue\_references\_\_)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00036}00036 \textcolor{preprocessor}{\#               define FMATIO\_MOVE\_SEMANTICS\_ENABLED 1}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00037}00037 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#       if defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#           if ((\_\_GNUC\_\_ == 4) \&\& (\_\_GNUC\_MINOR\_\_ >= 8)) || (\_\_GNUC\_\_ > 4)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#               if (\_\_cplusplus >= 201103) || defined(\_\_GXX\_EXPERIMENTAL\_CXX0X\_\_)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#                   define FMATIO\_MOVE\_SEMANTICS\_ENABLED 1}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#               endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#       if defined(\_MSC\_VER) \&\& (\_MSC\_VER >= 1700)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#           define FMATIO\_MOVE\_SEMANTICS\_ENABLED 1}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00048}00048 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00049}00049 \textcolor{preprocessor}{\#       if defined(\_\_INTEL\_CXX11\_MODE\_\_)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#           if defined(\_\_INTEL\_COMPILER) \&\& (\_\_INTEL\_COMPILER >= 1500)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00051}00051 \textcolor{preprocessor}{\#               define FMATIO\_MOVE\_SEMANTICS\_ENABLED 1}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00052}00052 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00053}00053 \textcolor{preprocessor}{\#           if defined(\_\_ICL) \&\& (\_\_ICL >= 1500)}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00054}00054 \textcolor{preprocessor}{\#               define FMATIO\_MOVE\_SEMANTICS\_ENABLED 1}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00055}00055 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00056}00056 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00057}00057 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00058}00058 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{core_8hpp_source_l00060}00060 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

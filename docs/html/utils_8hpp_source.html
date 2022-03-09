@@ -121,7 +121,7 @@ $(function() {
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_class" href="classUnitTestPool.html">UnitTestPool</a>(const ::std::string&amp; title)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        : tests(), length(title.size())</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        : tests(), length((<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)title.size())</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        ::std::cout &lt;&lt; <span class="stringliteral">&quot;\033[1;33m[ &quot;</span> &lt;&lt; title &lt;&lt; <span class="stringliteral">&quot; ]\033[0m&quot;</span> &lt;&lt; ::std::endl;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>

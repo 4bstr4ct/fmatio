@@ -1,0 +1,28 @@
+\hypertarget{writers_8inl_source}{}\doxysection{writers.\+inl}
+\label{writers_8inl_source}\index{include/fmatio/details/writers.inl@{include/fmatio/details/writers.inl}}
+\mbox{\hyperlink{writers_8inl}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00015}00015 \textcolor{keyword}{namespace }fmatio}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00017}00017     \textcolor{keyword}{namespace }details}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00018}00018     \{}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00019}00019         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00020}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_a72fd9cc649478a7f2c226e6f2675918b}{00020}}         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter_a72fd9cc649478a7f2c226e6f2675918b}{BasicFormatWriter<Char>::\string~BasicFormatWriter}}() noexcept \{ \};}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00022}00022         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Container>}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00023}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_ae5d13def5ead27211143dfca3c233322}{00023}}         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_ae5d13def5ead27211143dfca3c233322}{BasicDynamicWriter<Container>::BasicDynamicWriter}}(Container\& container) noexcept}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00024}00024             : container(container) \{ \}}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00026}00026         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Container>}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00027}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_afd2125e46fe2cf50c1cc4c05ef22e0d4}{00027}}         \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_afd2125e46fe2cf50c1cc4c05ef22e0d4}{BasicDynamicWriter<Container>::\string~BasicDynamicWriter}}() noexcept \{ \}}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00029}00029         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Container>}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00030}\mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_ac386c2750d67e83ec85fb9a4cc051330}{00030}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicDynamicWriter_ac386c2750d67e83ec85fb9a4cc051330}{BasicDynamicWriter<Container>::write}}(\mbox{\hyperlink{classfmatio_1_1BasicStringView}{BasicStringView<typename Container::CharType>}} stringified) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00031}00031         \{}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00032}00032             this-\/>container.append(stringified.getData(), stringified.getSize());}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00033}00033         \}}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00034}00034     \}}
+\DoxyCodeLine{\Hypertarget{writers_8inl_source_l00035}00035 \}}
+
+\end{DoxyCode}
