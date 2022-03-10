@@ -15,6 +15,10 @@
 #ifndef FMATIO_INCLUDE_FMATIO_BASIC_STRING_VIEW_HPP
 #define FMATIO_INCLUDE_FMATIO_BASIC_STRING_VIEW_HPP
 
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
+
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
 
@@ -27,17 +31,17 @@ namespace fmatio
 		/**
 		 * Define a const iterator to iterate through the data.
 		 */
-		using ConstIterator = const Char*;
+		using ConstIterator = typename const Char*;
 
 		/**
 		 * Define a public typedef for char type used in this class.
 		 */
-		using CharType = Char;
+		using CharType = typename Char;
 		
 		/**
 		 * Define a public typedef for value type used in this class.
 		 */
-		using ValueType = Char;
+		using ValueType = typename Char;
 
 	private:
 		const Char* data;

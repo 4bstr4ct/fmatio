@@ -15,6 +15,11 @@
 #ifndef FMATIO_INCLUDE_FMATIO_DETAILS_FORMAT_TRAITS_HPP
 #define FMATIO_INCLUDE_FMATIO_DETAILS_FORMAT_TRAITS_HPP
 
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
+
+#include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
 
 namespace fmatio

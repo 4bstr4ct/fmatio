@@ -15,12 +15,26 @@
 #ifndef FMATIO_INCLUDE_FMATIO_CORE_HPP
 #define FMATIO_INCLUDE_FMATIO_CORE_HPP
 
-#if FMATIO_CXX_STANDARD >= 11
-#	define FMATIO_NOEXCEPT noexcept
-#	define FMATIO_CONSTEXPR constexpr
-#else if FMATIO_CXX_STANDARD < 11
-#	define FMATIO_NOEXCEPT
-#	define FMATIO_CONSTEXPR
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
+
+#define FMATIO_INLINE inline
+
+#if defined(_MSC_VER) && (_MSC_VER < 1900)
+#    define FMATIO_NOEXCEPT _NOEXCEPT
+#    define FMATIO_CONSTEXPR
+#else
+#    define FMATIO_NOEXCEPT noexcept
+#    define FMATIO_CONSTEXPR constexpr
+#endif
+
+#if defined(__GNUC__) || defined(__clang__)
+#    define FMATIO_DEPRECATED __attribute__((deprecated))
+#elif defined(_MSC_VER)
+#    define FMATIO_DEPRECATED __declspec(deprecated)
+#else
+#    define FMATIO_DEPRECATED
 #endif
 
 #if FMATIO_DEBUG

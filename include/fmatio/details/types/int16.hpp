@@ -15,6 +15,10 @@
 #ifndef FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_INT16_HPP
 #define FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_INT16_HPP
 
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
+
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
 
@@ -27,7 +31,7 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		void int16Handle(BasicFormatWriter<Char>& writer, int16 value) FMATIO_NOEXCEPT
+		FMATIO_INLINE void int16Handle(BasicFormatWriter<Char>& writer, int16 value) FMATIO_NOEXCEPT
 		{
 			::std::string string = ::std::to_string(value);	// Have to reimplement this!
 			writer.write(BasicStringView<Char>(string.data()));

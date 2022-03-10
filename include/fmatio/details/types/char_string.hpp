@@ -15,6 +15,10 @@
 #ifndef FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_CHAR_STRING_HPP
 #define FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_CHAR_STRING_HPP
 
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
+
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
 
@@ -27,13 +31,13 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		void charStringHandle(BasicFormatWriter<Char>& writer, char* value) FMATIO_NOEXCEPT
+		FMATIO_INLINE void charStringHandle(BasicFormatWriter<Char>& writer, char* value) FMATIO_NOEXCEPT
 		{
 			writer.write(BasicStringView<Char>(value));
 		}
 
 		template<typename Char>
-		void charStringHandle(BasicFormatWriter<Char>& writer, const char* value) FMATIO_NOEXCEPT
+		FMATIO_INLINE void charStringHandle(BasicFormatWriter<Char>& writer, const char* value) FMATIO_NOEXCEPT
 		{
 			writer.write(BasicStringView<Char>(value));
 		}

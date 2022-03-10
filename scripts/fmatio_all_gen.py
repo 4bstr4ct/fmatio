@@ -25,4 +25,3 @@ with open('fmatio_all_2.hpp', 'w') as output_file:
 		with open(file, 'r') as inl_file:
 			content = inl_file.read()
 			output_file.write(content)
-

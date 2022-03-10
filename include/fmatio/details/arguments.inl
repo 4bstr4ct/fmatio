@@ -141,7 +141,7 @@ namespace fmatio
 		}
 
 		template<typename Char, typename Value>
-		BasicFormatArgument<Char> makeFormatArgument(const Value& value) FMATIO_NOEXCEPT
+		FMATIO_INLINE BasicFormatArgument<Char> makeFormatArgument(const Value& value) FMATIO_NOEXCEPT
 		{
 			FormatArgumentType type = TypeOf<Value>::value;
 

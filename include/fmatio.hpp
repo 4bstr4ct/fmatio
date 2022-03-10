@@ -16,6 +16,10 @@
 #ifndef FMATIO_INCLUDE_FMATIO_HPP
 #define FMATIO_INCLUDE_FMATIO_HPP
 
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
+
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
 
