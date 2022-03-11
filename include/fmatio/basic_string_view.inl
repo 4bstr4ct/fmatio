@@ -12,55 +12,57 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
+#include <fmatio/details/basic_string_utilities.hpp>
+
 namespace fmatio
 {
 	template<typename Char>
-	BasicStringView<Char>::BasicStringView() noexcept
+	BasicStringView<Char>::BasicStringView() FMATIO_NOEXCEPT
 		: data(), size() { }
 
 	template<typename Char>
-	BasicStringView<Char>::BasicStringView(const Char* data) noexcept
-		: data(data), size((uint32)::strlen(data)) { }
+	BasicStringView<Char>::BasicStringView(const Char* data) FMATIO_NOEXCEPT
+		: data(data), size(details::stringSize<Char>(data)) { }
 
 	template<typename Char>
-	BasicStringView<Char>::BasicStringView(const Char* data, uint32 size) noexcept
+	BasicStringView<Char>::BasicStringView(const Char* data, uint32 size) FMATIO_NOEXCEPT
 		: data(data), size(size) { }
 
 	template<typename Char>
-	BasicStringView<Char>::~BasicStringView() noexcept { }
+	BasicStringView<Char>::~BasicStringView() FMATIO_NOEXCEPT { }
 
 	template<typename Char>
-	const Char* BasicStringView<Char>::getData() const noexcept
+	const Char* BasicStringView<Char>::getData() const FMATIO_NOEXCEPT
 	{
 		return this->data;
 	}
 
 	template<typename Char>
-	uint32 BasicStringView<Char>::getSize() const noexcept
+	uint32 BasicStringView<Char>::getSize() const FMATIO_NOEXCEPT
 	{
 		return this->size;
 	}
 
 	template<typename Char>
-	bool BasicStringView<Char>::isEmpty() const noexcept
+	bool BasicStringView<Char>::isEmpty() const FMATIO_NOEXCEPT
 	{
 		return this->data == nullptr;
 	}
 
 	template<typename Char>
-	const Char* BasicStringView<Char>::getConstBegin() const noexcept
+	const Char* BasicStringView<Char>::getConstBegin() const FMATIO_NOEXCEPT
 	{
 		return this->data;
 	}
 
 	template<typename Char>
-	const Char* BasicStringView<Char>::getConstEnd() const noexcept
+	const Char* BasicStringView<Char>::getConstEnd() const FMATIO_NOEXCEPT
 	{
 		return this->data + this->size;
 	}
 
 	template<typename Char>
-	bool BasicStringView<Char>::operator ==(const BasicStringView<Char>& other) const noexcept
+	bool BasicStringView<Char>::operator ==(const BasicStringView<Char>& other) const FMATIO_NOEXCEPT
 	{
 		if (this == &other)
 			return true;
@@ -79,13 +81,13 @@ namespace fmatio
 	}
 
 	template<typename Char>
-	bool BasicStringView<Char>::operator !=(const BasicStringView<Char>& other) const noexcept
+	bool BasicStringView<Char>::operator !=(const BasicStringView<Char>& other) const FMATIO_NOEXCEPT
 	{
 		return !(*this == other);
 	}
 
 	template<typename Char>
-	const Char& BasicStringView<Char>::operator [](uint32 index) const noexcept
+	const Char& BasicStringView<Char>::operator [](uint32 index) const FMATIO_NOEXCEPT
 	{
 		FMATIO_ASSERT(index >= 0 && index < this->size, "Index out of bounds!");
 		return this->data[index];

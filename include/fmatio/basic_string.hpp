@@ -15,6 +15,10 @@
 #ifndef FMATIO_INCLUDE_FMATIO_BASIC_STRING_HPP
 #define FMATIO_INCLUDE_FMATIO_BASIC_STRING_HPP
 
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
+
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
 
@@ -50,66 +54,68 @@ namespace fmatio
 		uint32 capacity;
 
 	public:
-		BasicString() noexcept;
+		BasicString() FMATIO_NOEXCEPT;
 
-		BasicString(uint32 capacity) noexcept;
+		BasicString(uint32 capacity) FMATIO_NOEXCEPT;
 
-		BasicString(const Char* const data) noexcept;
+		BasicString(const Char* const data) FMATIO_NOEXCEPT;
 
-		BasicString(const BasicString& other) noexcept;
+		BasicString(const BasicString& other) FMATIO_NOEXCEPT;
 
 #if defined(FMATIO_MOVE_SEMANTICS_ENABLED) && FMATIO_MOVE_SEMANTICS_ENABLED == 1
-		BasicString(BasicString&& other) noexcept;
+		BasicString(BasicString&& other) FMATIO_NOEXCEPT;
 #endif
 
-		~BasicString() noexcept;
+		~BasicString() FMATIO_NOEXCEPT;
 
 	private:
-		void initialize(uint32 capacity) noexcept;
+		void initialize(uint32 capacity) FMATIO_NOEXCEPT;
 
-		void reallocate(uint32 newCapacity) noexcept;
+		void reallocate(uint32 newCapacity) FMATIO_NOEXCEPT;
 
-		void copy(const Char* const data, uint32 size) noexcept;
+		void copy(const Char* const data, uint32 size) FMATIO_NOEXCEPT;
 
-		void deallocate() noexcept;
-
-	public:
-		const Char* getData() const noexcept;
-
-		uint32 getSize() const noexcept;
-
-		uint32 getCapacity() const noexcept;
-
-		bool isEmpty() const noexcept;
-
-		void append(const Char* const string) noexcept;
-
-		void append(const Char* const begin, uint32 size) noexcept;
-
-		void clear() noexcept;
-
-		Char* getBegin() noexcept;
-		
-		Char* getEnd() noexcept;
-
-		const Char* getConstBegin() const noexcept;
-		
-		const Char* getConstEnd() const noexcept;
+		void deallocate() FMATIO_NOEXCEPT;
 
 	public:
-		BasicString& operator =(const BasicString& other) noexcept;
+		Char* getData() FMATIO_NOEXCEPT;
+
+		const Char* getData() const FMATIO_NOEXCEPT;
+
+		uint32 getSize() const FMATIO_NOEXCEPT;
+
+		uint32 getCapacity() const FMATIO_NOEXCEPT;
+
+		bool isEmpty() const FMATIO_NOEXCEPT;
+
+		void append(const Char* const string) FMATIO_NOEXCEPT;
+
+		void append(const Char* const begin, uint32 size) FMATIO_NOEXCEPT;
+
+		void clear() FMATIO_NOEXCEPT;
+
+		Char* getBegin() FMATIO_NOEXCEPT;
+		
+		Char* getEnd() FMATIO_NOEXCEPT;
+
+		const Char* getConstBegin() const FMATIO_NOEXCEPT;
+		
+		const Char* getConstEnd() const FMATIO_NOEXCEPT;
+
+	public:
+		BasicString& operator =(const BasicString& other) FMATIO_NOEXCEPT;
 
 #if defined(FMATIO_MOVE_SEMANTICS_ENABLED) && FMATIO_MOVE_SEMANTICS_ENABLED == 1
-		BasicString& operator =(BasicString&& other) noexcept;
+		BasicString& operator =(BasicString&& other) FMATIO_NOEXCEPT;
 #endif
 
-		bool operator ==(const BasicString& other) const noexcept;
+		bool operator ==(const BasicString& other) const FMATIO_NOEXCEPT;
 
-		bool operator !=(const BasicString& other) const noexcept;
+		bool operator !=(const BasicString& other) const FMATIO_NOEXCEPT;
 
-		Char& operator [](uint32 index) noexcept;
+		Char& operator [](uint32 index) FMATIO_NOEXCEPT;
 
-		const Char& operator [](uint32 index) const noexcept;
+		const Char& operator [](uint32 index) const FMATIO_NOEXCEPT;
 	};
 }
 

@@ -1,9 +1,9 @@
 /*******************************************************************************
- * @file double.hpp
+ * @file uint8.hpp
  *
  * @author Joris Baranauskas (jorisb)
  *
- * Defines functions to write double.
+ * Defines functions to write unsigned 8-bit integer.
  *
  * @copyright © 2022-2023 by Joris Baranauskas
  *
@@ -12,8 +12,12 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_DOUBLE_HPP
-#define FMATIO_INCLUDE_FMATIO_DETAILS_DOUBLE_HPP
+#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_UINT8_HPP
+#define FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_UINT8_HPP
+
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
@@ -27,7 +31,7 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		void doubleHandle(BasicFormatWriter<Char>& writer, double value) noexcept
+		FMATIO_INLINE void uint8Handle(BasicFormatWriter<Char>& writer, uint8 value) FMATIO_NOEXCEPT
 		{
 			::std::string string = ::std::to_string(value);	// Have to reimplement this!
 			writer.write(BasicStringView<Char>(string.data()));

@@ -1,9 +1,9 @@
 /*******************************************************************************
- * @file int8.hpp
+ * @file bool.hpp
  *
  * @author Joris Baranauskas (jorisb)
  *
- * Defines functions to write signed 8-bit integer.
+ * Defines functions to write boolean.
  *
  * @copyright © 2022-2023 by Joris Baranauskas
  *
@@ -12,13 +12,18 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_INT8_HPP
-#define FMATIO_INCLUDE_FMATIO_DETAILS_INT8_HPP
+#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_BOOL_HPP
+#define FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_BOOL_HPP
+
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
 
 #include <fmatio/details/writers.hpp>
+#include <fmatio/details/format_traits.hpp>
 
 #include <string>
 
@@ -27,9 +32,9 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		void int8Handle(BasicFormatWriter<Char>& writer, int8 value) noexcept
+		FMATIO_INLINE void boolHandle(BasicFormatWriter<Char>& writer, bool value) FMATIO_NOEXCEPT
 		{
-			::std::string string = ::std::to_string(value);	// Have to reimplement this!
+			::std::string string = value ? FormatTraits<Char>::trueStringified : FormatTraits<Char>::falseStringified;	// Have to reimplement this!
 			writer.write(BasicStringView<Char>(string.data()));
 		}
 	}

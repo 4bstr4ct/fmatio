@@ -15,206 +15,21 @@
 #ifndef FMATIO_INCLUDE_FMATIO_DETAILS_ARGUMENTS_HPP
 #define FMATIO_INCLUDE_FMATIO_DETAILS_ARGUMENTS_HPP
 
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
+
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
+
+#include <fmatio/details/type_traits.hpp>
+
+#include <initializer_list>
 
 namespace fmatio
 {
 	namespace details
 	{
-		/**
-		 * Defines types of format arguments.
-		 */
-		enum class FormatArgumentType : uint8
-		{
-			Unknown,
-			Bool,
-
-			SignedInt8,
-			UnsignedInt8,
-
-			SignedInt16,
-			UnsignedInt16,
-
-			SignedInt32,
-			UnsignedInt32,
-
-			SignedInt64,
-			UnsignedInt64,
-
-			Float,
-			Double,
-
-			CharString,
-			ConstCharString,
-
-			NullPointer,
-			VoidPointer
-		};
-
-		/**
-		 * Format argument type definition for unknown type.
-		 * 
-		 * @tparam T
-		 * 		Type of the argument.
-		 */
-		template<typename T>
-		struct TypeOf
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::Unknown;
-		};
-
-		/**
-		 * Format argument type definition for boolean type.
-		 */
-		template<>
-		struct TypeOf<bool>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::Bool;
-		};
-
-		/**
-		 * Format argument type definition for signed int8 type.
-		 */
-		template<>
-		struct TypeOf<int8>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::SignedInt8;
-		};
-
-		/**
-		 * Format argument type definition for unsigned int8 type.
-		 */
-		template<>
-		struct TypeOf<uint8>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::UnsignedInt8;
-		};
-
-		/**
-		 * Format argument type definition for signed int16 type.
-		 */
-		template<>
-		struct TypeOf<int16>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::SignedInt16;
-		};
-
-		/**
-		 * Format argument type definition for unsigned int16 type.
-		 */
-		template<>
-		struct TypeOf<uint16>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::UnsignedInt16;
-		};
-
-		/**
-		 * Format argument type definition for signed int32 type.
-		 */
-		template<>
-		struct TypeOf<int32>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::SignedInt32;
-		};
-
-		/**
-		 * Format argument type definition for unsigned int32 type.
-		 */
-		template<>
-		struct TypeOf<uint32>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::UnsignedInt32;
-		};
-
-		/**
-		 * Format argument type definition for signed int64 type.
-		 */
-		template<>
-		struct TypeOf<int64>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::SignedInt64;
-		};
-
-		/**
-		 * Format argument type definition for unsigned int64 type.
-		 */
-		template<>
-		struct TypeOf<uint64>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::UnsignedInt64;
-		};
-
-		/**
-		 * Format argument type definition for float type.
-		 */
-		template<>
-		struct TypeOf<float>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::Float;
-		};
-
-		/**
-		 * Format argument type definition for double type.
-		 */
-		template<>
-		struct TypeOf<double>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::Double;
-		};
-
-		/**
-		 * Format argument type definition for char string type.
-		 */
-		template<>
-		struct TypeOf<char*>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::CharString;
-		};
-
-		/**
-		 * Format argument type definition for const char string type.
-		 */
-		template<>
-		struct TypeOf<const char*>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::ConstCharString;
-		};
-
-		/**
-		 * Format argument type definition for nullptr type.
-		 */
-		template<>
-		struct TypeOf<null>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::NullPointer;
-		};
-
-		/**
-		 * Format argument type definition for void pointer type.
-		 */
-		template<>
-		struct TypeOf<void*>
-		{
-		public:
-			constexpr static FormatArgumentType value = FormatArgumentType::VoidPointer;
-		};
-
 		/**
 		 * A format argument, that holds it's type and pointer to it's value address in memory.
 		 * 
@@ -232,7 +47,7 @@ namespace fmatio
 			/**
 			 * Construct a new basic Format argument object.
 			 */
-			BasicFormatArgument() noexcept;
+			BasicFormatArgument() FMATIO_NOEXCEPT;
 
 			/**
 			 * Construct a new basic Format argument object.
@@ -243,12 +58,12 @@ namespace fmatio
 			 * @param[in] value
 			 * 		Pointer to value address in memory.
 			 */
-			BasicFormatArgument(FormatArgumentType type, const void* value) noexcept;
+			BasicFormatArgument(FormatArgumentType type, const void* value) FMATIO_NOEXCEPT;
 
 			/**
 			 * Destroy the basic format argument object.
 			 */
-			~BasicFormatArgument() noexcept;
+			~BasicFormatArgument() FMATIO_NOEXCEPT;
 
 		public:
 			/**
@@ -257,7 +72,7 @@ namespace fmatio
 			 * @param[inout] writer
 			 * 		Writer that will pass stringified value to output buffer.
 			 */
-			void format(BasicFormatWriter<Char>& writer) const noexcept;
+			void format(BasicFormatWriter<Char>& writer) const FMATIO_NOEXCEPT;
 		};
 
 		/**
@@ -277,20 +92,20 @@ namespace fmatio
 			/**
 			 * Construct a new basic format arguments list object.
 			 */
-			BasicFormatArgumentsList() noexcept;
+			BasicFormatArgumentsList() FMATIO_NOEXCEPT;
 
 			/**
 			 * Construct a new basic format arguments list object.
 			 * 
-			 * @param[in] arguments
+			 * @param[in] argumentsList
 			 * 		Format arguments list. 
 			 */
-			BasicFormatArgumentsList(const ::std::initializer_list<BasicFormatArgument<Char>>& arguments) noexcept;
+			BasicFormatArgumentsList(const ::std::initializer_list<BasicFormatArgument<Char>>& argumentsList) FMATIO_NOEXCEPT;
 
 			/**
 			 * Destroy the basic format arguments list object.
 			 */
-			~BasicFormatArgumentsList() noexcept;
+			~BasicFormatArgumentsList() FMATIO_NOEXCEPT;
 
 		public:
 			/**
@@ -299,7 +114,7 @@ namespace fmatio
 			 * @return uint32 -
 			 * 		Size of the arguments list.
 			 */
-			uint32 getSize() const noexcept;
+			uint32 getSize() const FMATIO_NOEXCEPT;
 
 			/**
 			 * Format argument at provided index using provided format writer.
@@ -310,7 +125,7 @@ namespace fmatio
 			 * @param[in] index
 			 * 		Index of the argument that is going to be formatted.
 			 */
-			void format(BasicFormatWriter<Char>& writer, uint32 index) const noexcept;
+			void format(BasicFormatWriter<Char>& writer, uint32 index) const FMATIO_NOEXCEPT;
 		};
 
 		/**
@@ -322,13 +137,14 @@ namespace fmatio
 		 * @tparam Value
 		 * 		Value type.
 		 * 
-		 * @param[in] value 
+		 * @param[in] value
+		 *		Value of the format argument.
 		 * 
 		 * @return BasicFormatArgument<Char> -
 		 * 		Format argument.
 		 */
 		template<typename Char, typename Value>
-		BasicFormatArgument<Char> makeFormatArgument(const Value& value) noexcept;
+		FMATIO_INLINE BasicFormatArgument<Char> makeFormatArgument(const Value& value) FMATIO_NOEXCEPT;
 	}
 }
 
