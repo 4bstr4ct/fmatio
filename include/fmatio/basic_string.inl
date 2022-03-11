@@ -96,6 +96,12 @@ namespace fmatio
 	}
 
 	template<typename Char>
+	Char* BasicString<Char>::getData() FMATIO_NOEXCEPT
+	{
+		return this->data;
+	}
+
+	template<typename Char>
 	const Char* BasicString<Char>::getData() const FMATIO_NOEXCEPT
 	{
 		return this->data;

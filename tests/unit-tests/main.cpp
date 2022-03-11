@@ -28,23 +28,53 @@ FMATIO_INLINE void test(Arg&& arg, Args&&... args) FMATIO_NOEXCEPT
 
 int main(int argc, char** argv)
 {
-	FMATIO_ASSERT(false, "HAHAHA");
-	FMATIO_ASSERT(true,  "LALALA");
-	fmatio::echo(::std::cout, "{}\n", 5);
-	fmatio::echo(::std::cout, "{}\n", 7);
-	fmatio::echo(::std::cout, "{}\n", 7u);
-	fmatio::echo(::std::cout, "{}\n", 4.5f);
-	fmatio::echo(::std::cout, "{}\n", 2.25);
-	fmatio::echo(::std::cout, "{}\n", -1);
-	fmatio::echo(::std::cout, "{}\n", 'h');
-	fmatio::echo(::std::cout, "{}\n", 't');
-	fmatio::echo(::std::cout, "{}\n", (char*)"hello");
-	fmatio::echo(::std::cout, "{}\n", "hello again");
-	fmatio::echo(::std::cout, "{}\n", "lalalalalalala!");
-	fmatio::echo(::std::cout, "{}\n", nullptr);
-	std::cout << fmatio::format("{}\n", 8.5f);
-	std::string string = fmatio::format("{}\n", 8.5f).getData();
-	std::cout << string;
+	{
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 5);
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 7);
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 7u);
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 4.5f);
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 2.25);
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", -1);
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 'h');
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 't');
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", (char*)"hello");
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", "hello again");
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", "lalalalalalala!");
+		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", nullptr);
+		std::cout << fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f);
+		std::string string = fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f).getData();
+		const char* temp = string.data();
+		std::cout << temp;
+		fmatio::BasicString<char> basiString = fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f);
+		const char* cstring = basiString.getData();
+		std::cout << cstring;
+		const char* cstring2 = fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f).getData();
+		std::cout << cstring2;
+	}
+
+	{
+		fmatio::cecho(std::cout, "{}\n", 5);
+		fmatio::cecho(std::cout, "{}\n", 7);
+		fmatio::cecho(std::cout, "{}\n", 7u);
+		fmatio::cecho(std::cout, "{}\n", 4.5f);
+		fmatio::cecho(std::cout, "{}\n", 2.25);
+		fmatio::cecho(std::cout, "{}\n", -1);
+		fmatio::cecho(std::cout, "{}\n", 'h');
+		fmatio::cecho(std::cout, "{}\n", 't');
+		fmatio::cecho(std::cout, "{}\n", (char*)"hello");
+		fmatio::cecho(std::cout, "{}\n", "hello again");
+		fmatio::cecho(std::cout, "{}\n", "lalalalalalala!");
+		fmatio::cecho(std::cout, "{}\n", nullptr);
+		std::cout << fmatio::cformat("{}\n", 8.5f);
+		std::string string = fmatio::cformat("{}\n", 8.5f).getData();
+		const char* temp = string.data();
+		std::cout << temp;
+		fmatio::BasicString<char> basiString = fmatio::cformat("{}\n", 8.5f);
+		const char* cstring = basiString.getData();
+		std::cout << cstring;
+		const char* cstring2 = fmatio::cformat("{}\n", 8.5f).getData();
+		std::cout << cstring2;
+	}
 
 	return 0;
 }

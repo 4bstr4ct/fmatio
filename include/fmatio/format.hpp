@@ -38,13 +38,19 @@ namespace fmatio
 	FMATIO_INLINE Result format(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
 	template<typename Pattern, typename... Arguments>
-	FMATIO_INLINE BasicString<char> format(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
+	FMATIO_INLINE BasicString<char> cformat(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
 	template<typename Pattern, typename... Arguments>
 	FMATIO_INLINE BasicString<wchar> wformat(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
-	template<typename Stream, typename Pattern, typename... Arguments>
+	template<typename Result, typename Stream, typename Pattern, typename... Arguments>
 	FMATIO_INLINE void echo(Stream& stream, const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
+
+	template<typename Pattern, typename Stream, typename... Arguments>
+	FMATIO_INLINE void cecho(Stream& stream, const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
+
+	template<typename Pattern, typename Stream, typename... Arguments>
+	FMATIO_INLINE void wecho(Stream& stream, const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 }
 
 #include "./format.inl"

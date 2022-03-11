@@ -78,6 +78,8 @@ namespace fmatio
 		void deallocate() FMATIO_NOEXCEPT;
 
 	public:
+		Char* getData() FMATIO_NOEXCEPT;
+
 		const Char* getData() const FMATIO_NOEXCEPT;
 
 		uint32 getSize() const FMATIO_NOEXCEPT;
