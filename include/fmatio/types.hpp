@@ -15,12 +15,16 @@
 #ifndef FMATIO_INCLUDE_FMATIO_TYPES_HPP
 #define FMATIO_INCLUDE_FMATIO_TYPES_HPP
 
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
+
 namespace fmatio
 {
 	/**
 	 * A type represeting null pointer
 	 */
-	using null = decltype(__nullptr);
+	using null = decltype(nullptr);
 
 	/**
 	 * A type representing signed char. 

@@ -1,9 +1,9 @@
 /*******************************************************************************
- * @file int16.hpp
+ * @file char_string.hpp
  *
  * @author Joris Baranauskas (jorisb)
  *
- * Defines functions to write signed 16-bit integer.
+ * Defines functions to write char string.
  *
  * @copyright © 2022-2023 by Joris Baranauskas
  *
@@ -12,8 +12,12 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
-#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_INT16_HPP
-#define FMATIO_INCLUDE_FMATIO_DETAILS_INT16_HPP
+#ifndef FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_CHAR_STRING_HPP
+#define FMATIO_INCLUDE_FMATIO_DETAILS_TYPES_CHAR_STRING_HPP
+
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#	pragma once
+#endif
 
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
@@ -27,10 +31,15 @@ namespace fmatio
 	namespace details
 	{
 		template<typename Char>
-		void int16Handle(BasicFormatWriter<Char>& writer, int16 value) noexcept
+		FMATIO_INLINE void charStringHandle(BasicFormatWriter<Char>& writer, char* value) FMATIO_NOEXCEPT
 		{
-			::std::string string = ::std::to_string(value);	// Have to reimplement this!
-			writer.write(BasicStringView<Char>(string.data()));
+			writer.write(BasicStringView<Char>(value));
+		}
+
+		template<typename Char>
+		FMATIO_INLINE void charStringHandle(BasicFormatWriter<Char>& writer, const char* value) FMATIO_NOEXCEPT
+		{
+			writer.write(BasicStringView<Char>(value));
 		}
 	}
 }
