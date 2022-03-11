@@ -36,7 +36,6 @@
 #endif
 
 #ifndef FMATIO_GCC_PRAGMA
-// Workaround _Pragma bug https://gcc.gnu.org/bugzilla/show_bug.cgi?id=59884.
 #	if FMATIO_GCC_VERSION >= 504
 #		define FMATIO_GCC_PRAGMA(arg) _Pragma(arg)
 #	else
@@ -143,13 +142,8 @@
 #	endif
 #endif
 
-// Check if relaxed C++14 constexpr is supported.
-// GCC doesn't allow throw in constexpr until version 6 (bug 67371).
 #ifndef FMATIO_USE_CONSTEXPR
-#	define FMATIO_USE_CONSTEXPR \
-	(FMATIO_HAS_FEATURE(cxx_relaxed_constexpr) || FMATIO_MSC_VER >= 1912 || \
-	(FMATIO_GCC_VERSION >= 600 && __cplusplus >= 201402L)) && \
-	!FMATIO_NVCC && !FMATIO_ICC_VERSION
+#	define FMATIO_USE_CONSTEXPR (FMATIO_HAS_FEATURE(cxx_relaxed_constexpr) || FMATIO_MSC_VER >= 1912 || (FMATIO_GCC_VERSION >= 600 && __cplusplus >= 201402L)) && !FMATIO_NVCC && !FMATIO_ICC_VERSION
 #endif
 
 #ifdef FMATIO_USE_CONSTEXPR
@@ -187,7 +181,6 @@
 #endif
 
 #ifndef FMATIO_NORETURN
-// [[noreturn]] is disabled on MSVC and NVCC because of bogus unreachable code warnings.
 #	if FMATIO_EXCEPTIONS && FMATIO_HAS_CPP_ATTRIBUTE(noreturn) && !FMATIO_MSC_VER && !FMATIO_NVCC
 #		define FMATIO_NORETURN [[noreturn]]
 #	else
@@ -223,15 +216,27 @@
 
 #ifndef FMATIO_ASSERT
 #	ifdef FMATIO_DEBUG
-#		include <iostream>
-#		define FMATIO_ASSERT(condition, message) \
-		{ \
-			if (!(condition)) \
-			{ \
-				::std::cerr << "Assertion failed: " << message << "\n\tFile: " << __FILE__ << ". Line: " << __LINE__ << "." << ::std::endl; \
-				::std::exit(-1); \
-			} \
+
+#include <iostream>
+
+namespace fmatio
+{
+	namespace exceptions
+	{
+		template<typename Condition, typename Message, typename File, typename Line>
+		FMATIO_CONSTEXPR FMATIO_INLINE void fmatioAssert(Condition condition, Message message, File file, Line line)
+		{
+			if (!(condition))
+			{
+				::std::cerr << "Assertion failed: " << message << "\n\tFile: " << __FILE__ << ". Line: " << __LINE__ << "." << ::std::endl;
+				throw;
+			}
 		}
+	}
+}
+
+#		define FMATIO_ASSERT(condition, message) \
+			::fmatio::exceptions::fmatioAssert<bool, const char* const, const char* const, unsigned int>(condition, message, __FILE__, (unsigned int)__LINE__);
 #	else
 #		define FMATIO_ASSERT(condition, message)
 #	endif

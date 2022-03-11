@@ -24,57 +24,57 @@ namespace fmatio
 	/**
 	 * A type represeting null pointer
 	 */
-	using null = typename decltype(__nullptr);
+	using null = decltype(nullptr);
 
 	/**
 	 * A type representing signed char. 
 	 */
-	using int8 = typename signed char;
+	using int8 = signed char;
 
 	/**
 	 * A type representing unsigned char. 
 	 */
-	using uint8 = typename unsigned char;
+	using uint8 = unsigned char;
 	
 	/**
 	 * A type representing unsigned char. 
 	 */
-	using byte = typename unsigned char;
+	using byte = unsigned char;
 
 	/**
 	 * A type representing signed short. 
 	 */
-	using int16 = typename signed short;
+	using int16 = signed short;
 
 	/**
 	 * A type representing unsigned short. 
 	 */
-	using uint16 = typename unsigned short;
+	using uint16 = unsigned short;
 
 	/**
 	 * A type representing signed int. 
 	 */
-	using int32 = typename signed int;
+	using int32 = signed int;
 	
 	/**
 	 * A type representing unsigned int. 
 	 */
-	using uint32 = typename unsigned int;
+	using uint32 = unsigned int;
 
 	/**
 	 * A type representing signed long long. 
 	 */
-	using int64 = typename signed long long;
+	using int64 = signed long long;
 	
 	/**
 	 * A type representing unsigned long long. 
 	 */
-	using uint64 = typename unsigned long long;
+	using uint64 = unsigned long long;
 
 	/**
 	 * A type representing wide char. 
 	 */
-	using wchar = typename wchar_t;
+	using wchar = wchar_t;
 }
 
 #endif

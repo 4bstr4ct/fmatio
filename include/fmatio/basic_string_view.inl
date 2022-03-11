@@ -12,6 +12,8 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
+#include <fmatio/details/basic_string_utilities.hpp>
+
 namespace fmatio
 {
 	template<typename Char>
@@ -20,7 +22,7 @@ namespace fmatio
 
 	template<typename Char>
 	BasicStringView<Char>::BasicStringView(const Char* data) FMATIO_NOEXCEPT
-		: data(data), size((uint32)::strlen(data)) { }
+		: data(data), size(details::stringSize<Char>(data)) { }
 
 	template<typename Char>
 	BasicStringView<Char>::BasicStringView(const Char* data, uint32 size) FMATIO_NOEXCEPT

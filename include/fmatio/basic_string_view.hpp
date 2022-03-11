@@ -31,17 +31,17 @@ namespace fmatio
 		/**
 		 * Define a const iterator to iterate through the data.
 		 */
-		using ConstIterator = typename const Char*;
+		using ConstIterator = const Char*;
 
 		/**
 		 * Define a public typedef for char type used in this class.
 		 */
-		using CharType = typename Char;
+		using CharType = Char;
 		
 		/**
 		 * Define a public typedef for value type used in this class.
 		 */
-		using ValueType = typename Char;
+		using ValueType = Char;
 
 	private:
 		const Char* data;

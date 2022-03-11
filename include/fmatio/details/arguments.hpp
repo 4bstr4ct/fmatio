@@ -22,6 +22,8 @@
 #include <fmatio/core.hpp>
 #include <fmatio/types.hpp>
 
+#include <initializer_list>
+
 namespace fmatio
 {
 	namespace details
@@ -66,7 +68,7 @@ namespace fmatio
 		struct TypeOf
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::Unknown;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::Unknown;
 		};
 
 		/**
@@ -76,7 +78,7 @@ namespace fmatio
 		struct TypeOf<bool>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::Bool;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::Bool;
 		};
 
 		/**
@@ -86,7 +88,7 @@ namespace fmatio
 		struct TypeOf<char>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::Char;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::Char;
 		};
 
 		/**
@@ -96,7 +98,7 @@ namespace fmatio
 		struct TypeOf<int8>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::SignedInt8;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::SignedInt8;
 		};
 
 		/**
@@ -106,7 +108,7 @@ namespace fmatio
 		struct TypeOf<uint8>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::UnsignedInt8;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::UnsignedInt8;
 		};
 
 		/**
@@ -116,7 +118,7 @@ namespace fmatio
 		struct TypeOf<int16>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::SignedInt16;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::SignedInt16;
 		};
 
 		/**
@@ -126,7 +128,7 @@ namespace fmatio
 		struct TypeOf<uint16>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::UnsignedInt16;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::UnsignedInt16;
 		};
 
 		/**
@@ -136,7 +138,7 @@ namespace fmatio
 		struct TypeOf<int32>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::SignedInt32;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::SignedInt32;
 		};
 
 		/**
@@ -146,7 +148,7 @@ namespace fmatio
 		struct TypeOf<uint32>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::UnsignedInt32;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::UnsignedInt32;
 		};
 
 		/**
@@ -156,7 +158,7 @@ namespace fmatio
 		struct TypeOf<int64>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::SignedInt64;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::SignedInt64;
 		};
 
 		/**
@@ -166,7 +168,7 @@ namespace fmatio
 		struct TypeOf<uint64>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::UnsignedInt64;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::UnsignedInt64;
 		};
 
 		/**
@@ -176,7 +178,7 @@ namespace fmatio
 		struct TypeOf<float>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::Float;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::Float;
 		};
 
 		/**
@@ -186,7 +188,7 @@ namespace fmatio
 		struct TypeOf<double>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::Double;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::Double;
 		};
 
 		/**
@@ -196,7 +198,27 @@ namespace fmatio
 		struct TypeOf<char*>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::CharString;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::CharString;
+		};
+
+		/**
+		 * Format argument type definition for signed char string type.
+		 */
+		template<>
+		struct TypeOf<signed char*>
+		{
+		public:
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::CharString;
+		};
+
+		/**
+		 * Format argument type definition for unsigned char string type.
+		 */
+		template<>
+		struct TypeOf<unsigned char*>
+		{
+		public:
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::CharString;
 		};
 
 		/**
@@ -206,7 +228,27 @@ namespace fmatio
 		struct TypeOf<const char*>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::CharString;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::CharString;
+		};
+
+		/**
+		 * Format argument type definition for const signed char string type.
+		 */
+		template<>
+		struct TypeOf<const signed char*>
+		{
+		public:
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::CharString;
+		};
+
+		/**
+		 * Format argument type definition for const unsigned char string type.
+		 */
+		template<>
+		struct TypeOf<const unsigned char*>
+		{
+		public:
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::CharString;
 		};
 
 		/**
@@ -216,7 +258,7 @@ namespace fmatio
 		struct TypeOf<null>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::NullPointer;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::NullPointer;
 		};
 
 		/**
@@ -226,8 +268,72 @@ namespace fmatio
 		struct TypeOf<void*>
 		{
 		public:
-			static FMATIO_CONSTEXPR FormatArgumentType value = FormatArgumentType::VoidPointer;
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::VoidPointer;
 		};
+
+		/**
+		 * Format argument type definition for const void pointer type.
+		 */
+		template<>
+		struct TypeOf<const void*>
+		{
+		public:
+			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::VoidPointer;
+		};
+
+		template<typename T>
+		struct RemoveReference
+		{
+		public:
+			using Type = T;
+		};
+
+		template<typename T>
+		struct RemoveReference<T&>
+		{
+		public:
+			using Type = T;
+		};
+
+		template<typename T>
+		struct RemoveReference<T&&>
+		{
+		public:
+			using Type = T;
+		};
+
+		template<typename T>
+		using RemoveReferenceType = typename RemoveReference<T>::Type;
+
+		template<typename T>
+		struct RemoveExtent
+		{
+		public:
+			using Type = T;
+		};
+
+		template<typename T, uint32 size>
+		struct RemoveExtent<T[size]>
+		{
+		public:
+			using Type = T;
+		};
+
+		template<typename T>
+		struct RemoveExtent<T[]>
+		{
+		public:
+			using Type = T;
+		};
+
+		template<typename T>
+		using RemoveExtentType = typename RemoveExtent<T>::Type;
+
+		template<typename T>
+		using DecayedIfArray = ::std::conditional_t<::std::is_array_v<T>, RemoveExtentType<T> const*, T>;
+
+		template<typename T>
+		using Formattable = DecayedIfArray<RemoveReferenceType<T>>;
 
 		/**
 		 * A format argument, that holds it's type and pointer to it's value address in memory.
@@ -296,10 +402,10 @@ namespace fmatio
 			/**
 			 * Construct a new basic format arguments list object.
 			 * 
-			 * @param[in] arguments
+			 * @param[in] argumentsList
 			 * 		Format arguments list. 
 			 */
-			BasicFormatArgumentsList(const ::std::initializer_list<BasicFormatArgument<Char>>& arguments) FMATIO_NOEXCEPT;
+			BasicFormatArgumentsList(const ::std::initializer_list<BasicFormatArgument<Char>>& argumentsList) FMATIO_NOEXCEPT;
 
 			/**
 			 * Destroy the basic format arguments list object.

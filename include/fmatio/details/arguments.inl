@@ -121,8 +121,8 @@ namespace fmatio
 			: arguments(), size() { }
 
 		template<typename Char>
-		BasicFormatArgumentsList<Char>::BasicFormatArgumentsList(const ::std::initializer_list<BasicFormatArgument<Char>>& arguments) FMATIO_NOEXCEPT
-			: arguments(arguments.begin()), size((uint32)arguments.size()) { }
+		BasicFormatArgumentsList<Char>::BasicFormatArgumentsList(const ::std::initializer_list<BasicFormatArgument<Char>>& argumentsList) FMATIO_NOEXCEPT
+			: arguments(argumentsList.begin()), size((uint32)argumentsList.size()) { }
 
 		template<typename Char>
 		BasicFormatArgumentsList<Char>::~BasicFormatArgumentsList() FMATIO_NOEXCEPT { }

@@ -12,6 +12,8 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
+#include <fmatio/details/basic_string_utilities.hpp>
+
 namespace fmatio
 {
 	template<typename Char>
@@ -26,7 +28,7 @@ namespace fmatio
 	BasicString<Char>::BasicString(const Char* const data) FMATIO_NOEXCEPT
 		: data(), size(), capacity()
 	{
-		uint32 size = ::strlen(data);
+		uint32 size = details::stringSize<Char>(data);
 		initialize(size);
 		copy(data, size);
 	}
@@ -120,7 +122,7 @@ namespace fmatio
 	template<typename Char>
 	void BasicString<Char>::append(const Char* const string) FMATIO_NOEXCEPT
 	{
-		append(string, ::strlen(string));
+		append(string, details::stringSize<Char>(string));
 	}
 
 	template<typename Char>
@@ -129,7 +131,7 @@ namespace fmatio
 		if (this->size + size + 1 > this->capacity)
 			reallocate(this->capacity + size + 1);
 
-		::memcpy(this->data + this->size, begin, size);
+		details::stringCopy<Char>(this->data + this->size, begin, size);
 		this->size += size;
 	}
 

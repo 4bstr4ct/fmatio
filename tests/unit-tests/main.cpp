@@ -26,18 +26,10 @@ FMATIO_INLINE void test(Arg&& arg, Args&&... args) FMATIO_NOEXCEPT
 	test(args...);
 }
 
-
-/*
-
-PRODETI TYPEOF SIGNED CHAR*, UNSIGNED CHAR* IR CHAR*!!!!!! 
-
-*/
-
 int main(int argc, char** argv)
 {
-	test(5, "lalala");
-
-	/*
+	FMATIO_ASSERT(false, "HAHAHA");
+	FMATIO_ASSERT(true,  "LALALA");
 	fmatio::echo(::std::cout, "{}\n", 5);
 	fmatio::echo(::std::cout, "{}\n", 7);
 	fmatio::echo(::std::cout, "{}\n", 7u);
@@ -47,12 +39,12 @@ int main(int argc, char** argv)
 	fmatio::echo(::std::cout, "{}\n", 'h');
 	fmatio::echo(::std::cout, "{}\n", 't');
 	fmatio::echo(::std::cout, "{}\n", (char*)"hello");
-	fmatio::echo(::std::cout, "{}\n", (char*)"yeyeye!");
+	fmatio::echo(::std::cout, "{}\n", "hello again");
+	fmatio::echo(::std::cout, "{}\n", "lalalalalalala!");
 	fmatio::echo(::std::cout, "{}\n", nullptr);
 	std::cout << fmatio::format("{}\n", 8.5f);
 	std::string string = fmatio::format("{}\n", 8.5f).getData();
 	std::cout << string;
-	*/
 
 	return 0;
 }

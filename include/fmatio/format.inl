@@ -21,14 +21,14 @@ namespace fmatio
 	{
 		uint32 count = 0;
 
-		for (BasicStringView<Char>::ConstIterator it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)
+		for (typename BasicStringView<Char>::ConstIterator it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)
 			if (*it == details::FormatTraits<Char>::formatBegin && *(it + 1) == details::FormatTraits<Char>::formatEnd)
 				count++;
 
 		FMATIO_ASSERT(count == arguments.getSize(), "Format arguments count and their placeholders \'{}\' count are different!");
 		uint32 index = 0;
 
-		for (BasicStringView<Char>::ConstIterator it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)
+		for (typename BasicStringView<Char>::ConstIterator it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)
 		{
 			if (*it == details::FormatTraits<Char>::formatBegin && *(it + 1) == details::FormatTraits<Char>::formatEnd && index <= pattern.getSize())
 			{
@@ -40,7 +40,7 @@ namespace fmatio
 			}
 		}
 
-		writer.write(BasicStringView<Char>((char*)"\0", 1));
+		writer.write(BasicStringView<Char>((Char*)"\0", 1));
 	}
 
 	template<typename Result, typename Pattern, typename... Arguments>
@@ -48,7 +48,7 @@ namespace fmatio
 	{
 		using CharType = typename Result::CharType; Result result = Result();
 		details::BasicDynamicWriter<Result> writer = details::BasicDynamicWriter<Result>(result);
-		formatHandle(writer, BasicStringView<CharType>(pattern), { details::makeFormatArgument<CharType>(arguments)... });
+		formatHandle(writer, BasicStringView<CharType>(pattern), { details::makeFormatArgument<CharType, details::Formattable<Arguments>>(arguments)... });
 		FMATIO_ASSERT(result.getData() != nullptr && result.getSize() > 0, "Format resulted in a invalid string!");
 		return result;
 	}

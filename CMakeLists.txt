@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.3)
+project("fmatio" LANGUAGES C CXX)
 
 if(${CMAKE_VERSION} VERSION_LESS 3.12)
 	cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
@@ -43,8 +44,6 @@ if(FMATIO_IS_MASTER_PROJECT AND NOT CMAKE_BUILD_TYPE)
 				"CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.")
 endif()
 
-project("fmatio" LANGUAGES C CXX)
-
 if(FMATIO_IS_MASTER_PROJECT AND NOT DEFINED CMAKE_CXX_VISIBILITY_PRESET)
 	set_verbose(CMAKE_CXX_VISIBILITY_PRESET hidden CACHE STRING
 				"Preset for the export of private symbols")
@@ -56,10 +55,6 @@ if(FMATIO_IS_MASTER_PROJECT AND NOT DEFINED CMAKE_VISIBILITY_INLINES_HIDDEN)
 	set_verbose(CMAKE_VISIBILITY_INLINES_HIDDEN ON CACHE BOOL
 				"Whether to add a compile flag to hide symbols of inline functions")
 endif()
-
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 	set(PEDANTIC_COMPILE_FLAGS -pedantic-errors -Wall -Wextra -pedantic
@@ -215,7 +210,7 @@ string(TOUPPER "${CMAKE_BUILD_TYPE}" BUILD_VARIANT)
 set(FMATIO_BUILD_VARIANT "FMATIO_${BUILD_VARIANT}")
 message(${FMATIO_BUILD_VARIANT})
 
-add_library(${PROJECT_NAME} INTERFACE ${FMATIO_HEADER_FILES} ${FMATIO_INLINE_FILES})
+add_library(${PROJECT_NAME} INTERFACE)
 
 target_compile_definitions(${PROJECT_NAME}
 	INTERFACE
@@ -231,11 +226,9 @@ target_include_directories(${PROJECT_NAME}
 		$<BUILD_INTERFACE:${FMATIO_INCLUDE_DIRECTORY}>
 )
 
-set(FMATIO_DEBUG_POSTFIX d CACHE STRING "Debug library postfix.")
-
 set_target_properties(${PROJECT_NAME} PROPERTIES
 	PUBLIC_HEADER "${FMATIO_PUBLIC_HEADER_FILES}"
-	DEBUG_POSTFIX "${FMATIO_DEBUG_POSTFIX}")
+)
 
 if(FMATIO_TESTS)
 	add_subdirectory(tests)

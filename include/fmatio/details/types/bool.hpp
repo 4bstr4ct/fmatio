@@ -23,6 +23,7 @@
 #include <fmatio/types.hpp>
 
 #include <fmatio/details/writers.hpp>
+#include <fmatio/details/format_traits.hpp>
 
 #include <string>
 
