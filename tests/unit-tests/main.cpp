@@ -26,6 +26,13 @@ FMATIO_INLINE void test(Arg&& arg, Args&&... args) FMATIO_NOEXCEPT
 	test(args...);
 }
 
+
+/*
+
+PRODETI TYPEOF SIGNED CHAR*, UNSIGNED CHAR* IR CHAR*!!!!!! 
+
+*/
+
 int main(int argc, char** argv)
 {
 	test(5, "lalala");
