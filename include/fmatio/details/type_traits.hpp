@@ -279,6 +279,12 @@ namespace fmatio
 			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::VoidPointer;
 		};
 
+		/**
+		 * Remove reference structure.
+		 * 
+		 * @tparam T
+		 * 		Type without reference.
+		 */
 		template<typename T>
 		struct RemoveReference
 		{
@@ -286,6 +292,12 @@ namespace fmatio
 			using Type = T;
 		};
 
+		/**
+		 * Remove reference structure.
+		 * 
+		 * @tparam T
+		 * 		Type with reference.
+		 */
 		template<typename T>
 		struct RemoveReference<T&>
 		{
@@ -293,6 +305,12 @@ namespace fmatio
 			using Type = T;
 		};
 
+		/**
+		 * Remove reference structure.
+		 * 
+		 * @tparam T
+		 * 		Type with double reference.
+		 */
 		template<typename T>
 		struct RemoveReference<T&&>
 		{
@@ -300,9 +318,21 @@ namespace fmatio
 			using Type = T;
 		};
 
+		/**
+		 * Remove reference type structure.
+		 * 
+		 * @tparam T
+		 * 		Type for reference removal.
+		 */
 		template<typename T>
 		using RemoveReferenceType = typename RemoveReference<T>::Type;
 
+		/**
+		 * Remove extent structure.
+		 * 
+		 * @tparam T
+		 * 		Type without any extent.
+		 */
 		template<typename T>
 		struct RemoveExtent
 		{
@@ -310,6 +340,15 @@ namespace fmatio
 			using Type = T;
 		};
 
+		/**
+		 * Remove extent structure.
+		 * 
+		 * @tparam T
+		 * 		Type as static array of provided size.
+		 * 
+		 * @tparam size
+		 * 		Size of the array.
+		 */
 		template<typename T, uint32 size>
 		struct RemoveExtent<T[size]>
 		{
@@ -317,6 +356,12 @@ namespace fmatio
 			using Type = T;
 		};
 
+		/**
+		 * Remove extent structure.
+		 * 
+		 * @tparam T
+		 * 		Type as static array.
+		 */
 		template<typename T>
 		struct RemoveExtent<T[]>
 		{
@@ -324,6 +369,12 @@ namespace fmatio
 			using Type = T;
 		};
 
+		/**
+		 * Remove extent type structure.
+		 * 
+		 * @tparam T
+		 * 		Type for extent removal.
+		 */
 		template<typename T>
 		using RemoveExtentType = typename RemoveExtent<T>::Type;
 
