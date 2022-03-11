@@ -19,19 +19,6 @@ public:
 
 int main(int argc, char** argv)
 {
-	/*
-	std::vector<Student> students = { { "Joris", "Baranauskas", 9.8f }, { "Markas", "Vielavicius", 9.7f } };
-	std::string finalString;
-
-	for(uint32_t i = 0; i < students.size(); i++)
-	{
-		const char* string = fmatio::format("{}\n", students[i].finalGrade).getData();
-		finalString.append(string);
-	}
-
-	std::cout << finalString;
-	*/
-
 	fmatio::echo(::std::cout, "{}\n", 5);
 	fmatio::echo(::std::cout, "{}\n", 7);
 	fmatio::echo(::std::cout, "{}\n", 7u);
