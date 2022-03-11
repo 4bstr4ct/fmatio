@@ -17,8 +17,20 @@ public:
 	float finalGrade;
 };
 
+FMATIO_INLINE void test() FMATIO_NOEXCEPT { }
+
+template<typename Arg, typename... Args>
+FMATIO_INLINE void test(Arg&& arg, Args&&... args) FMATIO_NOEXCEPT
+{
+	std::cout << arg << std::endl;
+	test(args...);
+}
+
 int main(int argc, char** argv)
 {
+	test(5, "lalala");
+
+	/*
 	fmatio::echo(::std::cout, "{}\n", 5);
 	fmatio::echo(::std::cout, "{}\n", 7);
 	fmatio::echo(::std::cout, "{}\n", 7u);
@@ -33,5 +45,7 @@ int main(int argc, char** argv)
 	std::cout << fmatio::format("{}\n", 8.5f);
 	std::string string = fmatio::format("{}\n", 8.5f).getData();
 	std::cout << string;
+	*/
+
 	return 0;
 }
