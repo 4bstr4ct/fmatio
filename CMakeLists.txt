@@ -113,6 +113,7 @@ file(GLOB FMATIO_INLINE_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.inl"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string.inl"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string_view.inl"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/formatters.inl"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.inl"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/writers.inl"
@@ -126,6 +127,7 @@ file(GLOB FMATIO_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string_view.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/formatters.inl"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/format_traits.hpp"
@@ -150,10 +152,6 @@ file(GLOB FMATIO_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/double.hpp"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/char_string.hpp"
-
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_utilities.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_view_utilities.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/utilities.hpp"
 )
 
 set(FMATIO_PUBLIC_HEADER_FILES
@@ -164,6 +162,7 @@ set(FMATIO_PUBLIC_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/format.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/basic_string_view.hpp"
+	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/formatters.inl"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/arguments.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/format_traits.hpp"
@@ -171,7 +170,7 @@ set(FMATIO_PUBLIC_HEADER_FILES
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/bool.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/char.hpp"
-	
+
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/int8.hpp"
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/uint8.hpp"
 
@@ -188,10 +187,6 @@ set(FMATIO_PUBLIC_HEADER_FILES
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/double.hpp"
 
 	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/details/types/char_string.hpp"
-
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_utilities.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/basic_string_view_utilities.hpp"
-	"${FMATIO_INCLUDE_DIRECTORY}/fmatio/std/utilities.hpp"
 )
 
 set(FMATIO_OS "")

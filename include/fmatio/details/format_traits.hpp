@@ -35,10 +35,10 @@ namespace fmatio
 		public:
 			static FMATIO_CONSTEXPR char formatBegin = '{';
 			static FMATIO_CONSTEXPR char formatEnd = '}';
+			static FMATIO_CONSTEXPR char formatPrecision = 'p';
 
 			static FMATIO_CONSTEXPR const char trueStringified[] = "true";
 			static FMATIO_CONSTEXPR const char falseStringified[] = "false";
-
 			static FMATIO_CONSTEXPR const char nullptrStringified[] = "nullptr";
 		};
 
@@ -48,10 +48,10 @@ namespace fmatio
 		public:
 			static FMATIO_CONSTEXPR wchar formatBegin = L'{';
 			static FMATIO_CONSTEXPR wchar formatEnd = L'}';
+			static FMATIO_CONSTEXPR wchar formatPrecision = L'p';
 
 			static FMATIO_CONSTEXPR const wchar trueStringified[] = L"true";
 			static FMATIO_CONSTEXPR const wchar falseStringified[] = L"false";
-
 			static FMATIO_CONSTEXPR const wchar nullptrStringified[] = L"nullptr";
 		};
 	}

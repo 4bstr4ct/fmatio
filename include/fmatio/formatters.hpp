@@ -36,7 +36,7 @@ namespace fmatio
 	};
 
 	template<typename Char>
-	class SafeIteratorFormatter : public BasicFormatter<Char>
+	class SafeFmatioFormatter : public BasicFormatter<Char>
 	{
 	public:
 		virtual void format(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT override;

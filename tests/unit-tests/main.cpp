@@ -17,18 +17,9 @@ public:
 	float finalGrade;
 };
 
-FMATIO_INLINE void test() FMATIO_NOEXCEPT { }
-
-template<typename Arg, typename... Args>
-FMATIO_INLINE void test(Arg&& arg, Args&&... args) FMATIO_NOEXCEPT
-{
-	std::cout << arg << std::endl;
-	test(args...);
-}
-
 int main(int argc, char** argv)
 {
-	fmatio::echo<fmatio::SafeCharIteratorFormatter,
+	fmatio::echo<fmatio::CSafeFmatioFormatter,
 		fmatio::String>(
 			std::cout, "Hello, {}!\n", "world");
 

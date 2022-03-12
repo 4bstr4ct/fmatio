@@ -19,7 +19,34 @@
 namespace fmatio
 {
 	template<typename Char>
-	void SafeIteratorFormatter<Char>::format(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT
+	void SafeFmatioFormatter<Char>::format(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT
+	{
+		bool enableFormatting = false;
+		typename BasicStringView<Char>::ConstIterator iterator = pattern.getConstBegin();
+		typename BasicStringView<Char>::ConstIterator previous = iterator;
+
+		for (uint32 index = 0; iterator != pattern.getConstEnd(); iterator++)
+		{
+			if (*iterator == details::FormatTraits<Char>::formatBegin)
+			{
+				writer.write(BasicStringView<Char>(previous, iterator - previous));
+				enableFormatting = true;
+			}
+			else if (*iterator == details::FormatTraits<Char>::formatEnd && enableFormatting)
+			{
+				previous = iterator + 1;
+				arguments.format(writer, index++);
+				enableFormatting = false;
+			}
+		}
+
+		writer.write(BasicStringView<Char>(previous, iterator - previous));
+		// writer.write(BasicStringView<Char>((Char*)"\0", 1));
+	}
+
+	/*
+	template<typename Char>
+	void SafeFmatioFormatter<Char>::format(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT
 	{
 		uint32 count = 0;
 
@@ -44,4 +71,5 @@ namespace fmatio
 
 		writer.write(BasicStringView<Char>((Char*)"\0", 1));
 	}
+	*/
 }
