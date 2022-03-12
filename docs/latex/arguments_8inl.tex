@@ -1,16 +1,18 @@
 \hypertarget{arguments_8inl}{}\doxysection{include/fmatio/details/arguments.inl File Reference}
 \label{arguments_8inl}\index{include/fmatio/details/arguments.inl@{include/fmatio/details/arguments.inl}}
-{\ttfamily \#include $<$fmatio/details/int8.\+hpp$>$}\newline
-{\ttfamily \#include $<$fmatio/details/uint8.\+hpp$>$}\newline
-{\ttfamily \#include $<$fmatio/details/int16.\+hpp$>$}\newline
-{\ttfamily \#include $<$fmatio/details/uint16.\+hpp$>$}\newline
-{\ttfamily \#include $<$fmatio/details/int32.\+hpp$>$}\newline
-{\ttfamily \#include $<$fmatio/details/uint32.\+hpp$>$}\newline
-{\ttfamily \#include $<$fmatio/details/int64.\+hpp$>$}\newline
-{\ttfamily \#include $<$fmatio/details/uint64.\+hpp$>$}\newline
-{\ttfamily \#include $<$fmatio/details/float.\+hpp$>$}\newline
-{\ttfamily \#include $<$fmatio/details/double.\+hpp$>$}\newline
-{\ttfamily \#include $<$fmatio/details/char\+\_\+string.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/bool.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/char.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/int8.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/uint8.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/int16.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/uint16.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/int32.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/uint32.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/int64.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/uint64.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/float.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/double.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/details/types/char\+\_\+string.\+hpp$>$}\newline
 Include dependency graph for arguments.\+inl\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
@@ -18,7 +20,7 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Char , typename Value $>$ }\\Basic\+Format\+Argument$<$ Char $>$ \mbox{\hyperlink{arguments_8hpp_aac035f79e5c870904c9c7e2152f5ea95}{fmatio\+::details\+::make\+Format\+Argument}} (const Value \&value) noexcept
+{\footnotesize template$<$typename Char , typename Value $>$ }\\FMATIO\+\_\+\+INLINE Basic\+Format\+Argument$<$ Char $>$ \mbox{\hyperlink{arguments_8hpp_a52471ce86be0348c299952d666aeacdd}{fmatio\+::details\+::make\+Format\+Argument}} (const Value \&value) FMATIO\+\_\+\+NOEXCEPT
 \begin{DoxyCompactList}\small\item\em Make a format argument with provided value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -31,19 +33,15 @@ Defines \mbox{\hyperlink{format_8hpp}{format.\+hpp}} implementations.
 \begin{DoxyCopyright}{Copyright}
 © 2022-\/2023 by Joris Baranauskas
 \end{DoxyCopyright}
-This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
-
-Definition in file \mbox{\hyperlink{arguments_8inl_source}{arguments.\+inl}}.
-
-
+This file is distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{arguments_8hpp_aac035f79e5c870904c9c7e2152f5ea95}\label{arguments_8hpp_aac035f79e5c870904c9c7e2152f5ea95}} 
+\mbox{\Hypertarget{arguments_8hpp_a52471ce86be0348c299952d666aeacdd}\label{arguments_8hpp_a52471ce86be0348c299952d666aeacdd}} 
 \index{arguments.inl@{arguments.inl}!makeFormatArgument@{makeFormatArgument}}
 \index{makeFormatArgument@{makeFormatArgument}!arguments.inl@{arguments.inl}}
 \doxysubsubsection{\texorpdfstring{makeFormatArgument()}{makeFormatArgument()}}
 {\footnotesize\ttfamily template$<$typename Char , typename Value $>$ \\
-Basic\+Format\+Argument$<$ Char $>$ fmatio\+::details\+::make\+Format\+Argument (\begin{DoxyParamCaption}\item[{const Value \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+FMATIO\+\_\+\+INLINE Basic\+Format\+Argument$<$ Char $>$ fmatio\+::details\+::make\+Format\+Argument (\begin{DoxyParamCaption}\item[{const Value \&}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -58,7 +56,7 @@ Make a format argument with provided value.
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em value} & \\
+\mbox{\texttt{ in}}  & {\em value} & Value of the format argument.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -66,23 +64,22 @@ Basic\+Format\+Argument$<$\+Char$>$ -\/ Format argument.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{arguments_8inl_source_l00139}{139}} of file \mbox{\hyperlink{arguments_8inl_source}{arguments.\+inl}}.
+Definition at line 144 of file arguments.\+inl.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00140         \{}
-\DoxyCodeLine{00141             \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type = TypeOf<Value>::value;}
-\DoxyCodeLine{00142 }
-\DoxyCodeLine{00143             \textcolor{keywordflow}{if} (type != FormatArgumentType::Unknown)}
-\DoxyCodeLine{00144             \{}
-\DoxyCodeLine{00145                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>(type, \&value);}
-\DoxyCodeLine{00146             \}}
-\DoxyCodeLine{00147             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (::std::is\_pointer\_v<Value>)}
-\DoxyCodeLine{00148             \{}
-\DoxyCodeLine{00149                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>(FormatArgumentType::VoidPointer, \&value);}
-\DoxyCodeLine{00150             \}}
-\DoxyCodeLine{00151             }
-\DoxyCodeLine{00152             \textcolor{keywordflow}{return} BasicFormatArgument<Char>();}
-\DoxyCodeLine{00153         \}}
+\DoxyCodeLine{145         \{}
+\DoxyCodeLine{146             \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type = TypeOf<Value>::value;}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148             \textcolor{keywordflow}{if} (type != FormatArgumentType::Unknown)}
+\DoxyCodeLine{149             \{}
+\DoxyCodeLine{150                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>(type, \&value);}
+\DoxyCodeLine{151             \}}
+\DoxyCodeLine{152             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{153             \{}
+\DoxyCodeLine{154                 FMATIO\_ASSERT(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}Provided argument type is not supported!"{}});}
+\DoxyCodeLine{155                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>();}
+\DoxyCodeLine{156             \}}
+\DoxyCodeLine{157         \}}
 
 \end{DoxyCode}

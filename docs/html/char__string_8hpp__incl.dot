@@ -1,29 +1,29 @@
-digraph "include/fmatio/details/char_string.hpp"
+digraph "include/fmatio/details/types/char_string.hpp"
 {
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="include/fmatio/details\l/char_string.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="include/fmatio/details\l/types/char_string.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="fmatio/core.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$core_8hpp.html",tooltip=" "];
-  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="fmatio/types.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$types_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="fmatio/details/writers.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$writers_8hpp.html",tooltip=" "];
-  Node4 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="fmatio/basic_string.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$basic__string_8hpp.html",tooltip=" "];
+  Node4 [label="fmatio/types.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$types_8hpp.html",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="fmatio/details/writers.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$writers_8hpp.html",tooltip=" "];
   Node5 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="./basic_string.inl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$basic__string_8inl.html",tooltip=" "];
-  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="fmatio/basic_string\l_view.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$basic__string__view_8hpp.html",tooltip=" "];
-  Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="fmatio/basic_string\l_view.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$basic__string__view_8hpp.html",tooltip=" "];
+  Node6 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="./basic_string_view.inl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$basic__string__view_8inl.html",tooltip=" "];
   Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="./basic_string_view.inl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$basic__string__view_8inl.html",tooltip=" "];
-  Node4 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="fmatio/details/basic\l_string_utilities.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$basic__string__utilities_8hpp.html",tooltip=" "];
+  Node8 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="./writers.inl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$writers_8inl.html",tooltip=" "];
   Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node10 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];

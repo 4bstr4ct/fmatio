@@ -20,7 +20,6 @@
 #endif
 
 #include <fmatio/core.hpp>
-#include <fmatio/basic_string.hpp>
 #include <fmatio/basic_string_view.hpp>
 
 namespace fmatio

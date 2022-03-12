@@ -1,5 +1,5 @@
-\hypertarget{uint16_8hpp}{}\doxysection{include/fmatio/details/uint16.hpp File Reference}
-\label{uint16_8hpp}\index{include/fmatio/details/uint16.hpp@{include/fmatio/details/uint16.hpp}}
+\hypertarget{uint16_8hpp}{}\doxysection{include/fmatio/details/types/uint16.hpp File Reference}
+\label{uint16_8hpp}\index{include/fmatio/details/types/uint16.hpp@{include/fmatio/details/types/uint16.hpp}}
 {\ttfamily \#include $<$fmatio/core.\+hpp$>$}\newline
 {\ttfamily \#include $<$fmatio/types.\+hpp$>$}\newline
 {\ttfamily \#include $<$fmatio/details/writers.\+hpp$>$}\newline
@@ -11,7 +11,8 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{uint16_8hpp_a78e158511ce172257a9ed7c1d9959ba9}{fmatio\+::details\+::uint16\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, uint16 value) noexcept
+\mbox{\Hypertarget{uint16_8hpp_aafe23d7defb1eeaf18c0cbd8c64ed3ff}\label{uint16_8hpp_aafe23d7defb1eeaf18c0cbd8c64ed3ff}} 
+{\footnotesize template$<$typename Char $>$ }\\FMATIO\+\_\+\+INLINE void {\bfseries fmatio\+::details\+::uint16\+Handle} (Basic\+Format\+Writer$<$ Char $>$ \&writer, uint16 value) FMATIO\+\_\+\+NOEXCEPT
 \end{DoxyCompactItemize}
 
 
@@ -24,29 +25,4 @@ Defines functions to write unsigned 16-\/bit integer.
 \begin{DoxyCopyright}{Copyright}
 © 2022-\/2023 by Joris Baranauskas
 \end{DoxyCopyright}
-This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
-
-Definition in file \mbox{\hyperlink{uint16_8hpp_source}{uint16.\+hpp}}.
-
-
-
-\doxysubsection{Function Documentation}
-\mbox{\Hypertarget{uint16_8hpp_a78e158511ce172257a9ed7c1d9959ba9}\label{uint16_8hpp_a78e158511ce172257a9ed7c1d9959ba9}} 
-\index{uint16.hpp@{uint16.hpp}!uint16Handle@{uint16Handle}}
-\index{uint16Handle@{uint16Handle}!uint16.hpp@{uint16.hpp}}
-\doxysubsubsection{\texorpdfstring{uint16Handle()}{uint16Handle()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-void fmatio\+::details\+::uint16\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_af57d680165131ff29b1c1755cfefae3c}{uint16}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{uint16_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{uint16_8hpp_source}{uint16.\+hpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00031         \{}
-\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
-\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
-\DoxyCodeLine{00034         \}}
-
-\end{DoxyCode}
+This file is distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 

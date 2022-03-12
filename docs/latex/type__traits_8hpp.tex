@@ -1,0 +1,90 @@
+\hypertarget{type__traits_8hpp}{}\doxysection{include/fmatio/details/type\+\_\+traits.hpp File Reference}
+\label{type__traits_8hpp}\index{include/fmatio/details/type\_traits.hpp@{include/fmatio/details/type\_traits.hpp}}
+{\ttfamily \#include $<$fmatio/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/types.\+hpp$>$}\newline
+Include dependency graph for type\+\_\+traits.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1RemoveReference}{fmatio\+::details\+::\+Remove\+Reference$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Remove reference structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1RemoveReference_3_01T_01_6_01_4}{fmatio\+::details\+::\+Remove\+Reference$<$ T \& $>$}}
+\begin{DoxyCompactList}\small\item\em Remove reference structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1RemoveReference_3_01T_01_6_6_01_4}{fmatio\+::details\+::\+Remove\+Reference$<$ T \&\& $>$}}
+\begin{DoxyCompactList}\small\item\em Remove reference structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1RemoveExtent}{fmatio\+::details\+::\+Remove\+Extent$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Remove extent structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1RemoveExtent_3_01T_0fsize_0e_4}{fmatio\+::details\+::\+Remove\+Extent$<$ T\mbox{[}size\mbox{]}$>$}}
+\begin{DoxyCompactList}\small\item\em Remove extent structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfmatio_1_1details_1_1RemoveExtent_3_01T_0f_0e_4}{fmatio\+::details\+::\+Remove\+Extent$<$ T\mbox{[}$\,$\mbox{]}$>$}}
+\begin{DoxyCompactList}\small\item\em Remove extent structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{type__traits_8hpp_afddb47ae50490245d330207fc4e9a5f4}{fmatio\+::details\+::\+Remove\+Reference\+Type}} = typename Remove\+Reference$<$ T $>$\+::Type
+\begin{DoxyCompactList}\small\item\em Remove reference type structure. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{type__traits_8hpp_a643485461fb4fd599aac22f44336c4cf}{fmatio\+::details\+::\+Remove\+Extent\+Type}} = typename Remove\+Extent$<$ T $>$\+::Type
+\begin{DoxyCompactList}\small\item\em Remove extent type structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{type__traits_8hpp_a8983e9667c8feb8a616ae88ad3f659e0}\label{type__traits_8hpp_a8983e9667c8feb8a616ae88ad3f659e0}} 
+{\footnotesize template$<$typename T $>$ }\\using {\bfseries fmatio\+::details\+::\+Decayed\+If\+Array} = \+::std\+::conditional\+\_\+t$<$\+::std\+::is\+\_\+array\+\_\+v$<$ T $>$, Remove\+Extent\+Type$<$ T $>$ const  $\ast$, T $>$
+\item 
+\mbox{\Hypertarget{type__traits_8hpp_a3f4903aaeddb86df204f044b8954409d}\label{type__traits_8hpp_a3f4903aaeddb86df204f044b8954409d}} 
+{\footnotesize template$<$typename T $>$ }\\using {\bfseries fmatio\+::details\+::\+Formattable} = Decayed\+If\+Array$<$ Remove\+Reference\+Type$<$ T $>$ $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Joris Baranauskas (jorisb)
+\end{DoxyAuthor}
+Defines classes and utilitites for type traits.
+
+\begin{DoxyCopyright}{Copyright}
+© 2022-\/2023 by Joris Baranauskas
+\end{DoxyCopyright}
+This file is distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{type__traits_8hpp_a643485461fb4fd599aac22f44336c4cf}\label{type__traits_8hpp_a643485461fb4fd599aac22f44336c4cf}} 
+\index{type\_traits.hpp@{type\_traits.hpp}!RemoveExtentType@{RemoveExtentType}}
+\index{RemoveExtentType@{RemoveExtentType}!type\_traits.hpp@{type\_traits.hpp}}
+\doxysubsubsection{\texorpdfstring{RemoveExtentType}{RemoveExtentType}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{type__traits_8hpp_a643485461fb4fd599aac22f44336c4cf}{fmatio\+::details\+::\+Remove\+Extent\+Type}} = typedef typename Remove\+Extent$<$T$>$\+::Type}
+
+
+
+Remove extent type structure. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type for extent removal. \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 126 of file type\+\_\+traits.\+hpp.
+
+\mbox{\Hypertarget{type__traits_8hpp_afddb47ae50490245d330207fc4e9a5f4}\label{type__traits_8hpp_afddb47ae50490245d330207fc4e9a5f4}} 
+\index{type\_traits.hpp@{type\_traits.hpp}!RemoveReferenceType@{RemoveReferenceType}}
+\index{RemoveReferenceType@{RemoveReferenceType}!type\_traits.hpp@{type\_traits.hpp}}
+\doxysubsubsection{\texorpdfstring{RemoveReferenceType}{RemoveReferenceType}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{type__traits_8hpp_afddb47ae50490245d330207fc4e9a5f4}{fmatio\+::details\+::\+Remove\+Reference\+Type}} = typedef typename Remove\+Reference$<$T$>$\+::Type}
+
+
+
+Remove reference type structure. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type for reference removal. \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 75 of file type\+\_\+traits.\+hpp.
+

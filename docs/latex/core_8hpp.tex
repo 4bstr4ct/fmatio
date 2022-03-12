@@ -1,11 +1,93 @@
 \hypertarget{core_8hpp}{}\doxysection{include/fmatio/core.hpp File Reference}
 \label{core_8hpp}\index{include/fmatio/core.hpp@{include/fmatio/core.hpp}}
-This graph shows which files directly or indirectly include this file\+:
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for core.\+hpp\+:
 % FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{core_8hpp_a708342aeee496098aa1eee529e56a22e}{FMATIO\+\_\+\+ASSERT}}(expression,  message)
+\mbox{\Hypertarget{core_8hpp_af6ec6a37a61abedd3df09f658204525c}\label{core_8hpp_af6ec6a37a61abedd3df09f658204525c}} 
+\#define {\bfseries FMATIO\+\_\+\+CLANG\+\_\+\+VERSION}~0
+\item 
+\mbox{\Hypertarget{core_8hpp_ac63904b10c3a50248abc565d2483b11c}\label{core_8hpp_ac63904b10c3a50248abc565d2483b11c}} 
+\#define {\bfseries FMATIO\+\_\+\+GCC\+\_\+\+VERSION}~0
+\item 
+\mbox{\Hypertarget{core_8hpp_a70e5a221bef354bcac37ec21e942f6ae}\label{core_8hpp_a70e5a221bef354bcac37ec21e942f6ae}} 
+\#define {\bfseries FMATIO\+\_\+\+GCC\+\_\+\+PRAGMA}(arg)
+\item 
+\mbox{\Hypertarget{core_8hpp_a0c6a63ca2d1e26eb2b9214e0b0108c21}\label{core_8hpp_a0c6a63ca2d1e26eb2b9214e0b0108c21}} 
+\#define {\bfseries FMATIO\+\_\+\+ICC\+\_\+\+VERSION}~0
+\item 
+\mbox{\Hypertarget{core_8hpp_af83a2ad045a5431f978dd593ef05a0df}\label{core_8hpp_af83a2ad045a5431f978dd593ef05a0df}} 
+\#define {\bfseries FMATIO\+\_\+\+NVCOMPILER\+\_\+\+VERSION}~0
+\item 
+\mbox{\Hypertarget{core_8hpp_af47fd102c5f1cc7c88c95a9f051beebe}\label{core_8hpp_af47fd102c5f1cc7c88c95a9f051beebe}} 
+\#define {\bfseries FMATIO\+\_\+\+NVCC}~0
+\item 
+\mbox{\Hypertarget{core_8hpp_aa60ddc4add1a1cdf51743785f98de53b}\label{core_8hpp_aa60ddc4add1a1cdf51743785f98de53b}} 
+\#define {\bfseries FMATIO\+\_\+\+MSC\+\_\+\+VER}~0
+\item 
+\mbox{\Hypertarget{core_8hpp_a2e1a9ed7b9e08c4aed0920e0f4bece33}\label{core_8hpp_a2e1a9ed7b9e08c4aed0920e0f4bece33}} 
+\#define {\bfseries FMATIO\+\_\+\+MSC\+\_\+\+WARNING}(...)
+\item 
+\mbox{\Hypertarget{core_8hpp_a30119817e0021a479ce7e6d5951569bd}\label{core_8hpp_a30119817e0021a479ce7e6d5951569bd}} 
+\#define {\bfseries FMATIO\+\_\+\+HAS\+\_\+\+FEATURE}(x)~0
+\item 
+\mbox{\Hypertarget{core_8hpp_a566b56782d7a2912402ad85aae614a5a}\label{core_8hpp_a566b56782d7a2912402ad85aae614a5a}} 
+\#define {\bfseries FMATIO\+\_\+\+CPLUSPLUS}~\+\_\+\+\_\+cplusplus
+\item 
+\mbox{\Hypertarget{core_8hpp_a59c8322ee7a5087780965f1ffcfc54df}\label{core_8hpp_a59c8322ee7a5087780965f1ffcfc54df}} 
+\#define {\bfseries FMATIO\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE}(x)~0
+\item 
+\mbox{\Hypertarget{core_8hpp_a3dca3c5aab5cecf3ab8621fa5d06e012}\label{core_8hpp_a3dca3c5aab5cecf3ab8621fa5d06e012}} 
+\#define {\bfseries FMATIO\+\_\+\+HAS\+\_\+\+CPP14\+\_\+\+ATTRIBUTE}(attribute)~  (FMATIO\+\_\+\+CPLUSPLUS $>$= 201402L \&\& FMATIO\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE(attribute))
+\item 
+\mbox{\Hypertarget{core_8hpp_ab4895b4853417a4272138b127e33fdd4}\label{core_8hpp_ab4895b4853417a4272138b127e33fdd4}} 
+\#define {\bfseries FMATIO\+\_\+\+HAS\+\_\+\+CPP17\+\_\+\+ATTRIBUTE}(attribute)~  (FMATIO\+\_\+\+CPLUSPLUS $>$= 201703L \&\& FMATIO\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE(attribute))
+\item 
+\mbox{\Hypertarget{core_8hpp_a39f07d418bcfe800a9d9e934e0de8eec}\label{core_8hpp_a39f07d418bcfe800a9d9e934e0de8eec}} 
+\#define {\bfseries FMATIO\+\_\+\+USE\+\_\+\+CONSTEXPR}~(FMATIO\+\_\+\+HAS\+\_\+\+FEATURE(cxx\+\_\+relaxed\+\_\+constexpr) $\vert$$\vert$ FMATIO\+\_\+\+MSC\+\_\+\+VER $>$= 1912 $\vert$$\vert$ (FMATIO\+\_\+\+GCC\+\_\+\+VERSION $>$= 600 \&\& \+\_\+\+\_\+cplusplus $>$= 201402L)) \&\& !FMATIO\+\_\+\+NVCC \&\& !FMATIO\+\_\+\+ICC\+\_\+\+VERSION
+\item 
+\mbox{\Hypertarget{core_8hpp_a6781b466b2fa4171dd0efbaf37b6f173}\label{core_8hpp_a6781b466b2fa4171dd0efbaf37b6f173}} 
+\#define {\bfseries FMATIO\+\_\+\+CONSTEXPR}
+\item 
+\mbox{\Hypertarget{core_8hpp_ab5d7dcf9ded817fb44b8d1ed3038b8c9}\label{core_8hpp_ab5d7dcf9ded817fb44b8d1ed3038b8c9}} 
+\#define {\bfseries FMATIO\+\_\+\+CONSTEXPR\+\_\+\+DECL}
+\item 
+\mbox{\Hypertarget{core_8hpp_afce4f8667f8b82e591087befd52fa3de}\label{core_8hpp_afce4f8667f8b82e591087befd52fa3de}} 
+\#define {\bfseries FMATIO\+\_\+\+NOEXCEPT}~noexcept
+\item 
+\mbox{\Hypertarget{core_8hpp_a5fb75edea9f172a534847dd02e60acb7}\label{core_8hpp_a5fb75edea9f172a534847dd02e60acb7}} 
+\#define {\bfseries FMATIO\+\_\+\+INLINE}~inline
+\item 
+\mbox{\Hypertarget{core_8hpp_a06539144dfbdaa9b0cdedf95582747b2}\label{core_8hpp_a06539144dfbdaa9b0cdedf95582747b2}} 
+\#define {\bfseries FMATIO\+\_\+\+NOINLINE}
+\item 
+\mbox{\Hypertarget{core_8hpp_a52fe657d65b4527b056d68d98e30fea7}\label{core_8hpp_a52fe657d65b4527b056d68d98e30fea7}} 
+\#define {\bfseries FMATIO\+\_\+\+NORETURN}
+\item 
+\mbox{\Hypertarget{core_8hpp_abfbd72642c41ff307977d83b096a8a04}\label{core_8hpp_abfbd72642c41ff307977d83b096a8a04}} 
+\#define {\bfseries FMATIO\+\_\+\+NODISCARD}
+\item 
+\mbox{\Hypertarget{core_8hpp_a4b61134dec90e85770648c2b0f2368b2}\label{core_8hpp_a4b61134dec90e85770648c2b0f2368b2}} 
+\#define {\bfseries FMATIO\+\_\+\+DEPRECATED}~/$\ast$ deprecated $\ast$/
+\item 
+\mbox{\Hypertarget{core_8hpp_af9dd2ccdc851f6d839343303933f2f2a}\label{core_8hpp_af9dd2ccdc851f6d839343303933f2f2a}} 
+\#define {\bfseries FMATIO\+\_\+\+DEBUG}~NDEBUG
+\item 
+\mbox{\Hypertarget{core_8hpp_afe8f976120c61479460233db4b1ac05b}\label{core_8hpp_afe8f976120c61479460233db4b1ac05b}} 
+\#define {\bfseries FMATIO\+\_\+\+ASSERT}(condition,  message)~   \+::fmatio\+::exceptions\+::fmatio\+Assert$<$bool, const char$\ast$ const, const char$\ast$ const, unsigned int$>$(condition, message, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, (unsigned int)\+\_\+\+\_\+\+LINE\+\_\+\+\_\+);
+\item 
+\mbox{\Hypertarget{core_8hpp_af6ff059a215257b4d90fc6cc70d383dc}\label{core_8hpp_af6ff059a215257b4d90fc6cc70d383dc}} 
+\#define {\bfseries FMATIO\+\_\+\+OS\+\_\+\+WINDOWS\+\_\+\+X32}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{core_8hpp_aea6f5fa336643ee4a21038af48dec1b6}\label{core_8hpp_aea6f5fa336643ee4a21038af48dec1b6}} 
+{\footnotesize template$<$typename Condition , typename Message , typename File , typename Line $>$ }\\FMATIO\+\_\+\+CONSTEXPR FMATIO\+\_\+\+INLINE void {\bfseries fmatio\+::exceptions\+::fmatio\+Assert} (Condition condition, Message message, File file, Line line)
 \end{DoxyCompactItemize}
 
 
@@ -18,20 +100,4 @@ Defines macros and helper utilities.
 \begin{DoxyCopyright}{Copyright}
 © 2022-\/2023 by Joris Baranauskas
 \end{DoxyCopyright}
-This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
-
-Definition in file \mbox{\hyperlink{core_8hpp_source}{core.\+hpp}}.
-
-
-
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{core_8hpp_a708342aeee496098aa1eee529e56a22e}\label{core_8hpp_a708342aeee496098aa1eee529e56a22e}} 
-\index{core.hpp@{core.hpp}!FMATIO\_ASSERT@{FMATIO\_ASSERT}}
-\index{FMATIO\_ASSERT@{FMATIO\_ASSERT}!core.hpp@{core.hpp}}
-\doxysubsubsection{\texorpdfstring{FMATIO\_ASSERT}{FMATIO\_ASSERT}}
-{\footnotesize\ttfamily \#define FMATIO\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{expression,  }\item[{}]{message }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{core_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{core_8hpp_source}{core.\+hpp}}.
-
+This file is distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 

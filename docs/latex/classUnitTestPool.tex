@@ -3,119 +3,25 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classUnitTestPool_a10e1ca2875e3c455ef68ec0eff91b26c}{Unit\+Test\+Pool}} (const \+::std\+::string \&title)
+\mbox{\Hypertarget{classUnitTestPool_a10e1ca2875e3c455ef68ec0eff91b26c}\label{classUnitTestPool_a10e1ca2875e3c455ef68ec0eff91b26c}} 
+{\bfseries Unit\+Test\+Pool} (const \+::std\+::string \&title)
 \item 
-void \mbox{\hyperlink{classUnitTestPool_a6d64655dcb594946e53e9fe5fcc5e5f5}{add\+Test}} (const \+::std\+::string \&title, bool expression, const \+::std\+::string \&expression\+String, const \+::std\+::string \&on\+Success, const \+::std\+::string \&on\+Failure)
+\mbox{\Hypertarget{classUnitTestPool_a6d64655dcb594946e53e9fe5fcc5e5f5}\label{classUnitTestPool_a6d64655dcb594946e53e9fe5fcc5e5f5}} 
+void {\bfseries add\+Test} (const \+::std\+::string \&title, bool expression, const \+::std\+::string \&expression\+String, const \+::std\+::string \&on\+Success, const \+::std\+::string \&on\+Failure)
 \item 
-void \mbox{\hyperlink{classUnitTestPool_a6d92e3ad862da46fc2e55d4ad0e7478b}{add\+Test}} (const \mbox{\hyperlink{classUnitTest}{Unit\+Test}} \&test)
+\mbox{\Hypertarget{classUnitTestPool_a6d92e3ad862da46fc2e55d4ad0e7478b}\label{classUnitTestPool_a6d92e3ad862da46fc2e55d4ad0e7478b}} 
+void {\bfseries add\+Test} (const \mbox{\hyperlink{classUnitTest}{Unit\+Test}} \&test)
 \item 
-void \mbox{\hyperlink{classUnitTestPool_ab2236f9e0f4b7251ab9d7a6740a05442}{perform\+All}} ()
+\mbox{\Hypertarget{classUnitTestPool_ab2236f9e0f4b7251ab9d7a6740a05442}\label{classUnitTestPool_ab2236f9e0f4b7251ab9d7a6740a05442}} 
+void {\bfseries perform\+All} ()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{utils_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
+Definition at line 44 of file utils.\+hpp.
 
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classUnitTestPool_a10e1ca2875e3c455ef68ec0eff91b26c}\label{classUnitTestPool_a10e1ca2875e3c455ef68ec0eff91b26c}} 
-\index{UnitTestPool@{UnitTestPool}!UnitTestPool@{UnitTestPool}}
-\index{UnitTestPool@{UnitTestPool}!UnitTestPool@{UnitTestPool}}
-\doxysubsubsection{\texorpdfstring{UnitTestPool()}{UnitTestPool()}}
-{\footnotesize\ttfamily Unit\+Test\+Pool\+::\+Unit\+Test\+Pool (\begin{DoxyParamCaption}\item[{const \+::std\+::string \&}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Definition at line \mbox{\hyperlink{utils_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00052         : tests(), length((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int})title.size())}
-\DoxyCodeLine{00053     \{}
-\DoxyCodeLine{00054         ::std::cout << \textcolor{stringliteral}{"{}\(\backslash\)033[1;33m[ "{}} << title << \textcolor{stringliteral}{"{} ]\(\backslash\)033[0m"{}} << ::std::endl;}
-\DoxyCodeLine{00055     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classUnitTestPool_a84be5b09065ba095737e7d60e316db39}\label{classUnitTestPool_a84be5b09065ba095737e7d60e316db39}} 
-\index{UnitTestPool@{UnitTestPool}!````~UnitTestPool@{$\sim$UnitTestPool}}
-\index{````~UnitTestPool@{$\sim$UnitTestPool}!UnitTestPool@{UnitTestPool}}
-\doxysubsubsection{\texorpdfstring{$\sim$UnitTestPool()}{~UnitTestPool()}}
-{\footnotesize\ttfamily Unit\+Test\+Pool\+::$\sim$\+Unit\+Test\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Definition at line \mbox{\hyperlink{utils_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00058     \{}
-\DoxyCodeLine{00059         ::std::cout << \textcolor{stringliteral}{"{}\(\backslash\)033[1;33m[ "{}};}
-\DoxyCodeLine{00060 }
-\DoxyCodeLine{00061         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this-\/>length; i++)}
-\DoxyCodeLine{00062             ::std::cout << \textcolor{stringliteral}{"{}-\/"{}};}
-\DoxyCodeLine{00063 }
-\DoxyCodeLine{00064         ::std::cout << \textcolor{stringliteral}{"{} ]\(\backslash\)033[0m"{}} << ::std::endl;}
-\DoxyCodeLine{00065     \}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classUnitTestPool_a6d64655dcb594946e53e9fe5fcc5e5f5}\label{classUnitTestPool_a6d64655dcb594946e53e9fe5fcc5e5f5}} 
-\index{UnitTestPool@{UnitTestPool}!addTest@{addTest}}
-\index{addTest@{addTest}!UnitTestPool@{UnitTestPool}}
-\doxysubsubsection{\texorpdfstring{addTest()}{addTest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Unit\+Test\+Pool\+::add\+Test (\begin{DoxyParamCaption}\item[{const \+::std\+::string \&}]{title,  }\item[{bool}]{expression,  }\item[{const \+::std\+::string \&}]{expression\+String,  }\item[{const \+::std\+::string \&}]{on\+Success,  }\item[{const \+::std\+::string \&}]{on\+Failure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Definition at line \mbox{\hyperlink{utils_8hpp_source_l00068}{68}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00073     \{}
-\DoxyCodeLine{00074         this-\/>tests.push\_back(\mbox{\hyperlink{classUnitTest}{UnitTest}}(title, expression, expressionString, onSuccess, onFailure));}
-\DoxyCodeLine{00075     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classUnitTestPool_a6d92e3ad862da46fc2e55d4ad0e7478b}\label{classUnitTestPool_a6d92e3ad862da46fc2e55d4ad0e7478b}} 
-\index{UnitTestPool@{UnitTestPool}!addTest@{addTest}}
-\index{addTest@{addTest}!UnitTestPool@{UnitTestPool}}
-\doxysubsubsection{\texorpdfstring{addTest()}{addTest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Unit\+Test\+Pool\+::add\+Test (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUnitTest}{Unit\+Test}} \&}]{test }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Definition at line \mbox{\hyperlink{utils_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00078     \{}
-\DoxyCodeLine{00079         this-\/>tests.push\_back(test);}
-\DoxyCodeLine{00080     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classUnitTestPool_ab2236f9e0f4b7251ab9d7a6740a05442}\label{classUnitTestPool_ab2236f9e0f4b7251ab9d7a6740a05442}} 
-\index{UnitTestPool@{UnitTestPool}!performAll@{performAll}}
-\index{performAll@{performAll}!UnitTestPool@{UnitTestPool}}
-\doxysubsubsection{\texorpdfstring{performAll()}{performAll()}}
-{\footnotesize\ttfamily void Unit\+Test\+Pool\+::perform\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Definition at line \mbox{\hyperlink{utils_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00083     \{}
-\DoxyCodeLine{00084         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& test : this-\/>tests)}
-\DoxyCodeLine{00085             test.perform();}
-\DoxyCodeLine{00086     \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -1,5 +1,5 @@
-\hypertarget{float_8hpp}{}\doxysection{include/fmatio/details/float.hpp File Reference}
-\label{float_8hpp}\index{include/fmatio/details/float.hpp@{include/fmatio/details/float.hpp}}
+\hypertarget{float_8hpp}{}\doxysection{include/fmatio/details/types/float.hpp File Reference}
+\label{float_8hpp}\index{include/fmatio/details/types/float.hpp@{include/fmatio/details/types/float.hpp}}
 {\ttfamily \#include $<$fmatio/core.\+hpp$>$}\newline
 {\ttfamily \#include $<$fmatio/types.\+hpp$>$}\newline
 {\ttfamily \#include $<$fmatio/details/writers.\+hpp$>$}\newline
@@ -11,7 +11,8 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{float_8hpp_a3ba785380223de4517cdde51ca4770e5}{fmatio\+::details\+::float\+Handle}} (Basic\+Format\+Writer$<$ Char $>$ \&writer, float value) noexcept
+\mbox{\Hypertarget{float_8hpp_a9c549a4180f9c1275f067497b9d7f097}\label{float_8hpp_a9c549a4180f9c1275f067497b9d7f097}} 
+{\footnotesize template$<$typename Char $>$ }\\FMATIO\+\_\+\+INLINE void {\bfseries fmatio\+::details\+::float\+Handle} (Basic\+Format\+Writer$<$ Char $>$ \&writer, float value) FMATIO\+\_\+\+NOEXCEPT
 \end{DoxyCompactItemize}
 
 
@@ -24,29 +25,4 @@ Defines functions to write float.
 \begin{DoxyCopyright}{Copyright}
 © 2022-\/2023 by Joris Baranauskas
 \end{DoxyCopyright}
-This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
-
-Definition in file \mbox{\hyperlink{float_8hpp_source}{float.\+hpp}}.
-
-
-
-\doxysubsection{Function Documentation}
-\mbox{\Hypertarget{float_8hpp_a3ba785380223de4517cdde51ca4770e5}\label{float_8hpp_a3ba785380223de4517cdde51ca4770e5}} 
-\index{float.hpp@{float.hpp}!floatHandle@{floatHandle}}
-\index{floatHandle@{floatHandle}!float.hpp@{float.hpp}}
-\doxysubsubsection{\texorpdfstring{floatHandle()}{floatHandle()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-void fmatio\+::details\+::float\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{float_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{float_8hpp_source}{float.\+hpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00031         \{}
-\DoxyCodeLine{00032             ::std::string \textcolor{keywordtype}{string} = ::std::to\_string(value); \textcolor{comment}{// Have to reimplement this!}}
-\DoxyCodeLine{00033             writer.write(BasicStringView<Char>(\textcolor{keywordtype}{string}.data()));}
-\DoxyCodeLine{00034         \}}
-
-\end{DoxyCode}
+This file is distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 

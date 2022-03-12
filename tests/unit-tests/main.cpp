@@ -1,5 +1,5 @@
 #include <fmatio.hpp>
-#include <fmatio/std/utilities.hpp>
+#include <fmatio/formatters.hpp>
 
 #include "./utils.hpp"
 
@@ -28,6 +28,13 @@ FMATIO_INLINE void test(Arg&& arg, Args&&... args) FMATIO_NOEXCEPT
 
 int main(int argc, char** argv)
 {
+	fmatio::echo<fmatio::SafeCharIteratorFormatter,
+		fmatio::String>(
+			std::cout, "Hello, {}!\n", "world");
+
+	fmatio::cecho(std::cout, "Hello, {}!\n", "world");
+
+#if 0
 	{
 		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 5);
 		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 7);
@@ -75,6 +82,7 @@ int main(int argc, char** argv)
 		const char* cstring2 = fmatio::cformat("{}\n", 8.5f).getData();
 		std::cout << cstring2;
 	}
+#endif
 
 	return 0;
 }

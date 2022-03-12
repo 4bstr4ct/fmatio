@@ -1,8 +1,7 @@
-\hypertarget{basic__string__utilities_8hpp}{}\doxysection{include/fmatio/std/basic\+\_\+string\+\_\+utilities.hpp File Reference}
-\label{basic__string__utilities_8hpp}\index{include/fmatio/std/basic\_string\_utilities.hpp@{include/fmatio/std/basic\_string\_utilities.hpp}}
-{\ttfamily \#include $<$fmatio/basic\+\_\+string.\+hpp$>$}\newline
-{\ttfamily \#include $<$ostream$>$}\newline
-{\ttfamily \#include $<$string$>$}\newline
+\hypertarget{basic__string__utilities_8hpp}{}\doxysection{include/fmatio/details/basic\+\_\+string\+\_\+utilities.hpp File Reference}
+\label{basic__string__utilities_8hpp}\index{include/fmatio/details/basic\_string\_utilities.hpp@{include/fmatio/details/basic\_string\_utilities.hpp}}
+{\ttfamily \#include $<$fmatio/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/types.\+hpp$>$}\newline
 Include dependency graph for basic\+\_\+string\+\_\+utilities.\+hpp\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
@@ -10,9 +9,11 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Char  = char$>$ }\\\+::std\+::ostream \& \mbox{\hyperlink{basic__string__utilities_8hpp_ac9dc7b42ac0529670b6c02001bc69ebd}{operator$<$$<$}} (\+::std\+::ostream \&stream, const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&string) noexcept
+\mbox{\Hypertarget{basic__string__utilities_8hpp_a268cca456dd2d41cf2203beb161fc0c7}\label{basic__string__utilities_8hpp_a268cca456dd2d41cf2203beb161fc0c7}} 
+{\footnotesize template$<$typename Char $>$ }\\FMATIO\+\_\+\+CONSTEXPR FMATIO\+\_\+\+INLINE uint32 {\bfseries fmatio\+::details\+::string\+Size} (const Char $\ast$const string) FMATIO\+\_\+\+NOEXCEPT
 \item 
-{\footnotesize template$<$typename Char $>$ }\\\+::std\+::basic\+\_\+string$<$ Char $>$ \mbox{\hyperlink{basic__string__utilities_8hpp_ae76f6e7a9b0bacf9a8cd1dc182f2abcb}{to\+Std\+Basic\+String}} (const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&string) noexcept
+\mbox{\Hypertarget{basic__string__utilities_8hpp_aa4c2e01ffee885692e32917831df1002}\label{basic__string__utilities_8hpp_aa4c2e01ffee885692e32917831df1002}} 
+{\footnotesize template$<$typename Char $>$ }\\FMATIO\+\_\+\+CONSTEXPR FMATIO\+\_\+\+INLINE void {\bfseries fmatio\+::details\+::string\+Copy} (Char $\ast$destination, const Char $\ast$const source, uint32 size) FMATIO\+\_\+\+NOEXCEPT
 \end{DoxyCompactItemize}
 
 
@@ -20,52 +21,9 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyAuthor}{Author}
 Joris Baranauskas (jorisb)
 \end{DoxyAuthor}
-Defines std functions and operators for basic string.
+Defines classes and utilitites for format traits.
 
 \begin{DoxyCopyright}{Copyright}
 © 2022-\/2023 by Joris Baranauskas
 \end{DoxyCopyright}
-This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
-
-Definition in file \mbox{\hyperlink{basic__string__utilities_8hpp_source}{basic\+\_\+string\+\_\+utilities.\+hpp}}.
-
-
-
-\doxysubsection{Function Documentation}
-\mbox{\Hypertarget{basic__string__utilities_8hpp_ac9dc7b42ac0529670b6c02001bc69ebd}\label{basic__string__utilities_8hpp_ac9dc7b42ac0529670b6c02001bc69ebd}} 
-\index{basic\_string\_utilities.hpp@{basic\_string\_utilities.hpp}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!basic\_string\_utilities.hpp@{basic\_string\_utilities.hpp}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily template$<$typename Char  = char$>$ \\
-\+::std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\+::std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{basic__string__utilities_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{basic__string__utilities_8hpp_source}{basic\+\_\+string\+\_\+utilities.\+hpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00025 \{}
-\DoxyCodeLine{00026     stream << \textcolor{keywordtype}{string}.getData();}
-\DoxyCodeLine{00027     \textcolor{keywordflow}{return} stream;}
-\DoxyCodeLine{00028 \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{basic__string__utilities_8hpp_ae76f6e7a9b0bacf9a8cd1dc182f2abcb}\label{basic__string__utilities_8hpp_ae76f6e7a9b0bacf9a8cd1dc182f2abcb}} 
-\index{basic\_string\_utilities.hpp@{basic\_string\_utilities.hpp}!toStdBasicString@{toStdBasicString}}
-\index{toStdBasicString@{toStdBasicString}!basic\_string\_utilities.hpp@{basic\_string\_utilities.hpp}}
-\doxysubsubsection{\texorpdfstring{toStdBasicString()}{toStdBasicString()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-\+::std\+::basic\+\_\+string$<$ Char $>$ to\+Std\+Basic\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfmatio_1_1BasicString}{fmatio\+::\+Basic\+String}}$<$ Char $>$ \&}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{basic__string__utilities_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{basic__string__utilities_8hpp_source}{basic\+\_\+string\+\_\+utilities.\+hpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00032 \{}
-\DoxyCodeLine{00033     return ::std::basic\_string<Char>(\textcolor{keywordtype}{string}.getData(), \textcolor{keywordtype}{string}.getSize());}
-\DoxyCodeLine{00034 \}}
-
-\end{DoxyCode}
+This file is distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 

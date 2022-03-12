@@ -4,6 +4,7 @@
 {\ttfamily \#include $<$fmatio/types.\+hpp$>$}\newline
 {\ttfamily \#include $<$fmatio/basic\+\_\+string.\+hpp$>$}\newline
 {\ttfamily \#include $<$fmatio/basic\+\_\+string\+\_\+view.\+hpp$>$}\newline
+{\ttfamily \#include $<$fmatio/formatters.\+hpp$>$}\newline
 {\ttfamily \#include $<$fmatio/details/writers.\+hpp$>$}\newline
 {\ttfamily \#include $<$fmatio/details/arguments.\+hpp$>$}\newline
 {\ttfamily \#include \char`\"{}./format.\+inl\char`\"{}}\newline
@@ -11,18 +12,50 @@ Include dependency graph for format.\+hpp\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{format_8hpp_abedb2e1804e59b8f194b0e5d91b0ad07}\label{format_8hpp_abedb2e1804e59b8f194b0e5d91b0ad07}} 
+using {\bfseries fmatio\+::\+String} = Basic\+String$<$ char $>$
+\item 
+\mbox{\Hypertarget{format_8hpp_ae0091b41cbc0c51d93c4e15126730450}\label{format_8hpp_ae0091b41cbc0c51d93c4e15126730450}} 
+using {\bfseries fmatio\+::\+WString} = Basic\+String$<$ wchar $>$
+\item 
+\mbox{\Hypertarget{format_8hpp_ad4c200c09bea3778b98b00029c380d97}\label{format_8hpp_ad4c200c09bea3778b98b00029c380d97}} 
+using {\bfseries fmatio\+::\+String\+View} = Basic\+String\+View$<$ char $>$
+\item 
+\mbox{\Hypertarget{format_8hpp_a4a273d0292200e17ce79aca61df4a705}\label{format_8hpp_a4a273d0292200e17ce79aca61df4a705}} 
+using {\bfseries fmatio\+::\+WString\+View} = Basic\+String\+View$<$ wchar $>$
+\item 
+\mbox{\Hypertarget{format_8hpp_aaf6c997d7fe78e168377d94e56acb062}\label{format_8hpp_aaf6c997d7fe78e168377d94e56acb062}} 
+using {\bfseries fmatio\+::\+Safe\+Char\+Iterator\+Formatter} = Safe\+Iterator\+Formatter$<$ char $>$
+\item 
+\mbox{\Hypertarget{format_8hpp_a040b9c29a867b79e223e84e40d4b04c5}\label{format_8hpp_a040b9c29a867b79e223e84e40d4b04c5}} 
+using {\bfseries fmatio\+::\+Safe\+WChar\+Iterator\+Formatter} = Safe\+Iterator\+Formatter$<$ wchar $>$
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Char $>$ }\\void \mbox{\hyperlink{format_8hpp_a767b99eda650e5c81312adbbea7be9b9}{fmatio\+::format\+Handle}} (details\+::\+Basic\+Format\+Writer$<$ Char $>$ \&writer, Basic\+String\+View$<$ Char $>$ pattern, const details\+::\+Basic\+Format\+Arguments\+List$<$ Char $>$ \&arguments) noexcept
+\mbox{\Hypertarget{format_8hpp_a7bc57d630e8b63cfecc6b2ae9c8b5ac5}\label{format_8hpp_a7bc57d630e8b63cfecc6b2ae9c8b5ac5}} 
+{\footnotesize template$<$typename Formatter , typename Char $>$ }\\FMATIO\+\_\+\+INLINE void {\bfseries fmatio\+::format\+Handle} (details\+::\+Basic\+Format\+Writer$<$ Char $>$ \&writer, Basic\+String\+View$<$ Char $>$ pattern, const details\+::\+Basic\+Format\+Arguments\+List$<$ Char $>$ \&arguments) FMATIO\+\_\+\+NOEXCEPT
 \item 
-{\footnotesize template$<$typename Result , typename Pattern , typename... Arguments$>$ }\\Result \mbox{\hyperlink{format_8hpp_ae911aceda15385aab555913856e3a203}{fmatio\+::format}} (const Pattern \&pattern, Arguments \&\&... arguments) noexcept
+\mbox{\Hypertarget{format_8hpp_a0205fe7b85f234bd839bd332504fab70}\label{format_8hpp_a0205fe7b85f234bd839bd332504fab70}} 
+{\footnotesize template$<$typename Formatter , typename Result , typename Pattern , typename... Arguments$>$ }\\FMATIO\+\_\+\+INLINE Result {\bfseries fmatio\+::format} (const Pattern \&pattern, Arguments \&\&... arguments) FMATIO\+\_\+\+NOEXCEPT
 \item 
-{\footnotesize template$<$typename Pattern , typename... Arguments$>$ }\\Basic\+String$<$ char $>$ \mbox{\hyperlink{format_8hpp_a9b11cdaf7c702f060eb34cb3d94b0c4d}{fmatio\+::format}} (const Pattern \&pattern, Arguments \&\&... arguments) noexcept
+\mbox{\Hypertarget{format_8hpp_a49824c0b3e6cef96fc4672c6686606f4}\label{format_8hpp_a49824c0b3e6cef96fc4672c6686606f4}} 
+{\footnotesize template$<$typename Formatter  = Safe\+Iterator\+Formatter$<$char$>$, typename Pattern , typename... Arguments$>$ }\\FMATIO\+\_\+\+INLINE Basic\+String$<$ char $>$ {\bfseries fmatio\+::cformat} (const Pattern \&pattern, Arguments \&\&... arguments) FMATIO\+\_\+\+NOEXCEPT
 \item 
-{\footnotesize template$<$typename Pattern , typename... Arguments$>$ }\\Basic\+String$<$ wchar $>$ \mbox{\hyperlink{format_8hpp_a684c353d9f06fb89f5a3c13f34f05997}{fmatio\+::wformat}} (const Pattern \&pattern, Arguments \&\&... arguments) noexcept
+\mbox{\Hypertarget{format_8hpp_a8fb835c47f4823af409573a4e30ae449}\label{format_8hpp_a8fb835c47f4823af409573a4e30ae449}} 
+{\footnotesize template$<$typename Formatter  = Safe\+Iterator\+Formatter$<$wchar$>$, typename Pattern , typename... Arguments$>$ }\\FMATIO\+\_\+\+INLINE Basic\+String$<$ wchar $>$ {\bfseries fmatio\+::wformat} (const Pattern \&pattern, Arguments \&\&... arguments) FMATIO\+\_\+\+NOEXCEPT
 \item 
-{\footnotesize template$<$typename Stream , typename Pattern , typename... Arguments$>$ }\\void \mbox{\hyperlink{format_8hpp_a3f6c56f566a6007650a4e8998079b4b5}{fmatio\+::echo}} (Stream \&stream, const Pattern \&pattern, Arguments \&\&... arguments) noexcept
+\mbox{\Hypertarget{format_8hpp_a816489d53105575b2b5b4cce56247df6}\label{format_8hpp_a816489d53105575b2b5b4cce56247df6}} 
+{\footnotesize template$<$typename Formatter , typename Result , typename Stream , typename Pattern , typename... Arguments$>$ }\\FMATIO\+\_\+\+INLINE void {\bfseries fmatio\+::echo} (Stream \&stream, const Pattern \&pattern, Arguments \&\&... arguments) FMATIO\+\_\+\+NOEXCEPT
+\item 
+\mbox{\Hypertarget{format_8hpp_a3811c622c7ae39212f25c688a1a71033}\label{format_8hpp_a3811c622c7ae39212f25c688a1a71033}} 
+{\footnotesize template$<$typename Formatter  = Safe\+Iterator\+Formatter$<$char$>$, typename Pattern , typename Stream , typename... Arguments$>$ }\\FMATIO\+\_\+\+INLINE void {\bfseries fmatio\+::cecho} (Stream \&stream, const Pattern \&pattern, Arguments \&\&... arguments) FMATIO\+\_\+\+NOEXCEPT
+\item 
+\mbox{\Hypertarget{format_8hpp_adce3227ada7d2db74d11c41f4563985c}\label{format_8hpp_adce3227ada7d2db74d11c41f4563985c}} 
+{\footnotesize template$<$typename Formatter  = Safe\+Iterator\+Formatter$<$wchar$>$, typename Pattern , typename Stream , typename... Arguments$>$ }\\FMATIO\+\_\+\+INLINE void {\bfseries fmatio\+::wecho} (Stream \&stream, const Pattern \&pattern, Arguments \&\&... arguments) FMATIO\+\_\+\+NOEXCEPT
 \end{DoxyCompactItemize}
 
 
@@ -35,127 +68,4 @@ Includes most often used and important headers and defines main library methods.
 \begin{DoxyCopyright}{Copyright}
 © 2022-\/2023 by Joris Baranauskas
 \end{DoxyCopyright}
-This file are distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
-
-Definition in file \mbox{\hyperlink{format_8hpp_source}{format.\+hpp}}.
-
-
-
-\doxysubsection{Function Documentation}
-\mbox{\Hypertarget{format_8hpp_a3f6c56f566a6007650a4e8998079b4b5}\label{format_8hpp_a3f6c56f566a6007650a4e8998079b4b5}} 
-\index{format.hpp@{format.hpp}!echo@{echo}}
-\index{echo@{echo}!format.hpp@{format.hpp}}
-\doxysubsubsection{\texorpdfstring{echo()}{echo()}}
-{\footnotesize\ttfamily template$<$typename Stream , typename Pattern , typename... Arguments$>$ \\
-void fmatio\+::echo (\begin{DoxyParamCaption}\item[{Stream \&}]{stream,  }\item[{const Pattern \&}]{pattern,  }\item[{Arguments \&\&...}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{format_8inl_source_l00069}{69}} of file \mbox{\hyperlink{format_8inl_source}{format.\+inl}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00070     \{}
-\DoxyCodeLine{00071         stream << format<Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...).getData();}
-\DoxyCodeLine{00072     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{format_8hpp_ae911aceda15385aab555913856e3a203}\label{format_8hpp_ae911aceda15385aab555913856e3a203}} 
-\index{format.hpp@{format.hpp}!format@{format}}
-\index{format@{format}!format.hpp@{format.hpp}}
-\doxysubsubsection{\texorpdfstring{format()}{format()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Result , typename Pattern , typename... Arguments$>$ \\
-Result fmatio\+::format (\begin{DoxyParamCaption}\item[{const Pattern \&}]{pattern,  }\item[{Arguments \&\&...}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{format_8inl_source_l00045}{45}} of file \mbox{\hyperlink{format_8inl_source}{format.\+inl}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00046     \{}
-\DoxyCodeLine{00047         \textcolor{keyword}{using} CharType = Result::CharType; Result result = Result();}
-\DoxyCodeLine{00048         details::BasicDynamicWriter<Result> writer = details::BasicDynamicWriter<Result>(result);}
-\DoxyCodeLine{00049         formatHandle(writer, BasicStringView<CharType>(pattern), \{ details::makeFormatArgument<CharType>(arguments)... \});}
-\DoxyCodeLine{00050         FMATIO\_ASSERT(result.getData() != \textcolor{keyword}{nullptr} \&\& result.getSize() > 0, \textcolor{stringliteral}{"{}Format resulted in a invalid string!"{}});}
-\DoxyCodeLine{00051         \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{00052     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{format_8hpp_a9b11cdaf7c702f060eb34cb3d94b0c4d}\label{format_8hpp_a9b11cdaf7c702f060eb34cb3d94b0c4d}} 
-\index{format.hpp@{format.hpp}!format@{format}}
-\index{format@{format}!format.hpp@{format.hpp}}
-\doxysubsubsection{\texorpdfstring{format()}{format()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Pattern , typename... Arguments$>$ \\
-Basic\+String$<$ char $>$ fmatio\+::format (\begin{DoxyParamCaption}\item[{const Pattern \&}]{pattern,  }\item[{Arguments \&\&...}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{format_8inl_source_l00055}{55}} of file \mbox{\hyperlink{format_8inl_source}{format.\+inl}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00056     \{}
-\DoxyCodeLine{00057         BasicString<char> result = format<BasicString<char>, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);}
-\DoxyCodeLine{00058         \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{00059     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{format_8hpp_a767b99eda650e5c81312adbbea7be9b9}\label{format_8hpp_a767b99eda650e5c81312adbbea7be9b9}} 
-\index{format.hpp@{format.hpp}!formatHandle@{formatHandle}}
-\index{formatHandle@{formatHandle}!format.hpp@{format.hpp}}
-\doxysubsubsection{\texorpdfstring{formatHandle()}{formatHandle()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-void fmatio\+::format\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{details\+::\+Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{classfmatio_1_1BasicStringView}{Basic\+String\+View}}$<$ Char $>$}]{pattern,  }\item[{const \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList}{details\+::\+Basic\+Format\+Arguments\+List}}$<$ Char $>$ \&}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{format_8inl_source_l00018}{18}} of file \mbox{\hyperlink{format_8inl_source}{format.\+inl}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00019     \{}
-\DoxyCodeLine{00020         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} count = 0;}
-\DoxyCodeLine{00021 }
-\DoxyCodeLine{00022         \textcolor{keywordflow}{for} (BasicStringView<Char>::ConstIterator it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)}
-\DoxyCodeLine{00023             \textcolor{keywordflow}{if} (*it == \textcolor{charliteral}{'\{'} \&\& *(it + 1) == \textcolor{charliteral}{'\}'})}
-\DoxyCodeLine{00024                 count++;}
-\DoxyCodeLine{00025 }
-\DoxyCodeLine{00026         FMATIO\_ASSERT(count == arguments.getSize(), \textcolor{stringliteral}{"{}Format arguments count and their placeholders \(\backslash\)'\{\}\(\backslash\)' count are different!"{}});}
-\DoxyCodeLine{00027         \mbox{\hyperlink{types_8hpp_af4757d76d9f9f243c688a973adf2a2eb}{uint32}} index = 0;}
-\DoxyCodeLine{00028 }
-\DoxyCodeLine{00029         \textcolor{keywordflow}{for} (BasicStringView<Char>::ConstIterator it = pattern.getConstBegin(); it != pattern.getConstEnd(); it++)}
-\DoxyCodeLine{00030         \{}
-\DoxyCodeLine{00031             \textcolor{keywordflow}{if} (*it == \textcolor{charliteral}{'\{'} \&\& *(it + 1) == \textcolor{charliteral}{'\}'} \&\& index <= pattern.getSize())}
-\DoxyCodeLine{00032             \{}
-\DoxyCodeLine{00033                 arguments.format(writer, index++); it++;}
-\DoxyCodeLine{00034             \}}
-\DoxyCodeLine{00035             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00036             \{}
-\DoxyCodeLine{00037                 writer.write(BasicStringView<Char>(it, 1));}
-\DoxyCodeLine{00038             \}}
-\DoxyCodeLine{00039         \}}
-\DoxyCodeLine{00040 }
-\DoxyCodeLine{00041         writer.write(BasicStringView<Char>((\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"{}\(\backslash\)0"{}}, 1));}
-\DoxyCodeLine{00042     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{format_8hpp_a684c353d9f06fb89f5a3c13f34f05997}\label{format_8hpp_a684c353d9f06fb89f5a3c13f34f05997}} 
-\index{format.hpp@{format.hpp}!wformat@{wformat}}
-\index{wformat@{wformat}!format.hpp@{format.hpp}}
-\doxysubsubsection{\texorpdfstring{wformat()}{wformat()}}
-{\footnotesize\ttfamily template$<$typename Pattern , typename... Arguments$>$ \\
-Basic\+String$<$ wchar $>$ fmatio\+::wformat (\begin{DoxyParamCaption}\item[{const Pattern \&}]{pattern,  }\item[{Arguments \&\&...}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{format_8inl_source_l00062}{62}} of file \mbox{\hyperlink{format_8inl_source}{format.\+inl}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00063     \{}
-\DoxyCodeLine{00064         BasicString<wchar> result = format<BasicString<wchar>, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);}
-\DoxyCodeLine{00065         \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{00066     \}}
-
-\end{DoxyCode}
+This file is distributed under the GNU GENERAL PUBLIC LICENSE, Version 3. You should have received a copy of the license along with this project. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 

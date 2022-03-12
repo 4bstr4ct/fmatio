@@ -1,17 +1,13 @@
-digraph "include/fmatio"
-{
- // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
+digraph "include/fmatio" {
   compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
   subgraph clusterdir_d44c64559bbebec7f509842c48db8b23 {
-    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,dashed,", label="include", fontname="Helvetica", fontsize="10", URL="dir_d44c64559bbebec7f509842c48db8b23.html"]
+    graph [ bgcolor="#ddddee", pencolor="black", label="include" fontname="Helvetica", fontsize="10", URL="dir_d44c64559bbebec7f509842c48db8b23.html"]
   subgraph clusterdir_5da136c88b575f522fc8a57bfffb7b19 {
-    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_5da136c88b575f522fc8a57bfffb7b19.html"]
-    dir_5da136c88b575f522fc8a57bfffb7b19 [shape=plaintext, label="fmatio"];
-  dir_9311315dac7143999c569b5b98dc70be [shape=box, label="details", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_9311315dac7143999c569b5b98dc70be.html"];
-  dir_28ac07ec03ee8750fafc6e97978df47d [shape=box, label="std", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_28ac07ec03ee8750fafc6e97978df47d.html"];
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_5da136c88b575f522fc8a57bfffb7b19.html"];
+    dir_5da136c88b575f522fc8a57bfffb7b19 [shape=plaintext label="fmatio"];
+  dir_9311315dac7143999c569b5b98dc70be [shape=box label="details" fillcolor="white" style="filled" color="red" URL="dir_9311315dac7143999c569b5b98dc70be.html"];
   }
   }
-  dir_5da136c88b575f522fc8a57bfffb7b19->dir_9311315dac7143999c569b5b98dc70be [headlabel="2", labeldistance=1.5 headhref="dir_000006_000005.html"];
 }
