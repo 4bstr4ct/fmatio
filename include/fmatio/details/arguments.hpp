@@ -379,7 +379,19 @@ namespace fmatio
 			 * @param[in] index
 			 * 		Index of the argument that is going to be formatted.
 			 */
-			void format(BasicFormatWriter<Char>& writer, uint32 index) const FMATIO_NOEXCEPT;
+			FMATIO_DEPRECATED void format(BasicFormatWriter<Char>& writer, uint32 index) const FMATIO_NOEXCEPT;
+
+		public:
+			/**
+			 * Get const referenceto he format argument by index.
+			 * 
+			 * @param[in] index
+			 * 		Index of the format argument.
+			 * 
+			 * @return const BasicFormatArgument<Char>& -
+			 * 		Basic format argument.
+			 */
+			const BasicFormatArgument<Char>& operator [](uint32 index) const FMATIO_NOEXCEPT;
 		};
 
 		/**

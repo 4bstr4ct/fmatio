@@ -134,11 +134,19 @@ namespace fmatio
 		}
 
 		template<typename Char>
-		void BasicFormatArgumentsList<Char>::format(BasicFormatWriter<Char>& writer, uint32 index) const FMATIO_NOEXCEPT
+		FMATIO_DEPRECATED void BasicFormatArgumentsList<Char>::format(BasicFormatWriter<Char>& writer, uint32 index) const FMATIO_NOEXCEPT
 		{
 			FMATIO_ASSERT(index >= 0 && index < this->size, "Index out of bounds!");
 			this->arguments[index].format(writer);
 		}
+
+		template<typename Char>
+		const BasicFormatArgument<Char>& BasicFormatArgumentsList<Char>::operator [](uint32 index) const FMATIO_NOEXCEPT
+		{
+			FMATIO_ASSERT(index >= 0 && index < this->size, "Index out of bounds!");
+			return this->arguments[index];
+		}
+
 
 		template<typename Char, typename Value>
 		FMATIO_INLINE BasicFormatArgument<Char> makeFormatArgument(const Value& value) FMATIO_NOEXCEPT
