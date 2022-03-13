@@ -22,8 +22,8 @@ A list to store format arguments.
 \begin{DoxyCompactList}\small\item\em Destroy the basic format arguments list object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{types_8hpp_ad546682098b8238a3e81c20cceeec5bd}{uint32}} \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_ab5e40846ff8fdb6695e335067c4d89d0}{get\+Size}} () const FMATIO\+\_\+\+NOEXCEPT
 \begin{DoxyCompactList}\small\item\em Get the size of the format arguments list. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_a936c994b1ba9eec5186f206621491ddd}{format}} (\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&writer, \mbox{\hyperlink{types_8hpp_ad546682098b8238a3e81c20cceeec5bd}{uint32}} index) const FMATIO\+\_\+\+NOEXCEPT
-\begin{DoxyCompactList}\small\item\em Format argument at provided index using provided format writer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+const \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{Basic\+Format\+Argument}}$<$ Char $>$ \& \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList_ab01825aa141311f97dca670b37717854}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{types_8hpp_ad546682098b8238a3e81c20cceeec5bd}{uint32}} index) const FMATIO\+\_\+\+NOEXCEPT
+\begin{DoxyCompactList}\small\item\em Get const referenceto he format argument by index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -39,7 +39,7 @@ A list to store format arguments.
 \end{DoxyTemplParams}
 
 
-Definition at line 339 of file arguments.\+hpp.
+Definition at line 318 of file arguments.\+hpp.
 
 
 
@@ -62,46 +62,16 @@ Construct a new basic format arguments list object.
 \end{DoxyParams}
 
 
-Definition at line 124 of file arguments.\+inl.
+Definition at line 121 of file arguments.\+inl.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{125             : arguments(argumentsList.begin()), size((uint32)argumentsList.size()) \{ \}}
+\DoxyCodeLine{122             : arguments(argumentsList.begin()), size((uint32)argumentsList.size()) \{ \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classfmatio_1_1details_1_1BasicFormatArgumentsList_a936c994b1ba9eec5186f206621491ddd}\label{classfmatio_1_1details_1_1BasicFormatArgumentsList_a936c994b1ba9eec5186f206621491ddd}} 
-\index{fmatio::details::BasicFormatArgumentsList$<$ Char $>$@{fmatio::details::BasicFormatArgumentsList$<$ Char $>$}!format@{format}}
-\index{format@{format}!fmatio::details::BasicFormatArgumentsList$<$ Char $>$@{fmatio::details::BasicFormatArgumentsList$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{format()}{format()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-void \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList}{fmatio\+::details\+::\+Basic\+Format\+Arguments\+List}}$<$ Char $>$\+::format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatWriter}{Basic\+Format\+Writer}}$<$ Char $>$ \&}]{writer,  }\item[{\mbox{\hyperlink{types_8hpp_ad546682098b8238a3e81c20cceeec5bd}{uint32}}}]{index }\end{DoxyParamCaption}) const}
-
-
-
-Format argument at provided index using provided format writer. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in,out}}  & {\em writer} & Writer that will format and write argument\textquotesingle{}s value into output buffer.\\
-\hline
-\mbox{\texttt{ in}}  & {\em index} & Index of the argument that is going to be formatted. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 137 of file arguments.\+inl.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{138         \{}
-\DoxyCodeLine{139             FMATIO\_ASSERT(index >= 0 \&\& index < this-\/>size, \textcolor{stringliteral}{"{}Index out of bounds!"{}});}
-\DoxyCodeLine{140             this-\/>arguments[index].format(writer);}
-\DoxyCodeLine{141         \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{classfmatio_1_1details_1_1BasicFormatArgumentsList_ab5e40846ff8fdb6695e335067c4d89d0}\label{classfmatio_1_1details_1_1BasicFormatArgumentsList_ab5e40846ff8fdb6695e335067c4d89d0}} 
 \index{fmatio::details::BasicFormatArgumentsList$<$ Char $>$@{fmatio::details::BasicFormatArgumentsList$<$ Char $>$}!getSize@{getSize}}
 \index{getSize@{getSize}!fmatio::details::BasicFormatArgumentsList$<$ Char $>$@{fmatio::details::BasicFormatArgumentsList$<$ Char $>$}}
@@ -118,13 +88,44 @@ uint32 -\/ Size of the arguments list.
 \end{DoxyReturn}
 
 
-Definition at line 131 of file arguments.\+inl.
+Definition at line 128 of file arguments.\+inl.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{132         \{}
-\DoxyCodeLine{133             \textcolor{keywordflow}{return} this-\/>size;}
-\DoxyCodeLine{134         \}}
+\DoxyCodeLine{129         \{}
+\DoxyCodeLine{130             \textcolor{keywordflow}{return} this-\/>size;}
+\DoxyCodeLine{131         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfmatio_1_1details_1_1BasicFormatArgumentsList_ab01825aa141311f97dca670b37717854}\label{classfmatio_1_1details_1_1BasicFormatArgumentsList_ab01825aa141311f97dca670b37717854}} 
+\index{fmatio::details::BasicFormatArgumentsList$<$ Char $>$@{fmatio::details::BasicFormatArgumentsList$<$ Char $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!fmatio::details::BasicFormatArgumentsList$<$ Char $>$@{fmatio::details::BasicFormatArgumentsList$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+const \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{Basic\+Format\+Argument}}$<$ Char $>$ \& \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList}{fmatio\+::details\+::\+Basic\+Format\+Arguments\+List}}$<$ Char $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8hpp_ad546682098b8238a3e81c20cceeec5bd}{uint32}}}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Get const referenceto he format argument by index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & Index of the format argument.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Basic\+Format\+Argument$<$\+Char$>$\& -\/ Basic format argument. 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file arguments.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135         \{}
+\DoxyCodeLine{136             FMATIO\_ASSERT(index >= 0 \&\& index < this-\/>size, \textcolor{stringliteral}{"{}Index out of bounds!"{}});}
+\DoxyCodeLine{137             \textcolor{keywordflow}{return} this-\/>arguments[index];}
+\DoxyCodeLine{138         \}}
 
 \end{DoxyCode}
 

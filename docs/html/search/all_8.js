@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['null_45',['null',['../types_8hpp.html#a11819aef41c6a53d8caabe884e0d6429',1,'fmatio']]]
+  ['makeformatargument_50',['makeFormatArgument',['../arguments_8hpp.html#a52471ce86be0348c299952d666aeacdd',1,'fmatio::details']]]
 ];

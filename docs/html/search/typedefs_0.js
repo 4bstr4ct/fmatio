@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['byte_183',['byte',['../types_8hpp.html#a9e69bac98e62f57b10719194962dd657',1,'fmatio']]]
+  ['argumentsformatter_199',['ArgumentsFormatter',['../format_8hpp.html#accdeda2b8341119046c9dfd2f53cbb43',1,'fmatio']]]
 ];

@@ -19,7 +19,13 @@
 namespace fmatio
 {
 	template<typename Char>
-	void SafeFmatioFormatter<Char>::format(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT
+	ArgumentsFormatterBase<Char>::~ArgumentsFormatterBase() { }
+
+	template<typename Char>
+	BasicArgumentsFormatter<Char>::~BasicArgumentsFormatter() { }
+	
+	template<typename Char>
+	void BasicArgumentsFormatter<Char>::format(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT
 	{
 		bool enableFormatting = false;
 		typename BasicStringView<Char>::ConstIterator iterator = pattern.getConstBegin();

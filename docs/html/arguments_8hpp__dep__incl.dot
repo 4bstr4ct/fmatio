@@ -13,5 +13,6 @@ digraph "include/fmatio/details/arguments.hpp"
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="include/fmatio/formatters.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$formatters_8hpp.html",tooltip=" "];
   Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

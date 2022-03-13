@@ -29,15 +29,21 @@
 namespace fmatio
 {
 	template<typename Char>
-	class BasicFormatter
+	class ArgumentsFormatterBase
 	{
+	public:
+		virtual ~ArgumentsFormatterBase();
+
 	public:
 		virtual void format(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT = 0;
 	};
 
 	template<typename Char>
-	class SafeFmatioFormatter : public BasicFormatter<Char>
+	class BasicArgumentsFormatter : public ArgumentsFormatterBase<Char>
 	{
+	public:
+		virtual ~BasicArgumentsFormatter();
+
 	public:
 		virtual void format(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT override;
 	};

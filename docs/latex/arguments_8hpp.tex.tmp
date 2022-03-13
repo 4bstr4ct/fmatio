@@ -53,10 +53,6 @@ struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01const_01unsigned_0
 \begin{DoxyCompactList}\small\item\em Format argument type definition for const unsigned char string type. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01null_01_4}{fmatio\+::details\+::\+Type\+Of$<$ null $>$}}
 \begin{DoxyCompactList}\small\item\em Format argument type definition for nullptr type. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01void_01_5_01_4}{fmatio\+::details\+::\+Type\+Of$<$ void $\ast$ $>$}}
-\begin{DoxyCompactList}\small\item\em Format argument type definition for void pointer type. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structfmatio_1_1details_1_1TypeOf_3_01const_01void_01_5_01_4}{fmatio\+::details\+::\+Type\+Of$<$ const void $\ast$ $>$}}
-\begin{DoxyCompactList}\small\item\em Format argument type definition for const void pointer type. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgument}{fmatio\+::details\+::\+Basic\+Format\+Argument$<$ Char $>$}}
 \begin{DoxyCompactList}\small\item\em A format argument, that holds it\textquotesingle{}s type and pointer to it\textquotesingle{}s value address in memory. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classfmatio_1_1details_1_1BasicFormatArgumentsList}{fmatio\+::details\+::\+Basic\+Format\+Arguments\+List$<$ Char $>$}}
@@ -84,7 +80,6 @@ enum class \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{fm
 {\bfseries Double}
 , {\bfseries Char\+String}
 , {\bfseries Null\+Pointer}
-, {\bfseries Void\+Pointer}
  \}
 \begin{DoxyCompactList}\small\item\em Defines types of format arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
@@ -134,22 +129,18 @@ Basic\+Format\+Argument$<$\+Char$>$ -\/ Format argument.
 \end{DoxyReturn}
 
 
-Definition at line 144 of file arguments.\+inl.
+Definition at line 142 of file arguments.\+inl.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{145         \{}
-\DoxyCodeLine{146             \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type = TypeOf<Value>::value;}
-\DoxyCodeLine{147 }
-\DoxyCodeLine{148             \textcolor{keywordflow}{if} (type != FormatArgumentType::Unknown)}
-\DoxyCodeLine{149             \{}
-\DoxyCodeLine{150                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>(type, \&value);}
-\DoxyCodeLine{151             \}}
-\DoxyCodeLine{152             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{153             \{}
-\DoxyCodeLine{154                 FMATIO\_ASSERT(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}Provided argument type is not supported!"{}});}
-\DoxyCodeLine{155                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>();}
-\DoxyCodeLine{156             \}}
-\DoxyCodeLine{157         \}}
+\DoxyCodeLine{143         \{}
+\DoxyCodeLine{144             \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type = TypeOf<Value>::value;}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146             \textcolor{keywordflow}{if} (type != FormatArgumentType::Unknown)}
+\DoxyCodeLine{147                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>(type, \&value);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149             FMATIO\_ASSERT(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}Provided argument type is not supported!"{}});}
+\DoxyCodeLine{150             \textcolor{keywordflow}{return} BasicFormatArgument<Char>();}
+\DoxyCodeLine{151         \}}
 
 \end{DoxyCode}

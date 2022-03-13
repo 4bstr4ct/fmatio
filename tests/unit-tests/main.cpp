@@ -19,10 +19,14 @@ public:
 
 int main(int argc, char** argv)
 {
-	std::cout << fmatio::format<fmatio::CSafeFmatioFormatter, fmatio::String>("Hello, {p:2}!\n", 7.0f).getData();
+	std::cout << fmatio::format<
+		fmatio::BasicArgumentsFormatter<char>,
+			fmatio::BasicString<char>>("Hello, {p:2}!\n", 7.0f).getData();
+
+	std::cout << fmatio::format<fmatio::ArgumentsFormatter, fmatio::String>("Hello, {p:2}!\n", 7.0f).getData();
 	std::cout << fmatio::cformat("Hello, {}!\n", "world").getData();
 
-	fmatio::echo<fmatio::CSafeFmatioFormatter, fmatio::String>(std::cout, "Hello, {p:2}!\n", 7.0f);
+	fmatio::echo<fmatio::ArgumentsFormatter, fmatio::String>(std::cout, "Hello, {p:2}!\n", 7.0f);
 	fmatio::cecho(std::cout, "Hello, {}!\n", "world");
 
 #if 0

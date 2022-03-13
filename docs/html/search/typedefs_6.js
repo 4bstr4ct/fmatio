@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['valuetype_198',['ValueType',['../classfmatio_1_1BasicString.html#a76bb714df28eae89b38eaf35f8dfac1e',1,'fmatio::BasicString::ValueType()'],['../classfmatio_1_1BasicStringView.html#ab300b71fdf97ee7d618ab799b3af2336',1,'fmatio::BasicStringView::ValueType()']]]
+  ['string_211',['String',['../format_8hpp.html#abedb2e1804e59b8f194b0e5d91b0ad07',1,'fmatio']]],
+  ['stringview_212',['StringView',['../format_8hpp.html#ad4c200c09bea3778b98b00029c380d97',1,'fmatio']]]
 ];

@@ -108,9 +108,6 @@ namespace fmatio
 				charStringHandle(writer, FormatTraits<Char>::nullptrStringified);
 				break;
 
-			case FormatArgumentType::VoidPointer:
-				break;
-
 			default:
 				break;
 			}
@@ -134,13 +131,6 @@ namespace fmatio
 		}
 
 		template<typename Char>
-		FMATIO_DEPRECATED void BasicFormatArgumentsList<Char>::format(BasicFormatWriter<Char>& writer, uint32 index) const FMATIO_NOEXCEPT
-		{
-			FMATIO_ASSERT(index >= 0 && index < this->size, "Index out of bounds!");
-			this->arguments[index].format(writer);
-		}
-
-		template<typename Char>
 		const BasicFormatArgument<Char>& BasicFormatArgumentsList<Char>::operator [](uint32 index) const FMATIO_NOEXCEPT
 		{
 			FMATIO_ASSERT(index >= 0 && index < this->size, "Index out of bounds!");
@@ -154,14 +144,10 @@ namespace fmatio
 			FormatArgumentType type = TypeOf<Value>::value;
 
 			if (type != FormatArgumentType::Unknown)
-			{
 				return BasicFormatArgument<Char>(type, &value);
-			}
-			else
-			{
-				FMATIO_ASSERT(false, "Provided argument type is not supported!");
-				return BasicFormatArgument<Char>();
-			}
+
+			FMATIO_ASSERT(false, "Provided argument type is not supported!");
+			return BasicFormatArgument<Char>();
 		}
 	}
 }

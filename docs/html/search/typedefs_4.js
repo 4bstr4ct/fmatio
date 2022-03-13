@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['removeextenttype_192',['RemoveExtentType',['../type__traits_8hpp.html#a643485461fb4fd599aac22f44336c4cf',1,'fmatio::details']]],
-  ['removereferencetype_193',['RemoveReferenceType',['../type__traits_8hpp.html#afddb47ae50490245d330207fc4e9a5f4',1,'fmatio::details']]]
+  ['null_208',['null',['../types_8hpp.html#a11819aef41c6a53d8caabe884e0d6429',1,'fmatio']]]
 ];

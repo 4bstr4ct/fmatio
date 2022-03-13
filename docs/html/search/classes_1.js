@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['formattraits_107',['FormatTraits',['../structfmatio_1_1details_1_1FormatTraits.html',1,'fmatio::details']]],
-  ['formattraits_3c_20char_20_3e_108',['FormatTraits&lt; char &gt;',['../structfmatio_1_1details_1_1FormatTraits_3_01char_01_4.html',1,'fmatio::details']]],
-  ['formattraits_3c_20wchar_20_3e_109',['FormatTraits&lt; wchar &gt;',['../structfmatio_1_1details_1_1FormatTraits_3_01wchar_01_4.html',1,'fmatio::details']]]
+  ['basicargumentsformatter_111',['BasicArgumentsFormatter',['../classfmatio_1_1BasicArgumentsFormatter.html',1,'fmatio']]],
+  ['basicdynamicwriter_112',['BasicDynamicWriter',['../classfmatio_1_1details_1_1BasicDynamicWriter.html',1,'fmatio::details']]],
+  ['basicformatargument_113',['BasicFormatArgument',['../classfmatio_1_1details_1_1BasicFormatArgument.html',1,'fmatio::details']]],
+  ['basicformatargumentslist_114',['BasicFormatArgumentsList',['../classfmatio_1_1details_1_1BasicFormatArgumentsList.html',1,'fmatio::details']]],
+  ['basicformatwriter_115',['BasicFormatWriter',['../classfmatio_1_1details_1_1BasicFormatWriter.html',1,'fmatio::details']]],
+  ['basicformatwriter_3c_20container_3a_3achartype_20_3e_116',['BasicFormatWriter&lt; Container::CharType &gt;',['../classfmatio_1_1details_1_1BasicFormatWriter.html',1,'fmatio::details']]],
+  ['basicstring_117',['BasicString',['../classfmatio_1_1BasicString.html',1,'fmatio']]],
+  ['basicstringview_118',['BasicStringView',['../classfmatio_1_1BasicStringView.html',1,'fmatio']]]
 ];

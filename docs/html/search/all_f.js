@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['_7ebasicdynamicwriter_95',['~BasicDynamicWriter',['../classfmatio_1_1details_1_1BasicDynamicWriter.html#adb29112d7532eccbf6d924707a7b197b',1,'fmatio::details::BasicDynamicWriter']]],
-  ['_7ebasicformatargument_96',['~BasicFormatArgument',['../classfmatio_1_1details_1_1BasicFormatArgument.html#a9f134e46f3546d7aa7725f196a1e1604',1,'fmatio::details::BasicFormatArgument']]],
-  ['_7ebasicformatargumentslist_97',['~BasicFormatArgumentsList',['../classfmatio_1_1details_1_1BasicFormatArgumentsList.html#ae948c00e1306af3a726170b66788a13f',1,'fmatio::details::BasicFormatArgumentsList']]],
-  ['_7ebasicformatwriter_98',['~BasicFormatWriter',['../classfmatio_1_1details_1_1BasicFormatWriter.html#a415373c23e0eaabdaa28dc3522d45552',1,'fmatio::details::BasicFormatWriter']]]
+  ['valuetype_96',['ValueType',['../classfmatio_1_1BasicString.html#a76bb714df28eae89b38eaf35f8dfac1e',1,'fmatio::BasicString::ValueType()'],['../classfmatio_1_1BasicStringView.html#ab300b71fdf97ee7d618ab799b3af2336',1,'fmatio::BasicStringView::ValueType()']]]
 ];

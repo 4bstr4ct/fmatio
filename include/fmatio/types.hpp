@@ -22,7 +22,7 @@
 namespace fmatio
 {
 	/**
-	 * A type represeting null pointer
+	 * A type represeting null pointer.
 	 */
 	using null = decltype(nullptr);
 

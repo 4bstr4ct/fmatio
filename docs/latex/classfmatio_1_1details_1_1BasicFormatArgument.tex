@@ -37,7 +37,7 @@ A format argument, that holds it\textquotesingle{}s type and pointer to it\textq
 \end{DoxyTemplParams}
 
 
-Definition at line 294 of file arguments.\+hpp.
+Definition at line 273 of file arguments.\+hpp.
 
 
 
@@ -153,13 +153,10 @@ Definition at line 51 of file arguments.\+inl.
 \DoxyCodeLine{108                 charStringHandle(writer, FormatTraits<Char>::nullptrStringified);}
 \DoxyCodeLine{109                 \textcolor{keywordflow}{break};}
 \DoxyCodeLine{110 }
-\DoxyCodeLine{111             \textcolor{keywordflow}{case} FormatArgumentType::VoidPointer:}
+\DoxyCodeLine{111             \textcolor{keywordflow}{default}:}
 \DoxyCodeLine{112                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{113 }
-\DoxyCodeLine{114             \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{115                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{116             \}}
-\DoxyCodeLine{117         \}}
+\DoxyCodeLine{113             \}}
+\DoxyCodeLine{114         \}}
 
 \end{DoxyCode}
 

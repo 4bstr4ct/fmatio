@@ -96,29 +96,31 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keywordtype">char</span> formatBegin = <span class="charliteral">&#39;{&#39;</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keywordtype">char</span> formatEnd = <span class="charliteral">&#39;}&#39;</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <span class="keywordtype">char</span> trueStringified[] = <span class="stringliteral">&quot;true&quot;</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <span class="keywordtype">char</span> falseStringified[] = <span class="stringliteral">&quot;false&quot;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <span class="keywordtype">char</span> nullptrStringified[] = <span class="stringliteral">&quot;nullptr&quot;</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        };</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structfmatio_1_1details_1_1FormatTraits_3_01wchar_01_4.html">   46</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structfmatio_1_1details_1_1FormatTraits.html">FormatTraits</a>&lt;<a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a>&gt;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> formatBegin = L<span class="charliteral">&#39;{&#39;</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> formatEnd = L<span class="charliteral">&#39;}&#39;</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> trueStringified[] = L<span class="stringliteral">&quot;true&quot;</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> falseStringified[] = L<span class="stringliteral">&quot;false&quot;</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keywordtype">char</span> formatEntry = <span class="charliteral">&#39;:&#39;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keywordtype">char</span> formatPrecision = <span class="charliteral">&#39;p&#39;</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <span class="keywordtype">char</span> trueStringified[] = <span class="stringliteral">&quot;true&quot;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <span class="keywordtype">char</span> falseStringified[] = <span class="stringliteral">&quot;false&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <span class="keywordtype">char</span> nullptrStringified[] = <span class="stringliteral">&quot;nullptr&quot;</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        };</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structfmatio_1_1details_1_1FormatTraits_3_01wchar_01_4.html">   47</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structfmatio_1_1details_1_1FormatTraits.html">FormatTraits</a>&lt;<a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a>&gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> formatBegin = L<span class="charliteral">&#39;{&#39;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> formatEnd = L<span class="charliteral">&#39;}&#39;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> formatEntry = L<span class="charliteral">&#39;:&#39;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> formatPrecision = L<span class="charliteral">&#39;p&#39;</span>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> nullptrStringified[] = L<span class="stringliteral">&quot;nullptr&quot;</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        };</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> trueStringified[] = L<span class="stringliteral">&quot;true&quot;</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> falseStringified[] = L<span class="stringliteral">&quot;false&quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keyword">static</span> FMATIO_CONSTEXPR <span class="keyword">const</span> <a class="code" href="types_8hpp.html#a6a3d03d6510426c870fd1d6dc58d4ef9">wchar</a> nullptrStringified[] = L<span class="stringliteral">&quot;nullptr&quot;</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="acore_8hpp_html"><div class="ttname"><a href="core_8hpp.html">core.hpp</a></div></div>
 <div class="ttc" id="astructfmatio_1_1details_1_1FormatTraits_html"><div class="ttname"><a href="structfmatio_1_1details_1_1FormatTraits.html">fmatio::details::FormatTraits</a></div><div class="ttdef"><b>Definition:</b> <a href="format__traits_8hpp_source.html#l00030">format_traits.hpp:30</a></div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div></div>

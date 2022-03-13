@@ -64,22 +64,18 @@ Basic\+Format\+Argument$<$\+Char$>$ -\/ Format argument.
 \end{DoxyReturn}
 
 
-Definition at line 144 of file arguments.\+inl.
+Definition at line 142 of file arguments.\+inl.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{145         \{}
-\DoxyCodeLine{146             \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type = TypeOf<Value>::value;}
-\DoxyCodeLine{147 }
-\DoxyCodeLine{148             \textcolor{keywordflow}{if} (type != FormatArgumentType::Unknown)}
-\DoxyCodeLine{149             \{}
-\DoxyCodeLine{150                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>(type, \&value);}
-\DoxyCodeLine{151             \}}
-\DoxyCodeLine{152             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{153             \{}
-\DoxyCodeLine{154                 FMATIO\_ASSERT(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}Provided argument type is not supported!"{}});}
-\DoxyCodeLine{155                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>();}
-\DoxyCodeLine{156             \}}
-\DoxyCodeLine{157         \}}
+\DoxyCodeLine{143         \{}
+\DoxyCodeLine{144             \mbox{\hyperlink{arguments_8hpp_a6cfdfa75396bdb62c0cf576f768b23b0}{FormatArgumentType}} type = TypeOf<Value>::value;}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146             \textcolor{keywordflow}{if} (type != FormatArgumentType::Unknown)}
+\DoxyCodeLine{147                 \textcolor{keywordflow}{return} BasicFormatArgument<Char>(type, \&value);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149             FMATIO\_ASSERT(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}Provided argument type is not supported!"{}});}
+\DoxyCodeLine{150             \textcolor{keywordflow}{return} BasicFormatArgument<Char>();}
+\DoxyCodeLine{151         \}}
 
 \end{DoxyCode}

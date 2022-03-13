@@ -24,6 +24,7 @@
 #include <fmatio/types.hpp>
 
 #include <fmatio/format.hpp>
+#include <fmatio/formatters.hpp>
 
 #include <fmatio/basic_string.hpp>
 #include <fmatio/basic_string_view.hpp>

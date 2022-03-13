@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['int16_186',['int16',['../types_8hpp.html#af72cb3cac78bfb26ea295b0d25b87881',1,'fmatio']]],
-  ['int32_187',['int32',['../types_8hpp.html#a0e6caea73dfb2e9bc380607605f544bb',1,'fmatio']]],
-  ['int64_188',['int64',['../types_8hpp.html#ad87a41c48168eb64623c0b3a02ec91f3',1,'fmatio']]],
-  ['int8_189',['int8',['../types_8hpp.html#a4a7005e05a137c906bc0a95031e6131e',1,'fmatio']]],
-  ['iterator_190',['Iterator',['../classfmatio_1_1BasicString.html#a5376323483587e76f0b4270453f3caac',1,'fmatio::BasicString']]]
+  ['chartype_201',['CharType',['../classfmatio_1_1BasicString.html#ae7d4d6a4eeca5011d27a94f02140862c',1,'fmatio::BasicString::CharType()'],['../classfmatio_1_1BasicStringView.html#acc360cfc081876413e0c01fdc81382fa',1,'fmatio::BasicStringView::CharType()']]],
+  ['constiterator_202',['ConstIterator',['../classfmatio_1_1BasicString.html#aacd1135bb26f6a6e6b6758692845cd50',1,'fmatio::BasicString::ConstIterator()'],['../classfmatio_1_1BasicStringView.html#af567016eeddb4d90f4a60f4cda2cf3a2',1,'fmatio::BasicStringView::ConstIterator()']]]
 ];

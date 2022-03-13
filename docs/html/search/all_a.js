@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['safeiteratorformatter_54',['SafeIteratorFormatter',['../classfmatio_1_1SafeIteratorFormatter.html',1,'fmatio']]],
-  ['student_55',['Student',['../structStudent.html',1,'']]]
+  ['operator_5b_5d_52',['operator[]',['../classfmatio_1_1details_1_1BasicFormatArgumentsList.html#ab01825aa141311f97dca670b37717854',1,'fmatio::details::BasicFormatArgumentsList']]]
 ];

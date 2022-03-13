@@ -57,8 +57,7 @@ namespace fmatio
 			Double,
 
 			CharString,
-			NullPointer,
-			VoidPointer
+			NullPointer
 		};
 
 		/**
@@ -263,26 +262,6 @@ namespace fmatio
 		public:
 			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::NullPointer;
 		};
-
-		/**
-		 * Format argument type definition for void pointer type.
-		 */
-		template<>
-		struct TypeOf<void*>
-		{
-		public:
-			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::VoidPointer;
-		};
-
-		/**
-		 * Format argument type definition for const void pointer type.
-		 */
-		template<>
-		struct TypeOf<const void*>
-		{
-		public:
-			static FMATIO_CONSTEXPR const FormatArgumentType value = FormatArgumentType::VoidPointer;
-		};
 		
 		/**
 		 * A format argument, that holds it's type and pointer to it's value address in memory.
@@ -369,17 +348,6 @@ namespace fmatio
 			 * 		Size of the arguments list.
 			 */
 			uint32 getSize() const FMATIO_NOEXCEPT;
-
-			/**
-			 * Format argument at provided index using provided format writer.
-			 * 
-			 * @param[inout] writer
-			 * 		Writer that will format and write argument's value into output buffer.
-			 * 
-			 * @param[in] index
-			 * 		Index of the argument that is going to be formatted.
-			 */
-			FMATIO_DEPRECATED void format(BasicFormatWriter<Char>& writer, uint32 index) const FMATIO_NOEXCEPT;
 
 		public:
 			/**
