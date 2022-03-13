@@ -35,7 +35,7 @@ namespace fmatio
 		{
 			if (*iterator == details::FormatTraits<Char>::formatBegin)
 			{
-				writer.write(BasicStringView<Char>(previous, iterator - previous));
+				writer.write(BasicStringView<Char>(previous, (uint32)(iterator - previous)));
 				enableFormatting = true;
 			}
 			else if (*iterator == details::FormatTraits<Char>::formatEnd && enableFormatting)
@@ -46,6 +46,7 @@ namespace fmatio
 			}
 		}
 
-		writer.write(BasicStringView<Char>(previous, iterator - previous));
+		iterator++;
+		writer.write(BasicStringView<Char>(previous, (uint32)(iterator - previous)));
 	}
 }

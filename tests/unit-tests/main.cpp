@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 	fmatio::echo<fmatio::ArgumentsFormatter, fmatio::String>(std::cout, "Hello, {p:2}!\n", 7.0f);
 	fmatio::cecho(std::cout, "Hello, {}!\n", "world");
 
-#if 0
+	/*
 	{
 		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 5);
 		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 7);
@@ -43,7 +43,7 @@ int main(int argc, char** argv)
 		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", "hello again");
 		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", "lalalalalalala!");
 		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", nullptr);
-		std::cout << fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f);
+		std::cout << fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f).getData();
 		std::string string = fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f).getData();
 		const char* temp = string.data();
 		std::cout << temp;
@@ -53,6 +53,7 @@ int main(int argc, char** argv)
 		const char* cstring2 = fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f).getData();
 		std::cout << cstring2;
 	}
+	*/
 
 	{
 		fmatio::cecho(std::cout, "{}\n", 5);
@@ -67,7 +68,7 @@ int main(int argc, char** argv)
 		fmatio::cecho(std::cout, "{}\n", "hello again");
 		fmatio::cecho(std::cout, "{}\n", "lalalalalalala!");
 		fmatio::cecho(std::cout, "{}\n", nullptr);
-		std::cout << fmatio::cformat("{}\n", 8.5f);
+		std::cout << fmatio::cformat("{}\n", 8.5f).getData();
 		std::string string = fmatio::cformat("{}\n", 8.5f).getData();
 		const char* temp = string.data();
 		std::cout << temp;
@@ -77,7 +78,6 @@ int main(int argc, char** argv)
 		const char* cstring2 = fmatio::cformat("{}\n", 8.5f).getData();
 		std::cout << cstring2;
 	}
-#endif
 
 	return 0;
 }

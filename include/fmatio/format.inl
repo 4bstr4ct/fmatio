@@ -31,14 +31,14 @@ namespace fmatio
 		return result;
 	}
 
-	template<typename Formatter = BasicArgumentsFormatter<char>, typename Pattern, typename... Arguments>
+	template<typename Formatter, typename Pattern, typename... Arguments>
 	FMATIO_INLINE BasicString<char> cformat(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT
 	{
 		BasicString<char> result = format<Formatter, BasicString<char>, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);
 		return result;
 	}
 
-	template<typename Formatter = BasicArgumentsFormatter<wchar>, typename Pattern, typename... Arguments>
+	template<typename Formatter, typename Pattern, typename... Arguments>
 	FMATIO_INLINE BasicString<wchar> wformat(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT
 	{
 		BasicString<wchar> result = format<Formatter, BasicString<wchar>, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);
@@ -52,14 +52,14 @@ namespace fmatio
 		stream << result.getData();
 	}
 
-	template<typename Formatter = BasicArgumentsFormatter<char>, typename Pattern, typename Stream, typename... Arguments>
+	template<typename Formatter, typename Pattern, typename Stream, typename... Arguments>
 	FMATIO_INLINE void cecho(Stream& stream, const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT
 	{
 		BasicString<char> result = cformat<Formatter, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);
 		stream << result.getData();
 	}
 
-	template<typename Formatter = BasicArgumentsFormatter<wchar>, typename Pattern, typename Stream, typename... Arguments>
+	template<typename Formatter, typename Pattern, typename Stream, typename... Arguments>
 	FMATIO_INLINE void wecho(Stream& stream, const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT
 	{
 		BasicString<wchar> result = wformat<Formatter, Pattern, Arguments...>(pattern, ::std::forward<Arguments>(arguments)...);
