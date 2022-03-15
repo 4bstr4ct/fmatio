@@ -64,13 +64,13 @@ namespace fmatio
 	using WArgumentsFormatter = BasicArgumentsFormatter<wchar>;
 
 	/**
-	 * Hndle pattern formatting with provided formatter.
-	 * 
-	 * @tparam Formatter
-	 * 		Formatter type.
+	 * Handle pattern formatting with provided formatter.
 	 * 
 	 * @tparam Char
 	 * 		Char type.
+	 * 
+	 * @tparam Formatter
+	 * 		Formatter type.
 	 * 
 	 * @param[inout] writer
 	 * 		Formatted string writer.
@@ -79,14 +79,16 @@ namespace fmatio
 	 * 		Pattern by which arguments and result will be formatted.
 	 *
 	 * @param[in] arguments
-	 * 		Format arguments list.
 	 */
-	template<typename Formatter, typename Char>
+	template<typename Char, typename Formatter = BasicArgumentsFormatter<Char>>
 	FMATIO_INLINE void formatHandle(details::BasicFormatWriter<Char>& writer, BasicStringView<Char> pattern, const details::BasicFormatArgumentsList<Char>& arguments) FMATIO_NOEXCEPT;
 
 	/**
 	 * Format arguments using pattern into a provided type of the result.
 	 * 
+	 * @tparam Char
+	 * 		Char type.
+	 * 
 	 * @tparam Formatter
 	 * 		Formatter type.
 	 *
@@ -98,69 +100,84 @@ namespace fmatio
 	 * 
 	 * @tparam Arguments
 	 * 		Arguments types.
-	 *
+	 * 
 	 * @param[in] pattern
 	 * 		Pattern by which string and arguments will be formatted.
 	 * 
 	 * @param[in] arguments
-	 * 		Format arguments / variables. 
+	 * 		Format arguments / variables.
 	 * 
 	 * @return Result -
-	 * 		Formatted string in a type of result. 
+	 * 		Formatted string in a type of result.
 	 */
-	template<typename Formatter, typename Result, typename Pattern, typename... Arguments>
+	template<typename Char, typename Formatter = BasicArgumentsFormatter<Char>, typename Result = BasicString<Char>, typename Pattern = BasicStringView<Char>, typename... Arguments>
 	FMATIO_INLINE Result format(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
 	/**
-	 * Format arguments using pattern into a basic string pf chars.
+	 * Format arguments using pattern into a string of chars.
+	 * 
+	 * @tparam Char
+	 * 		Char type.
 	 * 
 	 * @tparam Formatter
 	 * 		Formatter type.
-	 *
+	 * 
+	 * @tparam Result
+	 * 		Result type.
+	 * 
 	 * @tparam Pattern
 	 * 		Pattern type.
 	 * 
 	 * @tparam Arguments
 	 * 		Arguments types.
-	 *
+	 * 
 	 * @param[in] pattern
 	 * 		Pattern by which string and arguments will be formatted.
 	 * 
 	 * @param[in] arguments
-	 * 		Format arguments / variables. 
+	 * 		Format arguments / variables.
 	 * 
-	 * @return BasicString<char> -
-	 * 		Formatted string in a type of basic string of chars. 
+	 * @return Result -
+	 * 		Formatted string in a form of a provided result type.
 	 */
-	template<typename Formatter = BasicArgumentsFormatter<char>, typename Pattern, typename... Arguments>
-	FMATIO_INLINE BasicString<char> cformat(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
+	template<typename Char = char, typename Formatter = BasicArgumentsFormatter<Char>, typename Result = BasicString<Char>, typename Pattern = BasicStringView<Char>, typename... Arguments>
+	FMATIO_INLINE Result cformat(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
 	/**
-	 * Format arguments using pattern into a basic string pf wide chars.
+	 * Format arguments using pattern into a string of wide chars.
+	 * 
+	 * @tparam Char
+	 * 		Char type.
 	 * 
 	 * @tparam Formatter
 	 * 		Formatter type.
-	 *
+	 * 
+	 * @tparam Result
+	 * 		Result type.
+	 * 
 	 * @tparam Pattern
 	 * 		Pattern type.
 	 * 
 	 * @tparam Arguments
 	 * 		Arguments types.
-	 *
+	 * 
 	 * @param[in] pattern
 	 * 		Pattern by which string and arguments will be formatted.
 	 * 
 	 * @param[in] arguments
-	 * 		Format arguments / variables. 
+	 * 		Format arguments / variables.
 	 * 
-	 * @return BasicString<wchar> -
-	 * 		Formatted string in a type of basic string of wide chars. 
+	 * @return Result -
+	 * 		Formatted string in a form of a provided result type.
 	 */
-	template<typename Formatter = BasicArgumentsFormatter<wchar>, typename Pattern, typename... Arguments>
-	FMATIO_INLINE BasicString<wchar> wformat(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
+	template<typename Char = wchar, typename Formatter = BasicArgumentsFormatter<Char>, typename Result = BasicString<Char>, typename Pattern = BasicStringView<Char>, typename... Arguments>
+	FMATIO_INLINE Result wformat(const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
 	/**
 	 * Echo formatted string by format function.
+	 * 
+	 * @tparam Char
+	 * 		Char type.
 	 * 
 	 * @tparam Formatter
 	 * 		Formatter type.
@@ -186,14 +203,20 @@ namespace fmatio
 	 * @param[in] arguments
 	 * 		Format arguments / variables.
 	 */
-	template<typename Formatter, typename Result, typename Stream, typename Pattern, typename... Arguments>
+	template<typename Char, typename Formatter = BasicArgumentsFormatter<Char>, typename Result = BasicString<Char>, typename Stream, typename Pattern = BasicStringView<Char>, typename... Arguments>
 	FMATIO_INLINE void echo(Stream& stream, const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
 	/**
 	 * Echo formatted string of chars by format function.
 	 * 
+	 * @tparam Char
+	 * 		Char type.
+	 * 
 	 * @tparam Formatter
 	 * 		Formatter type.
+	 *
+	 * @tparam Result
+	 * 		Result type.
 	 * 
 	 * @tparam Stream
 	 * 		Stream type.
@@ -213,14 +236,20 @@ namespace fmatio
 	 * @param[in] arguments
 	 * 		Format arguments / variables.
 	 */
-	template<typename Formatter = BasicArgumentsFormatter<char>, typename Pattern, typename Stream, typename... Arguments>
+	template<typename Char = char, typename Formatter = BasicArgumentsFormatter<Char>, typename Result = BasicString<Char>, typename Stream, typename Pattern = BasicStringView<Char>, typename... Arguments>
 	FMATIO_INLINE void cecho(Stream& stream, const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 
 	/**
 	 * Echo formatted string of wide chars by format function.
 	 * 
+	 * @tparam Char
+	 * 		Char type.
+	 * 
 	 * @tparam Formatter
 	 * 		Formatter type.
+	 *
+	 * @tparam Result
+	 * 		Result type.
 	 * 
 	 * @tparam Stream
 	 * 		Stream type.
@@ -240,7 +269,7 @@ namespace fmatio
 	 * @param[in] arguments
 	 * 		Format arguments / variables.
 	 */
-	template<typename Formatter = BasicArgumentsFormatter<wchar>, typename Pattern, typename Stream, typename... Arguments>
+	template<typename Char = wchar, typename Formatter = BasicArgumentsFormatter<Char>, typename Result = BasicString<Char>, typename Stream, typename Pattern = BasicStringView<Char>, typename... Arguments>
 	FMATIO_INLINE void wecho(Stream& stream, const Pattern& pattern, Arguments&&... arguments) FMATIO_NOEXCEPT;
 }
 

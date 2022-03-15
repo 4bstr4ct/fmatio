@@ -17,98 +17,90 @@ public:
 	float finalGrade;
 };
 
-const char* test()
+template<typename... Args>
+void test(const char* const pattern, Args&&... args)
 {
-	char* array = new char[11];
-	for (uint32_t i = 0 ; i < 10; i++)
-		array[i] = 'e';
-	array[10] = '\0';
-	return array;
+	std::cout << fmatio::format<char>(pattern, fmatio::details::forward<Args>(args)...).getData();
+	std::cout << fmatio::cformat(pattern, fmatio::details::forward<Args>(args)...).getData();
+
+	fmatio::echo<char>(std::cout, pattern, fmatio::details::forward<Args>(args)...);
+	fmatio::cecho(std::cout, pattern, fmatio::details::forward<Args>(args)...);
+
+	fmatio::BasicString<char> string1 = fmatio::format<char>(pattern, fmatio::details::forward<Args>(args)...);
+	fwrite(string1.getData(), sizeof(char), string1.getSize() * sizeof(char), stdout);
+	fmatio::BasicString<char> string2 = fmatio::cformat(pattern, fmatio::details::forward<Args>(args)...);
+	fwrite(string2.getData(), sizeof(char), string2.getSize() * sizeof(char), stdout);
+	
+	std::cout << "\n";
+}
+
+template<typename Char, typename... Args>
+void test(const Char* const pattern, Args&&... args)
+{
+	std::cout << fmatio::format<Char>(pattern, fmatio::details::forward<Args>(args)...).getData();
+	fmatio::echo<Char>(std::cout, pattern, fmatio::details::forward<Args>(args)...);
+
+	fmatio::BasicString<Char> string1 = fmatio::format<Char>(pattern, fmatio::details::forward<Args>(args)...);
+	fwrite(string1.getData(), sizeof(Char), string1.getSize() * sizeof(Char), stdout);
+
+	std::cout << "\n";
 }
 
 int main(int argc, char** argv)
 {
-	const char* t = test();
-	std::cout << t << std::endl;
-	delete[] t;
+	/*
+	test("Booleans: {} {}\n", true, false);
+	test("8-bit ints: {} {}\n", (fmatio::uint8)0x0, (fmatio::int8)0x1);
+	test("16-bit ints: {} {}\n", (fmatio::uint16)16, (fmatio::int16)-17);
+	test("32-bit ints: {} {}\n", (fmatio::uint32)20, (fmatio::int32)-18);
+	test("64-bit ints: {} {}\n", (fmatio::uint64)11, (fmatio::int64)-65);
+	test("Floats: {} {}\n", 5.5f, -3.14f);
+	test("Doubles: {} {}\n", 1.25, -2.78);
+	test("Chars: {} {} {} {}\n", 'k', '8', '$', '-');
+	test("Strings: {} {}{}\n", "Hello", "World", "!");
+	test("Nullptr: {}\n", nullptr);
+	test("Various: {} {} {} {} {} {} {} {}\n", nullptr, "Hello", 8, -5.5f, 'g', true, 0x7f000100, "Something!");
+	*/
+
+	test<char>("Booleans: {} {}\n", true, false);
+	test<char>("8-bit ints: {} {}\n", (fmatio::uint8)0x0, (fmatio::int8)0x1);
+	test<char>("16-bit ints: {} {}\n", (fmatio::uint16)16, (fmatio::int16)-17);
+	test<char>("32-bit ints: {} {}\n", (fmatio::uint32)20, (fmatio::int32)-18);
+	test<char>("64-bit ints: {} {}\n", (fmatio::uint64)11, (fmatio::int64)-65);
+	test<char>("Floats: {} {}\n", 5.5f, -3.14f);
+	test<char>("Doubles: {} {}\n", 1.25, -2.78);
+	test<char>("Chars: {} {} {} {}\n", 'k', '8', '$', '-');
+	test<char>("Strings: {} {}{}\n", "Hello", "World", "!");
+	test<char>("Nullptr: {}\n", nullptr);
+	test<char>("Various: {} {} {} {} {} {} {} {}\n", nullptr, "Hello", 8, -5.5f, 'g', true, 0x7f000100, "Something!");
 
 	/*
-	std::cout << fmatio::format<
+	test<fmatio::wchar>(L"Booleans: {} {}\n", true, false);
+	test<fmatio::wchar>(L"8-bit ints: {} {}\n", (fmatio::uint8)0x0, (fmatio::int8)0x1);
+	test<fmatio::wchar>(L"16-bit ints: {} {}\n", (fmatio::uint16)16, (fmatio::int16)-17);
+	test<fmatio::wchar>(L"32-bit ints: {} {}\n", (fmatio::uint32)20, (fmatio::int32)-18);
+	test<fmatio::wchar>(L"64-bit ints: {} {}\n", (fmatio::uint64)11, (fmatio::int64)-65);
+	test<fmatio::wchar>(L"Floats: {} {}\n", 5.5f, -3.14f);
+	test<fmatio::wchar>(L"Doubles: {} {}\n", 1.25, -2.78);
+	test<fmatio::wchar>(L"Chars: {} {} {} {}\n", L'k', L'8', L'$', L'-');
+	test<fmatio::wchar>(L"Strings: {} {}{}\n", L"Hello", L"World", L"!");
+	test<fmatio::wchar>(L"Nullptr: {}\n", nullptr);
+	test<fmatio::wchar>(L"Various: {} {} {} {} {} {} {} {}\n", nullptr, L"Hello", 8, -5.5f, L'g', true, 0x7f000100, L"Something!");
+	*/
+
+	std::cout << fmatio::format<char,
 		fmatio::BasicArgumentsFormatter<char>,
 			fmatio::BasicString<char>>("Hello, {p:2}!\n", 7.0f).getData();
 
-	std::cout << fmatio::format<fmatio::ArgumentsFormatter, fmatio::String>("Hello, {p:2}!\n", 7.0f).getData();
+	std::cout << fmatio::format<char,
+		fmatio::BasicArgumentsFormatter<char>,
+			fmatio::String>("Hello, {p:2}!\n", 7.0f).getData();
+
+	std::cout << fmatio::format<char, fmatio::ArgumentsFormatter, fmatio::String>("Hello, {p:2}!\n", 7.0f).getData();
 	std::cout << fmatio::cformat("Hello, {}!\n", "world").getData();
 
-	fmatio::echo<fmatio::ArgumentsFormatter, fmatio::String>(std::cout, "Hello, {p:2}!\n", 7.0f);
+	fmatio::echo<char, fmatio::ArgumentsFormatter, fmatio::String>(std::cout, "Hello, {p:2}!\n", 7.0f);
 	fmatio::cecho(std::cout, "Hello, {}!\n", "world");
-	*/
-
-	/*
-	{
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 5);
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 7);
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 7u);
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 4.5f);
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 2.25);
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", -1);
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 'h');
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", 't');
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", (char*)"hello");
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", "hello again");
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", "lalalalalalala!");
-		fmatio::echo<fmatio::BasicString<char>>(std::cout, "{}\n", nullptr);
-		std::cout << fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f).getData();
-		std::string string = fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f).getData();
-		const char* temp = string.data();
-		std::cout << temp;
-		fmatio::BasicString<char> basiString = fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f);
-		const char* cstring = basiString.getData();
-		std::cout << cstring;
-		const char* cstring2 = fmatio::format<fmatio::BasicString<char>>("{}\n", 8.5f).getData();
-		std::cout << cstring2;
-	}
-	*/
-
-	{
-		/*
-		fmatio::cecho(std::cout, "{}\n", 5);
-		fmatio::cecho(std::cout, "{}\n", 7);
-		fmatio::cecho(std::cout, "{}\n", 7u);
-		fmatio::cecho(std::cout, "{}\n", 4.5f);
-		fmatio::cecho(std::cout, "{}\n", 2.25);
-		fmatio::cecho(std::cout, "{}\n", -1);
-		fmatio::cecho(std::cout, "{}\n", 'h');
-		fmatio::cecho(std::cout, "{}\n", 't');
-		fmatio::cecho(std::cout, "{}\n", (char*)"hello");
-		fmatio::cecho(std::cout, "{}\n", "hello again");
-		fmatio::cecho(std::cout, "{}\n", "lalalalalalala!");
-		fmatio::cecho(std::cout, "{}\n", nullptr);
-		*/
-		
-		/*
-		std::cout << fmatio::cformat("{}\n", 8.5f).getData();
-
-		std::string string = fmatio::cformat("{}\n", 8.5f).getData();
-		const char* temp = string.data();
-		std::cout << temp;
-
-		fmatio::BasicString<char> basiString = fmatio::cformat("{}\n", 8.5f);
-		const char* cstring = basiString.getData();
-		std::cout << cstring;
-		*/
-		char* cstring2 = nullptr;
-		fmatio::BasicString<char> b = fmatio::cformat("{}\n", 8.5f);
-		cstring2 = b.getData();
-		std::cout << cstring2;
-
-
-		std::cout << str;
-
-		fmatio::BasicStringView<char> view = fmatio::cformat("{}\n", 8.5f).getData();
-		std::cout << view.getData();
-		std::cout << fmatio::cformat("{}\n", 8.5f).getData();
-	}
 
 	return 0;
 }

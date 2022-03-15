@@ -12,6 +12,7 @@
  * If not, see https://www.gnu.org/licenses/.
  ******************************************************************************/
 
+#include <fmatio/details/type_traits.hpp>
 #include <fmatio/details/basic_string_utilities.hpp>
 
 namespace fmatio
@@ -69,7 +70,7 @@ namespace fmatio
 			this->size = newCapacity;
 
 		for (uint32 i = 0; i < this->size; i++)
-			temp[i] = ::std::move(this->data[i]);
+			temp[i] = details::move(this->data[i]);
 
 		for (uint32 i = 0; i < this->size; i++)
 			this->data[i].~Char();
@@ -85,7 +86,7 @@ namespace fmatio
 		FMATIO_ASSERT(this->size >= size, "Provided cstring is too big to copy!");
 		
 		for (uint32 i = 0; i < size; i++)
-			this->data[i] = ::std::move(data[i]);
+			this->data[i] = details::move(data[i]);
 	}
 
 	template<typename Char>

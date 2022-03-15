@@ -74,6 +74,39 @@ namespace fmatio
 		template<typename T>
 		using RemoveReferenceType = typename RemoveReference<T>::Type;
 
+		template<typename T>
+		struct IsLValueReference
+		{
+		public:
+			static FMATIO_CONSTEXPR const bool is = false;
+		};
+
+		template<typename T>
+		struct IsLValueReference<T&>
+		{
+		public:
+			static FMATIO_CONSTEXPR const bool is = true;
+		};
+
+		template<typename T>
+		FMATIO_CONSTEXPR FMATIO_INLINE T&& forward(RemoveReferenceType<T>& value) FMATIO_NOEXCEPT
+		{
+			return static_cast<T&&>(value);
+		}
+
+		template<typename T>
+		FMATIO_CONSTEXPR FMATIO_INLINE T&& forward(RemoveReferenceType<T>&& value) FMATIO_NOEXCEPT
+		{
+			FMATIO_STATIC_ASSERT(!IsLValueReference<T>::is, "Bad forward call!");
+			return static_cast<T&&>(value);
+		}
+
+		template<typename T>
+		FMATIO_CONSTEXPR FMATIO_INLINE RemoveReferenceType<T>&& move(T&& value) FMATIO_NOEXCEPT
+		{
+			return static_cast<RemoveReferenceType<T>&&>(value);
+		}
+
 		/**
 		 * Remove extent structure.
 		 * 
@@ -116,6 +149,30 @@ namespace fmatio
 			using Type = T;
 		};
 
+		template<bool Test, class First, class Second>
+		struct Conditional
+		{
+		public:
+			using Type = Second;
+		};
+
+		template<class First, class Second>
+		struct Conditional<true, First, Second>
+		{
+		public:
+			using Type = First;
+		};
+
+		template<class First, class Second>
+		struct Conditional<false, First, Second>
+		{
+		public:
+			using Type = Second;
+		};
+
+		template<bool Test, class First, class Second>
+		using ConditionalType = typename Conditional<Test, First, Second>::Type;
+
 		/**
 		 * Remove extent type structure.
 		 * 
@@ -126,10 +183,10 @@ namespace fmatio
 		using RemoveExtentType = typename RemoveExtent<T>::Type;
 
 		template<typename T>
-		using DecayedIfArray = ::std::conditional_t<::std::is_array_v<T>, RemoveExtentType<T> const*, T>;
+		using DecayArrayType = ConditionalType<::std::is_array_v<T>, const RemoveExtentType<T>*, T>;
 
 		template<typename T>
-		using Formattable = DecayedIfArray<RemoveReferenceType<T>>;
+		using Formattable = DecayArrayType<RemoveReferenceType<T>>;
 	}
 }
 

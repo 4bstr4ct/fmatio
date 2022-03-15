@@ -34,7 +34,7 @@ namespace fmatio
 		template<typename Char>
 		FMATIO_INLINE void boolHandle(BasicFormatWriter<Char>& writer, bool value) FMATIO_NOEXCEPT
 		{
-			::std::string string = value ? FormatTraits<Char>::trueStringified : FormatTraits<Char>::falseStringified;	// Have to reimplement this!
+			::std::basic_string<Char> string = value ? FormatTraits<Char>::trueStringified : FormatTraits<Char>::falseStringified;	// Have to reimplement this!
 			writer.write(BasicStringView<Char>(string.data()));
 		}
 	}

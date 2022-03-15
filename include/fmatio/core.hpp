@@ -237,6 +237,9 @@ namespace fmatio
 
 #		define FMATIO_ASSERT(condition, message) \
 			::fmatio::exceptions::fmatioAssert<bool, const char* const, const char* const, unsigned int>(condition, message, __FILE__, (unsigned int)__LINE__);
+
+#		define FMATIO_STATIC_ASSERT(condition, message) \
+			static_assert(condition, message);
 #	else
 #		define FMATIO_ASSERT(condition, message)
 #	endif

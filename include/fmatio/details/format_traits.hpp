@@ -33,10 +33,10 @@ namespace fmatio
 		struct FormatTraits<char>
 		{
 		public:
-			static FMATIO_CONSTEXPR char formatBegin = '{';
-			static FMATIO_CONSTEXPR char formatEnd = '}';
-			static FMATIO_CONSTEXPR char formatEntry = ':';
-			static FMATIO_CONSTEXPR char formatPrecision = 'p';
+			static FMATIO_CONSTEXPR const char formatBegin = '{';
+			static FMATIO_CONSTEXPR const char formatEnd = '}';
+			static FMATIO_CONSTEXPR const char formatEntry = ':';
+			static FMATIO_CONSTEXPR const char formatPrecision = 'p';
 
 			static FMATIO_CONSTEXPR const char trueStringified[] = "true";
 			static FMATIO_CONSTEXPR const char falseStringified[] = "false";
@@ -47,10 +47,10 @@ namespace fmatio
 		struct FormatTraits<wchar>
 		{
 		public:
-			static FMATIO_CONSTEXPR wchar formatBegin = L'{';
-			static FMATIO_CONSTEXPR wchar formatEnd = L'}';
-			static FMATIO_CONSTEXPR wchar formatEntry = L':';
-			static FMATIO_CONSTEXPR wchar formatPrecision = L'p';
+			static FMATIO_CONSTEXPR const wchar formatBegin = L'{';
+			static FMATIO_CONSTEXPR const wchar formatEnd = L'}';
+			static FMATIO_CONSTEXPR const wchar formatEntry = L':';
+			static FMATIO_CONSTEXPR const wchar formatPrecision = L'p';
 
 			static FMATIO_CONSTEXPR const wchar trueStringified[] = L"true";
 			static FMATIO_CONSTEXPR const wchar falseStringified[] = L"false";
