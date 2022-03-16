@@ -48,7 +48,8 @@ void test(const Char* const pattern, Args&&... args)
 
 int main(int argc, char** argv)
 {
-	/*
+	std::cout << fmatio::format<char>("2 + 2 = {p:2}!\n", 4.0f).getData();
+
 	test("Booleans: {} {}\n", true, false);
 	test("8-bit ints: {} {}\n", (fmatio::uint8)0x0, (fmatio::int8)0x1);
 	test("16-bit ints: {} {}\n", (fmatio::uint16)16, (fmatio::int16)-17);
@@ -60,7 +61,6 @@ int main(int argc, char** argv)
 	test("Strings: {} {}{}\n", "Hello", "World", "!");
 	test("Nullptr: {}\n", nullptr);
 	test("Various: {} {} {} {} {} {} {} {}\n", nullptr, "Hello", 8, -5.5f, 'g', true, 0x7f000100, "Something!");
-	*/
 
 	test<char>("Booleans: {} {}\n", true, false);
 	test<char>("8-bit ints: {} {}\n", (fmatio::uint8)0x0, (fmatio::int8)0x1);
