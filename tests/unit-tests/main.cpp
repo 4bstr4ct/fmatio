@@ -9,6 +9,15 @@
 #include <array>
 #include <vector>
 
+class Logger
+{
+public:
+	static void log(const fmatio::BasicString<char>& formatted)
+	{
+		std::cout << fmatio::format<char>("[INTERNAL] {}", formatted.getData()).getData();
+	}
+};
+
 struct Student
 {
 public:
@@ -48,6 +57,7 @@ void test(const Char* const pattern, Args&&... args)
 
 int main(int argc, char** argv)
 {
+	Logger::log(fmatio::cformat("Initial log at {}.\n", "main()"));
 	std::cout << fmatio::format<char>("2 + 2 = {p:2}!\n", 4.0f).getData();
 
 	test("Booleans: {} {}\n", true, false);
