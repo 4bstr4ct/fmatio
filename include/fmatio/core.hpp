@@ -242,6 +242,7 @@ namespace fmatio
 			static_assert(condition, message);
 #	else
 #		define FMATIO_ASSERT(condition, message)
+#		define FMATIO_STATIC_ASSERT(condition, message)
 #	endif
 #endif
 
